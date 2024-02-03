@@ -2,19 +2,41 @@
   .cImage{
     height: 290px;
 }
+.card-h{
+  min-height: 120px !important;
+}
+.img-h{
+  height: 110px;
+}
 }
 @media screen and (min-width:0px) and (max-width:576px) {
   .cImage{
     height: 150px;
+}
+.offer-size{
+  height: 160px;
+}
+.card-h{
+  min-height: 100px;
+}
+.img-h{
+  height: 80px;
 }
 }
 @media screen and (min-width:576px) and (max-width:992px) {
   .cImage{
     height: 210px;
 }
+.card-h{
+  min-height: 110px;
 }
-@media screen and (min-width :0px) and (max-width:300px) {
+.img-h{
+  height: 80px;
+}
+
+}
+@media screen and (min-width :0px) and (max-width:350px) {
   .memo-text{
-    font-size: small;
+    font-size: medium;
   }
 }
