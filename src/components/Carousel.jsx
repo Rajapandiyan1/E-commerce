@@ -16,13 +16,13 @@ export default function Carousel() {
   </div>
   <div className="carousel-inner rounded-2">
     <div className="carousel-item active">
-      <img src={cour1} className="d-block w-100" height='280px' alt="..."/>
+      <img src={cour1} className="d-block w-100 cImage"  alt="..."/>
     </div>
     <div className="carousel-item">
-      <img src={head} className="d-block w-100" height='280px' alt="..."/>
+      <img src={head} className="d-block w-100 cImage"  alt="..."/>
     </div>
     <div className="carousel-item">
-      <img src={cycle} className="d-block w-100" height='280px' alt="..."/>
+      <img src={cycle} className="d-block w-100 cImage"  alt="..."/>
     </div>
   </div>
   <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
