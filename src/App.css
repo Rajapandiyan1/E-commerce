@@ -1,4 +1,4 @@
-@media screen and (min-width:992px) and (max-width:1300px){
+@media screen and (min-width:992px) and (max-width:1400px){
   .cImage{
     height: 290px;
 }
@@ -10,6 +10,11 @@
 }
 @media screen and (min-width:576px) and (max-width:992px) {
   .cImage{
-    height: 200px;
+    height: 210px;
 }
+}
+@media screen and (min-width :0px) and (max-width:300px) {
+  .memo-text{
+    font-size: small;
+  }
 }
