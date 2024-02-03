@@ -1,6 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function NavbarH() {
+    let moveProduct =useNavigate()
+    function Prod(params) {
+        moveProduct('/Product')
+    }
   return (
     <div className="row me-0 ms-0 border">
         <div className="col-3  ms-3 ms-sm-1 mt-lg-0 justify-content-center align-items-center d-flex  order-lg-1 navbar-brand text-warning mt-2">
@@ -20,7 +25,7 @@ export default function NavbarH() {
             <div className="input-group">
                 <input type="search" placeholder='search products' className='form-control' name="" id="" />
                 <div className="input-group-text">
-                <i className="fa fa-search"></i>
+                <i onClick={()=>{Prod()}} className="fa fa-search"></i>
                 </div>
             </div>
         </div>
