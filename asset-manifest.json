@@ -1,16 +1,22 @@
 {
   "files": {
-    "main.css": "/E-commerce/static/css/main.cf8bb132.css",
-    "main.js": "/E-commerce/static/js/main.4c14fd68.js",
+    "main.css": "/E-commerce/static/css/main.1308074d.css",
+    "main.js": "/E-commerce/static/js/main.beaf6aae.js",
+    "static/media/mobile.webp": "/E-commerce/static/media/mobile.80af194aac7d22b7d9c3.webp",
     "static/media/cycle.webp": "/E-commerce/static/media/cycle.e962904e7fc8877539d5.webp",
     "static/media/Caro-1.webp": "/E-commerce/static/media/Caro-1.c1d99a1668f6dc61254c.webp",
+    "static/media/laptop.webp": "/E-commerce/static/media/laptop.55557f80c867ab9168fc.webp",
+    "static/media/headset.webp": "/E-commerce/static/media/headset.1a363c064769c98cea14.webp",
+    "static/media/camera.webp": "/E-commerce/static/media/camera.b994ea0420d9b4fd67e2.webp",
+    "static/media/bat1.webp": "/E-commerce/static/media/bat1.27e04df255f56ead9050.webp",
+    "static/media/tv.webp": "/E-commerce/static/media/tv.43d2f1592f4e5e88f029.webp",
     "static/media/head.avif": "/E-commerce/static/media/head.ad0fdd78ed9df8dd3dfa.avif",
     "index.html": "/E-commerce/index.html",
-    "main.cf8bb132.css.map": "/E-commerce/static/css/main.cf8bb132.css.map",
-    "main.4c14fd68.js.map": "/E-commerce/static/js/main.4c14fd68.js.map"
+    "main.1308074d.css.map": "/E-commerce/static/css/main.1308074d.css.map",
+    "main.beaf6aae.js.map": "/E-commerce/static/js/main.beaf6aae.js.map"
   },
   "entrypoints": [
-    "static/css/main.cf8bb132.css",
-    "static/js/main.4c14fd68.js"
+    "static/css/main.1308074d.css",
+    "static/js/main.beaf6aae.js"
   ]
 }
