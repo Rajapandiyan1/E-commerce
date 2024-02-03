@@ -18,6 +18,7 @@ function Offer() {
                 </div>
             </div>
         </div>
+        
         <div className="col-6 col-sm-3 mt-2"><div className="card">
                 <div className="card-img-top">
                     <img className='w-100 offer-size'  src={belt} alt="" />
