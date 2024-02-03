@@ -40,7 +40,7 @@ senddata(setData(fil))
             </div>
         </div>
         
-<div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+<div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
   <div className="offcanvas-header">
     <h5 className="offcanvas-title" id="offcanvasBottomLabel">Profile</h5>
     <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
