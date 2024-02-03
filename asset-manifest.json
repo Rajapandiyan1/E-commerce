@@ -1,10 +1,14 @@
 {
   "files": {
-    "main.css": "/E-commerce/static/css/main.1308074d.css",
-    "main.js": "/E-commerce/static/js/main.a38fd245.js",
+    "main.css": "/E-commerce/static/css/main.3eb72b3e.css",
+    "main.js": "/E-commerce/static/js/main.a7498834.js",
     "static/media/mobile.webp": "/E-commerce/static/media/mobile.80af194aac7d22b7d9c3.webp",
+    "static/media/belt.webp": "/E-commerce/static/media/belt.46dec2174dd3c074f4bb.webp",
     "static/media/cycle.webp": "/E-commerce/static/media/cycle.e962904e7fc8877539d5.webp",
+    "static/media/shoe.webp": "/E-commerce/static/media/shoe.7cb0c285e9a9436a8ef4.webp",
     "static/media/Caro-1.webp": "/E-commerce/static/media/Caro-1.c1d99a1668f6dc61254c.webp",
+    "static/media/watch.webp": "/E-commerce/static/media/watch.d069fe9e31db2d467abc.webp",
+    "static/media/books.webp": "/E-commerce/static/media/books.43cba3f4946339f62228.webp",
     "static/media/laptop.webp": "/E-commerce/static/media/laptop.55557f80c867ab9168fc.webp",
     "static/media/headset.webp": "/E-commerce/static/media/headset.1a363c064769c98cea14.webp",
     "static/media/camera.webp": "/E-commerce/static/media/camera.b994ea0420d9b4fd67e2.webp",
@@ -12,11 +16,11 @@
     "static/media/tv.webp": "/E-commerce/static/media/tv.43d2f1592f4e5e88f029.webp",
     "static/media/head.avif": "/E-commerce/static/media/head.ad0fdd78ed9df8dd3dfa.avif",
     "index.html": "/E-commerce/index.html",
-    "main.1308074d.css.map": "/E-commerce/static/css/main.1308074d.css.map",
-    "main.a38fd245.js.map": "/E-commerce/static/js/main.a38fd245.js.map"
+    "main.3eb72b3e.css.map": "/E-commerce/static/css/main.3eb72b3e.css.map",
+    "main.a7498834.js.map": "/E-commerce/static/js/main.a7498834.js.map"
   },
   "entrypoints": [
-    "static/css/main.1308074d.css",
-    "static/js/main.a38fd245.js"
+    "static/css/main.3eb72b3e.css",
+    "static/js/main.a7498834.js"
   ]
 }
