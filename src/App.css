@@ -8,13 +8,16 @@
 .img-h{
   height: 110px;
 }
+.offer-size{
+  height: 220px;
+}
 }
 @media screen and (min-width:0px) and (max-width:576px) {
   .cImage{
     height: 150px;
 }
 .offer-size{
-  height: 160px;
+  height: 120px;
 }
 .card-h{
   min-height: 100px;
@@ -23,7 +26,7 @@
   height: 80px;
 }
 }
-@media screen and (min-width:576px) and (max-width:992px) {
+@media screen and (min-width:768px) and (max-width:992px) {
   .cImage{
     height: 210px;
 }
@@ -33,10 +36,33 @@
 .img-h{
   height: 80px;
 }
-
+.offer-size{
+  height: 160px;
+}
+.memo-text{
+  font-size: small;
+}
+}
+@media screen and (min-width:576px) and (max-width:768px) {
+  .cImage{
+    height: 210px;
+}
+.card-h{
+  min-height: 110px;
+}
+.img-h{
+  height: 70px;
+}
+.offer-size{
+  height: 130px;
+}
+.memo-text{
+  font-size: small;
+}
 }
 @media screen and (min-width :0px) and (max-width:350px) {
   .memo-text{
-    font-size: medium;
+    font-size:small;
   }
+
 }

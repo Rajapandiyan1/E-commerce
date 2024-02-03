@@ -10,7 +10,7 @@ function Offer() {
         <div className="col-6 col-sm-3 mt-2">
             <div className="card">
                 <div className="card-img-top">
-                    <img className='w-100 offer-size' height='150px' src={shoe} alt="" />
+                    <img className='w-100 offer-size'  src={shoe} alt="" />
                 </div>
                 <div className="card-footer">
                     <h6 className='memo-text'>Addidas shoe</h6>
@@ -20,7 +20,7 @@ function Offer() {
         </div>
         <div className="col-6 col-sm-3 mt-2"><div className="card">
                 <div className="card-img-top">
-                    <img className='w-100 offer-size' height='150px' src={belt} alt="" />
+                    <img className='w-100 offer-size'  src={belt} alt="" />
                 </div>
                 <div className="card-footer">
                     <h6 className='memo-text'>Wooland Belt</h6>
@@ -29,7 +29,7 @@ function Offer() {
             </div></div>
         <div className="col-6 col-sm-3 mt-2"><div className="card">
                 <div className="card-img-top">
-                    <img className='w-100 offer-size' height='150px' src={watch} alt="" />
+                    <img className='w-100 offer-size'  src={watch} alt="" />
                 </div>
                 <div className="card-footer">
                     <h6 className='memo-text'>Watch</h6>
@@ -38,7 +38,7 @@ function Offer() {
             </div></div>
         <div className="col-6 col-sm-3 mt-2"><div className="card">
                 <div className="card-img-top">
-                    <img className='w-100 offer-size' height='150px' src={books} alt="" />
+                    <img className='w-100 offer-size'  src={books} alt="" />
                 </div>
                 <div className="card-footer">
                     <h6 className='memo-text'>Books</h6>
