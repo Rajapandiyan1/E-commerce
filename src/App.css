@@ -9,7 +9,7 @@
   height: 110px;
 }
 .offer-size{
-  height: 220px;
+  height: 130px;
 }
 }
 @media screen and (min-width:0px) and (max-width:576px) {
@@ -37,7 +37,7 @@
   height: 80px;
 }
 .offer-size{
-  height: 160px;
+  height: 130px;
 }
 .memo-text{
   font-size: small;

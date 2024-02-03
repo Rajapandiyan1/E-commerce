@@ -5,9 +5,9 @@ import belt from './images/belt.webp'
 import books from './images/books.webp'
 function Offer() {
   return (
-    <div className='row me-0 ms-0 justify-content-center'>
+    <div className='row me-0 ms-0 justify-content-center justify-content-md-evenly'>
         <div className="col-12">Offers for 60%</div>
-        <div className="col-6 col-sm-3 mt-2">
+        <div className="col-6 col-sm-3  mt-2">
             <div className="card">
                 <div className="card-img-top">
                     <img className='w-100 offer-size'  src={shoe} alt="" />
@@ -19,7 +19,7 @@ function Offer() {
             </div>
         </div>
         
-        <div className="col-6 col-sm-3 mt-2"><div className="card">
+        <div className="col-6 col-sm-3  mt-2"><div className="card">
                 <div className="card-img-top">
                     <img className='w-100 offer-size'  src={belt} alt="" />
                 </div>
@@ -28,7 +28,7 @@ function Offer() {
                     <span className="memo-text">10 - 20 % Offer</span>
                 </div>
             </div></div>
-        <div className="col-6 col-sm-3 mt-2"><div className="card">
+        <div className="col-6 col-sm-3  mt-2"><div className="card">
                 <div className="card-img-top">
                     <img className='w-100 offer-size'  src={watch} alt="" />
                 </div>
@@ -37,7 +37,7 @@ function Offer() {
                     <span className="memo-text">15 - 30 % Offer</span>
                 </div>
             </div></div>
-        <div className="col-6 col-sm-3 mt-2"><div className="card">
+        <div className="col-6 col-sm-3  mt-2"><div className="card">
                 <div className="card-img-top">
                     <img className='w-100 offer-size'  src={books} alt="" />
                 </div>
