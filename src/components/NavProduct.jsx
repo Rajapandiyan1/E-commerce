@@ -9,7 +9,7 @@ function NavProduct() {
   return (
     <div className='row mt-2'>
         <div className="col-2 col-sm-1 ms-1 d-flex justify-content-center align-items-center" style={{fontSize:'25px'}}>
-        <i onClick={()=>{homes()}} class="fa fa-arrow-left"></i>
+        <i onClick={()=>{homes()}} className="fa fa-arrow-left"></i>
         </div>
         <div className="col-7">
     <div className="input-group">

@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
+import { setData } from './data/Searchdata';
 
 export default function NavbarH() {
-    let moveProduct =useNavigate()
+    let moveProduct =useNavigate();
+    let [fil,fildatas]=useState('');
+    let senddata=useDispatch()
+    function fildata(data) {
+        fildatas(data)
+    }
     function Prod(params) {
-        moveProduct('/Product')
+        if(fil != ''){
+senddata(setData(fil))
+        
+        moveProduct('/Product')}
     }
   return (
     <div className="row me-0 ms-0 border">
@@ -23,7 +33,7 @@ export default function NavbarH() {
             </div>
         <div className="col-12 mb-lg-1 mt-lg-1 justify-content-center align-items-center d-flex order-lg-2 col-lg-4 order-4 mt-3 mb-2">
             <div className="input-group">
-                <input type="search" placeholder='search products' className='form-control' name="" id="" />
+                <input type="search" placeholder='search products' onChange={(e)=>{fildata(e.target.value)}} className='form-control' name="" id="" />
                 <div className="input-group-text">
                 <i onClick={()=>{Prod()}} className="fa fa-search"></i>
                 </div>

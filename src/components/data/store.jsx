@@ -1,7 +1,11 @@
 import React from 'react'
 import {configureStore} from '@reduxjs/toolkit'
-import { Searchdata } from './Searchdata'
+import Searchdata from './Searchdata'
+
  
 export let store = configureStore({
-    reducer:Searchdata
+    
+    reducer:{
+        search:Searchdata,
+    }
 })
