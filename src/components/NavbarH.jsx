@@ -14,13 +14,13 @@ export default function NavbarH() {
             <button className="btn btn-primary btn-sm">
             Login</button></div>
             <div className="col-1 mt-lg-0 order-lg-5 me-2 mt-2 d-flex justify-content-center align-items-center">
-            <i class="fa fa-bars" style={{fontSize:'24px'}}></i>
+            <i className="fa fa-bars" style={{fontSize:'24px'}}></i>
             </div>
         <div className="col-12 mb-lg-1 mt-lg-1 justify-content-center align-items-center d-flex order-lg-2 col-lg-4 order-4 mt-3 mb-2">
             <div className="input-group">
                 <input type="search" placeholder='search products' className='form-control' name="" id="" />
                 <div className="input-group-text">
-                <i class="fa fa-search"></i>
+                <i className="fa fa-search"></i>
                 </div>
             </div>
         </div>
