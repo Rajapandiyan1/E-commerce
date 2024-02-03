@@ -29,7 +29,7 @@ senddata(setData(fil))
             <button className="btn btn-primary btn-sm">
             Login</button></div>
             <div className="col-1 mt-lg-0 order-lg-5 me-2 mt-2 d-flex justify-content-center align-items-center">
-            <i className="fa fa-bars" style={{fontSize:'24px'}}></i>
+            <i className="fa fa-bars" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" style={{fontSize:'24px'}}></i>
             </div>
         <div className="col-12 mb-lg-1 mt-lg-1 justify-content-center align-items-center d-flex order-lg-2 col-lg-4 order-4 mt-3 mb-2">
             <div className="input-group">
@@ -39,6 +39,16 @@ senddata(setData(fil))
                 </div>
             </div>
         </div>
+        
+<div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+  <div className="offcanvas-header">
+    <h5 className="offcanvas-title" id="offcanvasBottomLabel">Profile</h5>
+    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div className="offcanvas-body small">
+    
+  </div>
+</div>
     </div>
   )
 }

@@ -6,7 +6,7 @@ import {Provider} from 'react-redux'
 import { store } from './components/data/store';
 function App() {
   return (
-    <div className="container">
+    <div className="container-fluid">
 <Provider store={store}>
 <BrowserRouter>
 <Routes>
