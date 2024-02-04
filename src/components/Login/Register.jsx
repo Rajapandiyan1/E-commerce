@@ -65,47 +65,52 @@ function Register() {
   }
   return (
     <>
+    <div className="row justify-content-center" style={{minHeight:'50vh',marginTop:'8vh'}}>
+      <div className="col-10">
       <div className='row justify-content-center'>
-        <div className="col-12 col-md-7 mt-5">
+        <div className="col-10 col-md-7 text-center">
           <h1>Register Page</h1>
         </div>
-        <div className="col-12 col-md-7 col-md-7 mt-3">
+        <div className="col-10 col-md-7 col-md-7 mt-1">
           <label htmlFor="" className='form-label'>Username</label>
           </div>
-          <div className="col-12 col-md-7 col-md-7 mt-3">
+          <div className="col-10 col-md-7 col-md-7 mt-1">
             <input type="text" placeholder='Enter your Name' onChange={(e)=>{getDatas(e)}} className='form-control' name="displayName" id="" />
           </div>
-          {err.displayName &&<div className='col-7 mt-1 text-danger'>Invalid UserName</div>}
-        <div className="col-12 col-md-7 mt-3">
+          {err.displayName &&<div className='col-7 col-10 mt-1 text-danger'>Invalid UserName</div>}
+        <div className="col-10 col-md-7 mt-1">
           <label htmlFor="" className='form-label'>Email</label>
         </div>
-        <div className="col-12 col-md-7 mt-3">
+        <div className="col-10 col-md-7 mt-1">
           <input type="text" placeholder='Enter your email' className='form-control' onChange={(e)=>{getDatas(e)}} name="email" id="" />
         </div>
-        {err.email &&<div className='col-7 mt-1 text-danger'>Invalid Email</div>}
-        <div className="col-12 col-md-7 mt-3">
+        {err.email &&<div className='col-7 col-10 mt-1 text-danger'>Invalid Email</div>}
+        <div className="col-10 col-md-7 mt-1">
           <label htmlFor="" className='form-label'>Password</label>
         </div>
-        <div className="col-12 col-md-7 mt-3">
+        <div className="col-10 col-md-7 mt-1">
           <input type="password" placeholder='Enter your password' className='form-control' onChange={(e)=>{getDatas(e)}} name="password" id="" />
         </div>
-        {err.password &&<div className='col-12 col-md-7 mt-1 text-danger'>Invalid Password</div>}
-      {cusErr && <div className='col-12 col-md-7 mt-2'>{mess}</div>}
-        {loading && <div className="col-12 col-md-7 mt-5 d-flex justify-content-center">
+        {err.password &&<div className='col-10 col-md-7 mt-1 text-danger'>Invalid Password</div>}
+      {cusErr && <div className='col-10 col-md-7 mt-2'>{mess}</div>}
+        {loading && <div className="col-10 col-md-7 mt-5 d-flex justify-content-center">
           <span className='spinner-border'></span>
         </div>}
-        <div className="col-12 col-md-7">
+        <div className="col-10 col-md-7">
           <div className="row">
 
-        <div className="col-6 mt-5 ">
-          <span>Already account created <Link style={{ textDecoration: 'none' }} to='/login'>Login</Link></span>
+        <div className="col-8 mt-1 ">
+          <span>Account <Link style={{ textDecoration: 'none' }} to='/login'>Login</Link></span>
         </div>
-        <div className="col-6 mt-5 d-flex justify-content-end">
-          <button className="btn btn-primary" disabled={loading} onClick={() => { createAccount() }}>Create account</button>
+        <div className="col-3 d-flex justify-content-end align-items-center">
+          <button style={{height:'30px'}} className="btn btn-primary btn-sm" disabled={loading} onClick={() => { createAccount() }}>Create</button>
         </div>
           </div>
         </div>
       </div>
+      </div>
+    </div>
+      
 
     </>
 
