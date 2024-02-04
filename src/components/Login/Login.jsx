@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router'
 import { Link } from 'react-router-dom'
 import { Logi } from '../Api/Post'
 import { setToken } from '../Api/Getdata'
+import {Navbar} from './Navbar'
 function Login() {
   let crea = useNavigate()
   let [loading, isloading] = useState(false)
@@ -54,8 +55,12 @@ function Login() {
   }
 
   return (
-    <div className='row justify-content-center me-0 ms-0'>
-      <div className="col-12 col-md-7  mt-5">
+    <>
+    {/* <Navbar/> */}
+    <div className='row justify-content-center me-0 ms-0 ' style={{minHeight:'50vh',marginTop:'10vh'}}>
+<div className="col-12  d-flex align-items-center">
+<div className="row justify-content-center">
+<div className="col-12 col-md-7 text-center">
         <h1>Login Page</h1>
       </div>
       <div className="col-12 col-md-7 mt-4">
@@ -78,16 +83,19 @@ function Login() {
       </div>}
       <div className="col-12 col-md-7 mt-4">
         <div className="row">
-        <div className="col-6 col-md-6 mt-5 ">
+        <div className="col-6 col-md-6 ">
         <span>create <Link style={{ textDecoration: 'none' }} to='/Register'>new account</Link></span>
       </div>
-      <div className="col-6 col-md-6 mt-5 d-flex justify-content-end">
-        <button className="btn btn-primary" disabled={loading} onClick={() => { submits() }}>Login</button>
+      <div className="col-6 col-md-6 d-flex justify-content-end" style={{height:'40px'}}>
+        <button className="btn btn-primary h-80" disabled={loading} onClick={() => { submits() }}>Login</button>
       </div>
         </div>
       </div>
 
+</div>
+</div>
     </div>
+    </>
   )
 }
 
