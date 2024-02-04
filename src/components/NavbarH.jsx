@@ -40,7 +40,11 @@ senddata(setData(fil))
         <div className="col-1 col-lg-1 order-3 order-lg-4 mt-lg-0 justify-content-center align-items-center  d-flex me-4 mt-2">
             <button className="btn btn-primary btn-sm" onClick={()=> {moveProduct('/login')}}>
             Login</button></div>
-            
+            {admin && <div className="col-4 d-none d-lg-flex col-sm-2 col-lg-2 mt-lg-1 mb-lg-1 order-lg-5 ps-0 justify-content-center order-6 mt-1  d-flex align-items-center">
+            <button onClick={()=>{moveProduct('/admin') }} className="btn btn-primary btn-sm memo-text">
+                Dashboard
+            </button>
+        </div>}
             <div className="col-1 col-lg-1 order-lg-5 mt-lg-1 mb-lg-1 order-4 mt-lg-0 me-2 mt-2 d-flex justify-content-center align-items-center">
             <i className="fa fa-bars" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" style={{fontSize:'24px'}}></i>
             </div>
@@ -53,8 +57,8 @@ senddata(setData(fil))
             </div>
 
         </div>
-        {admin && <div className="col-4  col-sm-2 col-lg-2 mt-lg-1 mb-lg-1 order-lg-5 ps-0 justify-content-center order-5 mt-1  d-flex align-items-center">
-            <button className="btn btn-primary btn-sm memo-text">
+        {admin && <div className="col-4 d-lg-none col-sm-2 col-lg-2 mt-lg-1 mb-lg-1 order-lg-5 ps-0 justify-content-center order-5 mt-1  d-flex align-items-center">
+            <button onClick={()=>{moveProduct('/admin') }} className="btn btn-primary btn-sm memo-text">
                 Dashboard
             </button>
         </div>}
