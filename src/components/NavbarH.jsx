@@ -6,7 +6,8 @@ import { setData } from './data/Searchdata';
 export default function NavbarH() {
     let moveProduct =useNavigate();
     let [fil,fildatas]=useState('');
-    let [admin,setadmin]=useState(false)
+    let [admin,setadmin]=useState(false);
+    let [inres,setinres]=useState('')
     let senddata=useDispatch()
     function fildata(data) {
         fildatas(data)
@@ -15,6 +16,10 @@ export default function NavbarH() {
     let token= localStorage.getItem('Dashboard');
     if(token != ''){
         setadmin(true)
+        setinres('col-8')
+    }
+    else{
+        setinres('col-12')
     }
     },[])
     function Prod(params) {
@@ -39,7 +44,7 @@ senddata(setData(fil))
             <div className="col-1 col-lg-1 order-lg-5 mt-lg-1 mb-lg-1 order-4 mt-lg-0 me-2 mt-2 d-flex justify-content-center align-items-center">
             <i className="fa fa-bars" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" style={{fontSize:'24px'}}></i>
             </div>
-        <div className="col-8 col-sm-10 col-lg-4  order-lg-2 order-5 mb-lg-1 mt-lg-1 justify-content-center align-items-center d-flex  mt-3 mb-2">
+        <div className={'col-sm-10 col-lg-4  order-lg-2 order-5 mb-lg-1 mt-lg-1 justify-content-center align-items-center d-flex  mt-3 mb-2 '+inres}>
             <div className="input-group">
                 <input type="search" placeholder='search products' onChange={(e)=>{fildata(e.target.value)}} className='form-control' name="" id="" />
                 <div className="input-group-text">
