@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'  
 import NavProduct from './NavProduct'
 import { useSelector } from 'react-redux';
+import ShowProudct from './ShowProudct';
 
 export default function Product() {
     let [search,setSearch2]=useState('');
@@ -10,9 +11,7 @@ export default function Product() {
     },[search])
   return(<>
     <NavProduct sear={setSearch2}/>
-    <div className="row">
-        <div className="col-12 text-center">{search}</div>
-    </div>
+    <ShowProudct/>
     </>)
     
   
