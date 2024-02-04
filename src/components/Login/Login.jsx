@@ -66,14 +66,15 @@ function Login() {
       <div className="col-12 col-md-7 mt-4">
         <label htmlFor="" className='form-label'>Email</label>
       </div>
-      <div className="col-12 col-md-7 mt-4">
+      <div className="col-12 col-md-7 mt-3">
         <input type="text" placeholder='Enter your email' className='form-control' onChange={(e) => { getDatas(e) }} name="email" id="" />
       </div>
-      <div className="col-12 col-md-7 mt-4">
-        {err.email && <div className='col-6 mt-1 text-danger'>Invalid Email</div>}
+      <div className="col-12 col-md-7 mt-2">
+        {err.email && <div className='col-12 col-md-7  mt-1 text-danger'>Invalid Email</div>}
+        
         <label htmlFor="" className='form-label'>Password</label>
       </div>
-      <div className="col-12 col-md-7 mt-4">
+      <div className="col-12 col-md-7 mt-3">
         <input type="password" placeholder='Enter your password' className='form-control' onChange={(e) => { getDatas(e) }} name="password" id="" />
       </div>
       {err.password && <div className='col-12 col-md-7 mt-1 text-danger'>Invalid Password</div>}
