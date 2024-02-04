@@ -22,11 +22,11 @@ senddata(setData(fil))
             E-commerce
         </div>
         <div className="col-1 mt-lg-0 justify-content-center align-items-center d-flex order-lg-3 ms-auto me-5 mt-2">
-            <button className="btn-success btn btn-sm">
+            <button className="btn-success btn btn-sm" onClick={()=> {moveProduct('/Register')}}>
             Register</button>
             </div>
         <div className="col-1 mt-lg-0 justify-content-center align-items-center d-flex order-lg-4 me-4 mt-2">
-            <button className="btn btn-primary btn-sm">
+            <button className="btn btn-primary btn-sm" onClick={()=> {moveProduct('/login')}}>
             Login</button></div>
             <div className="col-1 mt-lg-0 order-lg-5 me-2 mt-2 d-flex justify-content-center align-items-center">
             <i className="fa fa-bars" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" style={{fontSize:'24px'}}></i>
