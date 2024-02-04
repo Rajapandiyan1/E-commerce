@@ -14,39 +14,39 @@ export default function MemoProduct() {
           <div className="card-img-top w-100">
             <img className='w-100 img-h'  src={mobile} alt="" />
           </div>
-          <label htmlFor="" className='text-center memo-text form-check-label'>Mobiles</label>
+          <label htmlFor="" className='text-center memo-text font-w mb-2 form-check-label'>Mobiles</label>
         </div>
       </div>
       <div className="col-sm-2 d-flex justify-content-center col-4 "><div className="card mt-1 mb-1 w-100 card-h" >
         <div className="card-img-top w-100">
-          <img className='w-100 img-h'  src={sport} alt="" />
+          <img className='w-100 img-h p-1'  src={sport} alt="" />
         </div>
-        <label htmlFor="" className='text-center memo-text'>Sports</label>
+        <label htmlFor="" className='text-center mb-2 memo-text font-w'>Sports</label>
       </div></div>
 
       <div className="col-sm-2 d-flex justify-content-center col-4 "><div className="card mt-1 mb-1 w-100 card-h" >
         <div className="card-img-top w-100">
-          <img className='w-100 img-h'  src={tv} alt="" />
+          <img className='w-100 img-h p-1'  src={tv} alt="" />
         </div>
-        <label htmlFor="" className='memo-text text-center'>Sports</label>
+        <label htmlFor="" className='memo-text text-center mb-2 font-w'>Sports</label>
       </div></div>
       <div className="col-sm-2 d-flex justify-content-center col-4 "><div className="w-100 card mt-1 mb-1 card-h" >
         <div className="card-img-top w-100">
-          <img className='w-100 img-h'  src={camera} alt="" />
+          <img className='w-100 img-h p-1'  src={camera} alt="" />
         </div>
-        <label htmlFor="" className='memo-text text-center'>Camera</label>
+        <label htmlFor="" className='memo-text text-center mb-2 font-w'>Camera</label>
       </div></div>
       <div className="col-sm-2 d-flex justify-content-center col-4 "><div className="w-100 card mt-1 mb-1 card-h" >
         <div className="card-img-top w-100">
-          <img className='w-100 img-h'  src={headset} alt="" />
+          <img className='w-100 img-h p-1 ne-1'  src={headset} alt="" />
         </div>
-        <label htmlFor="" className='text-center memo-text'>Headset</label>
+        <label htmlFor="" className='text-center memo-text mb-2 font-w'>Headset</label>
       </div></div>
       <div className="col-sm-2 d-flex justify-content-center col-4 "><div className="w-100 card mt-1 mb-1 card-h" >
         <div className="card-img-top w-100">
-          <img className='w-100 img-h'  src={laptop} alt="" />
+          <img className='w-100 img-h p-1'  src={laptop} alt="" />
         </div>
-        <label htmlFor="" className='text-center memo-text'>laptop</label>
+        <label htmlFor="" className='text-center memo-text mb-2 font-w'>laptop</label>
       </div></div>
     </div>
   )
