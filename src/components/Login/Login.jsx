@@ -56,8 +56,8 @@ function Login() {
 
   return (
     <>
-    {/* <Navbar/> */}
-    <div className='row justify-content-center me-0 ms-0 ' style={{minHeight:'50vh',marginTop:'10vh'}}>
+    <Navbar login={'Register'}/>
+    <div className='row justify-content-center mt-2 me-0 ms-0 ' style={{minHeight:'50vh'}}>
 <div className="col-12  d-flex align-items-center">
 <div className="row justify-content-center">
 <div className="col-12 col-md-7 text-center">
@@ -71,7 +71,7 @@ function Login() {
       </div>
       <div className="col-12 col-md-7 mt-2">
         {err.email && <div className='col-12 col-md-7  mt-1 text-danger'>Invalid Email</div>}
-        
+
         <label htmlFor="" className='form-label'>Password</label>
       </div>
       <div className="col-12 col-md-7 mt-3">
@@ -84,11 +84,11 @@ function Login() {
       </div>}
       <div className="col-12 col-md-7 mt-4">
         <div className="row">
-        <div className="col-6 col-md-6 ">
+        <div className="col-9 col-md-6 d-flex align-items-center">
         <span>create <Link style={{ textDecoration: 'none' }} to='/Register'>new account</Link></span>
       </div>
-      <div className="col-6 col-md-6 d-flex justify-content-end" style={{height:'40px'}}>
-        <button className="btn btn-primary h-80" disabled={loading} onClick={() => { submits() }}>Login</button>
+      <div className="col-3 col-md-6 d-flex align-items-center justify-content-end" style={{height:'40px'}}>
+        <button className="btn btn-primary btn-sm h-80" disabled={loading} onClick={() => { submits() }}>Submit</button>
       </div>
         </div>
       </div>

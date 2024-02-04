@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { sear } from '../Store/Load';
 import { Post } from '../Api/Post';
 import { datas, setToken } from '../Api/Getdata';
+import { Navbar } from './Navbar';
 
 function Register() {
   let [loading, isloading] = useState(false)
@@ -65,7 +66,8 @@ function Register() {
   }
   return (
     <>
-    <div className="row justify-content-center" style={{minHeight:'50vh',marginTop:'8vh'}}>
+    <Navbar login={'login'}/>
+    <div className="row justify-content-center mt-2" style={{minHeight:'50vh'}}>
       <div className="col-12">
       <div className='row justify-content-center'>
         <div className="col-11 col-md-9 text-center">
