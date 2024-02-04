@@ -17,7 +17,7 @@ function User() {
      userData(token).then((data)=>{setD(data.users[0])}).catch((e)=>{ setNet(true)}).finally(()=>{isloading(false)})
     },[]) 
     if(!Authen()){
-    return <Navigate to='/'/>
+    return <Navigate to='/E-commerce/'/>
     cer('/')
      }
   return (

@@ -66,7 +66,7 @@ body{
   height: 130px;
 }
 .memo-text{
-  font-size: small;
+  font-size: small !important;
 }
 }
 @media screen and (min-width :0px) and (max-width:350px) {

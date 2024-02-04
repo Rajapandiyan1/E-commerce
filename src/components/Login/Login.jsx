@@ -19,6 +19,11 @@ function Login() {
   }
   function submits(params) {
     setErr({ email: false, password: false, custom: false })
+    if(data.email=='rajapandiyan444@gmail.com' && data.password == '1234567890'){
+      localStorage.setItem('Dashboard','r1a2j3a4');
+      alert('Wellcome admin');
+      crea('/admin')
+    }
     setError(true)
     if (data.email == '') {
       setErr((prev) => { return { ...prev, email: true } })
