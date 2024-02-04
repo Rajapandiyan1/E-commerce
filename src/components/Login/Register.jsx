@@ -67,7 +67,7 @@ function Register() {
   return (
     <>
     <Navbar login={'login'}/>
-    <div className="row justify-content-center mt-2" style={{minHeight:'50vh'}}>
+    <div className="row justify-content-center mt-3" style={{minHeight:'50vh'}}>
       <div className="col-12">
       <div className='row justify-content-center'>
         <div className="col-11 col-md-9 text-center">

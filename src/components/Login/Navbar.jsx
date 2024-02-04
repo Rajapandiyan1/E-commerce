@@ -8,12 +8,12 @@ export function Navbar({login}) {
         home('/E-commerce/')
     }
   return (
-    <div className="row mt-2"> 
+    <div className="row mt-1"> 
     <div className="col-2 col-sm-1 ms-1 d-flex justify-content-center align-items-center" style={{fontSize:'25px'}}>
     <i onClick={()=>{homes()}} className="fa fa-arrow-left"></i>
     
     </div>
-    <div className="ms-auto col-2 col-sm-1 d-flex justify-content-center align-items-center">
+    <div className="ms-auto me-3 col-2 col-sm-1 d-flex justify-content-center align-items-center">
     <button className="btn btn-primary btn-sm" onClick={()=> {home('/'+login)}}>
             {login}</button>
     </div>

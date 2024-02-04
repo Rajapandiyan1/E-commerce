@@ -57,7 +57,7 @@ function Login() {
   return (
     <>
     <Navbar login={'Register'}/>
-    <div className='row justify-content-center mt-2 me-0 ms-0 ' style={{minHeight:'50vh'}}>
+    <div className='row justify-content-center mt-3 me-0 ms-0 ' style={{minHeight:'50vh'}}>
 <div className="col-12  d-flex align-items-center">
 <div className="row justify-content-center">
 <div className="col-12 col-md-7 text-center">
