@@ -67,35 +67,35 @@ function Register() {
   return (
     <>
     <Navbar login={'login'}/>
-    <div className="row justify-content-center mt-3" style={{minHeight:'51vh'}}>
+    <div className="row justify-content-center mt-3" style={{minHeight:'400'}}>
       <div className="col-12">
       <div className='row justify-content-center'>
-        <div className="col-11 col-md-9 text-center">
+        <div className="col-11 col-md-7 text-center">
           <h1>Register Page</h1>
         </div>
-        <div className="col-11  col-md-9 mt-3">
+        <div className="col-11  col-md-7 mt-3">
           <label htmlFor="" className='form-label'>Username</label>
           </div>
-          <div className="col-11 col-md-9 mt-2">
+          <div className="col-11 col-md-7 mt-2">
             <input type="text" placeholder='Enter your Name' onChange={(e)=>{getDatas(e)}} className='form-control' name="displayName" id="" />
           </div>
-          {err.displayName &&<div className='col-11 col-md-9 mt-1 text-danger'>Invalid UserName</div>}
-        <div className="col-11 col-md-9 mt-3">
+          {err.displayName &&<div className='col-11 col-md-7 mt-1 text-danger'>Invalid UserName</div>}
+        <div className="col-11 col-md-7 mt-3">
           <label htmlFor="" className='form-label'>Email</label>
         </div>
-        <div className="col-11 col-md-9 mt-2">
+        <div className="col-11 col-md-7 mt-2">
           <input type="text" placeholder='Enter your email' className='form-control' onChange={(e)=>{getDatas(e)}} name="email" id="" />
         </div>
-        {err.email &&<div className='col-md-9 col-11 mt-1 text-danger'>Invalid Email</div>}
-        <div className="col-11 col-md-9 mt-3">
+        {err.email &&<div className='col-md-7 col-11 mt-1 text-danger'>Invalid Email</div>}
+        <div className="col-11 col-md-7 mt-3">
           <label htmlFor="" className='form-label'>Password</label>
         </div>
-        <div className="col-11 col-md-9 mt-2">
+        <div className="col-11 col-md-7 mt-2">
           <input type="password" placeholder='Enter your password' className='form-control' onChange={(e)=>{getDatas(e)}} name="password" id="" />
         </div>
-        {err.password &&<div className='col-11 col-md-9 mt-1 text-danger'>Invalid Password</div>}
-      {cusErr && <div className='col-11 col-md-9 mt-1'>{mess}</div>}
-        {loading && <div className="col-11 col-md-9 mt-5 d-flex justify-content-center">
+        {err.password &&<div className='col-11 col-md-7 mt-1 text-danger'>Invalid Password</div>}
+      {cusErr && <div className='col-11 col-md-7 mt-1'>{mess}</div>}
+        {loading && <div className="col-11 col-md-7 mt-5 d-flex justify-content-center">
           <span className='spinner-border'></span>
         </div>}
         <div className="col-11 col-md-7 mt-3">
