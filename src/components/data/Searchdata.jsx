@@ -9,7 +9,6 @@ let Searchdata=createSlice({
             state[0]=action.payload;
         },
         getData:(state,action)=>{
-        
             return state[0];
         }
     }

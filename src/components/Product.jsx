@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'  
 import NavProduct from './NavProduct'
-import { getData } from './data/Searchdata';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 export default function Product() {
-    let [search,setSearch]=useState('');
+    let [search,setSearch2]=useState('');
     let searchdatas=useSelector((redux)=>{ return redux.search})
     useEffect(()=>{
-        setSearch(searchdatas[0])
-    },[])
+        setSearch2(searchdatas[0])
+    },[search])
   return(<>
-    <NavProduct/>
+    <NavProduct sear={setSearch2}/>
     <div className="row">
         <div className="col-12 text-center">{search}</div>
     </div>
