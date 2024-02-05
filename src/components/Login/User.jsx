@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Navigate, useNavigate } from 'react-router'
 import { Authen } from '../Api/Autho'
-import { datas } from '../Api/Getdata'
+import { adminCheck, datas } from '../Api/Getdata'
 import { userData } from '../Api/Post'
 import AdminNav from '../AdminNav'
 import {Link, Outlet} from 'react-router-dom'
-import AdminNavbar from '../AdminNavbar'
 function User() {
   let cer=useNavigate()
   let [loading,isloading]=useState(true)
@@ -15,7 +14,11 @@ function User() {
 
   
   useEffect(()=>{
+
     let token= datas();
+      if(!Authen() && !adminCheck ()){
+    cer('/E-commerce/')
+      }
      userData(token).then((data)=>{setD(data.users[0])}).catch((e)=>{ setNet(true)}).finally(()=>{isloading(false)})
     },[]) 
     

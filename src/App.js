@@ -11,6 +11,8 @@ import Addproduct from './components/Addproduct';
 import Orders from './components/Orders';
 import Feedback from './components/Feedback';
 import 'bootstrap/dist/css/bootstrap.css'
+import { Authen } from './components/Api/Autho';
+import { adminCheck } from './components/Api/Getdata';
 // import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 function App() {
   return (
@@ -22,13 +24,13 @@ function App() {
   <Route path='/Product' element={<Product/>}/>
   <Route path='/login' element={<Login/>} />
   <Route path='/Register' element={<Register/>} />
-  <Route path='/admin' element={<User/>}>
+  {Authen() && adminCheck() && <Route path='/admin' element={<User/>}>
 <Route path='addproduct' element={<Addproduct/>}/>
 <Route path='orders' element={<Orders/>}/>
 <Route path='feedback' element={<Feedback/>}/>
 <Route path='' element={<Addproduct/>}/>
-  </Route>
-  
+  </Route>}
+  <Route path='*' element={<h1>page not found</h1>}/>
 </Routes>
 </BrowserRouter>
 </Provider>

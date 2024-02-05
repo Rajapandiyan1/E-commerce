@@ -43,6 +43,7 @@ function Login() {
           }
           else{
             if(dat.idToken != null){
+              alert('not admin')
               localStorage.removeItem('Dashboard')
               setToken(dat.idToken);
               crea('/E-commerce/')

@@ -43,7 +43,8 @@ function Register() {
 
         Post(data).then((dat)=>{
           if(dat.idToken != null){
-            setToken(dat.idToken)
+            setToken(dat.idToken);
+           localStorage.removeItem('Dashboard')
             if(Authen()){
               nav('/E-commerce/')
               }

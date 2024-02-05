@@ -7,3 +7,11 @@ export let datas=()=>{
 export let logou=()=>{
     localStorage.removeItem("Token")
 }
+export let adminCheck=()=>{
+    if(localStorage.getItem('Dashboard') != null){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
