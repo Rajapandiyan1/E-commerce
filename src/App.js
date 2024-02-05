@@ -7,6 +7,9 @@ import { store } from './components/data/store';
 import Login from './components/Login/Login';
 import Register from './components/Login/Register';
 import User from './components/Login/User';
+import Addproduct from './components/Addproduct';
+import Orders from './components/Orders';
+import Feedback from './components/Feedback';
 
 function App() {
   return (
@@ -18,7 +21,13 @@ function App() {
   <Route path='/Product' element={<Product/>}/>
   <Route path='/login' element={<Login/>} />
   <Route path='/Register' element={<Register/>} />
-  <Route path='/admin' element={<User/>}/>
+  <Route path='/admin' element={<User/>}>
+<Route path='addproduct' element={<Addproduct/>}/>
+<Route path='orders' element={<Orders/>}/>
+<Route path='feedback' element={<Feedback/>}/>
+<Route path='' element={<Addproduct/>}/>
+  </Route>
+  
 </Routes>
 </BrowserRouter>
 </Provider>

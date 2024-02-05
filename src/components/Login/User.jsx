@@ -3,7 +3,8 @@ import { Navigate, useNavigate } from 'react-router'
 import { Authen } from '../Api/Autho'
 import { datas } from '../Api/Getdata'
 import { userData } from '../Api/Post'
-
+import AdminNav from '../AdminNav'
+import {Link, Outlet} from 'react-router-dom'
 function User() {
   let cer=useNavigate()
   let [loading,isloading]=useState(true)
@@ -18,28 +19,11 @@ function User() {
     },[]) 
     
   return (
-<div className="row">
-  {netErr && <div className='col-12 d-flex justify-content-center align-items-center' style={{height:'450px'}}>Network error</div>}
-  {!loading && !netErr &&<div className="col-12">
-  <div className="row justify-content-center align-items-center" style={{minHeight:'450px'}}>
-<div className="col-12 d-flex justify-content-center">
+<>
+  <AdminNav name={userD.displayName}/>
+  <Outlet/>
+</>
 
-  <div className='font-w'>Wellcome New User of {userD.displayName}</div>
-  {/* <Link to='/'>create Account</Link>
-  <button className="btn btn-primary" onClick={()=>{create()}}>Create Account</button> */}
-</div>
-<div className="col-12 word-wrap">
-  <div className='font-w'>Your Email : {userD.email}</div>
-</div>
-<div className="col-12">
-  <div className='font-w'>Your Local - Id : {userD.localId}</div>
-</div>
-</div>
-  </div>}
-  {loading && <div className='col-12 d-flex justify-content-center align-items-center' style={{height:'450px'}}>
-    <span className='spinner-border'></span>
-    </div>}
-</div>
 
   )
 }
