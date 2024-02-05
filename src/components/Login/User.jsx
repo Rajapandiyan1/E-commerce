@@ -5,6 +5,7 @@ import { datas } from '../Api/Getdata'
 import { userData } from '../Api/Post'
 import AdminNav from '../AdminNav'
 import {Link, Outlet} from 'react-router-dom'
+import AdminNavbar from '../AdminNavbar'
 function User() {
   let cer=useNavigate()
   let [loading,isloading]=useState(true)
