@@ -9,6 +9,7 @@ import Register from './components/Login/Register';
 import User from './components/Login/User';
 import Addproduct from './components/Addproduct';
 import Orders from './components/Orders';
+import 'bootstrap/dist/js/bootstrap.bundle.js'
 import Feedback from './components/Feedback';
 
 function App() {
