@@ -13,12 +13,14 @@ export default function NavbarH() {
         fildatas(data)
     }
     useEffect(()=>{
+        alert('col-8')
     let token= localStorage.getItem('Dashboard');
-    if(token != ''){
+    if(token != null){
         setadmin(true)
         setinres('col-8')
     }
     else{
+        setinres(false)
         setinres('col-12')
     }
     },[])
@@ -48,7 +50,7 @@ senddata(setData(fil))
             <div className="col-1 col-lg-1 order-lg-5 mt-lg-1 mb-lg-1 order-4 mt-lg-0 me-2 mt-2 d-flex justify-content-center align-items-center">
             <i className="fa fa-bars" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" style={{fontSize:'24px'}}></i>
             </div>
-        <div className={'col-sm-10 col-lg-4  order-lg-2 order-5 mb-lg-1 mt-lg-1 justify-content-center align-items-center d-flex  mt-3 mb-2 '+inres}>
+        <div className={'col-lg-10 col-lg-4  order-lg-2 order-5 mb-lg-1 mt-lg-1 justify-content-center align-items-center d-flex  mt-3 mb-2 '+inres}>
             <div className="input-group">
                 <input type="search" placeholder='search products' onChange={(e)=>{fildata(e.target.value)}} className='form-control' name="" id="" />
                 <div className="input-group-text">
@@ -58,7 +60,7 @@ senddata(setData(fil))
 
         </div>
         {admin && <div className="col-4 d-lg-none col-sm-2 col-lg-2 mt-lg-1 mb-lg-1 order-lg-5 ps-0 justify-content-center order-5 mt-1  d-flex align-items-center">
-            <button onClick={()=>{moveProduct('/admin') }} className="btn btn-primary btn-sm memo-text">
+            <button onClick={()=>{moveProduct('/admin') }} className="btn btn-primary ms-auto btn-sm memo-text">
                 Dashboard
             </button>
         </div>}

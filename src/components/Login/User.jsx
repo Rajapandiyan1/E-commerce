@@ -16,10 +16,7 @@ function User() {
     let token= datas();
      userData(token).then((data)=>{setD(data.users[0])}).catch((e)=>{ setNet(true)}).finally(()=>{isloading(false)})
     },[]) 
-    if(!Authen()){
-    return <Navigate to='/E-commerce/'/>
-    cer('/')
-     }
+    
   return (
 <div className="row">
   {netErr && <div className='col-12 d-flex justify-content-center align-items-center' style={{height:'450px'}}>Network error</div>}
@@ -27,15 +24,15 @@ function User() {
   <div className="row justify-content-center align-items-center" style={{minHeight:'450px'}}>
 <div className="col-12 d-flex justify-content-center">
 
-  <h1>Wellcome New User of {userD.displayName}</h1>
+  <div className='font-w'>Wellcome New User of {userD.displayName}</div>
   {/* <Link to='/'>create Account</Link>
   <button className="btn btn-primary" onClick={()=>{create()}}>Create Account</button> */}
 </div>
-<div className="col-12">
-  <h1>Your Email : {userD.email}</h1>
+<div className="col-12 word-wrap">
+  <div className='font-w'>Your Email : {userD.email}</div>
 </div>
 <div className="col-12">
-  <h1>Your Local - Id : {userD.localId}</h1>
+  <div className='font-w'>Your Local - Id : {userD.localId}</div>
 </div>
 </div>
   </div>}

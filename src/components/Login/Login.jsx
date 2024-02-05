@@ -19,11 +19,7 @@ function Login() {
   }
   function submits(params) {
     setErr({ email: false, password: false, custom: false })
-    if(data.email=='rajapandiyan444@gmail.com' && data.password == '1234567890'){
-      localStorage.setItem('Dashboard','r1a2j3a4');
-      alert('Wellcome admin');
-      crea('/admin')
-    }
+   
     setError(true)
     if (data.email == '') {
       setErr((prev) => { return { ...prev, email: true } })
@@ -38,9 +34,19 @@ function Login() {
       if (error) {
         Logi(data).then((dat) => { 
           setToken(dat.idToken);
-          if(dat.idToken != null){
-            setToken(dat.idToken);
-            crea('/E-commerce/')
+          if(data.email=='rajapandiyan444@gmail.com' && data.password == '1234567890'){
+            if(dat.idToken != null){
+              localStorage.setItem('Dashboard','r1a2j3a4');
+              setToken(dat.idToken);
+              crea('/E-commerce/')
+            }
+          }
+          else{
+            if(dat.idToken != null){
+              localStorage.removeItem('Dashboard')
+              setToken(dat.idToken);
+              crea('/E-commerce/')
+            }
           }
           setcus(false)
           if(dat.error.code == 400){
