@@ -16,8 +16,15 @@ export default  function Addproduct() {
       setoutput(true)
     }
   }
-  function uploadProduct(params) {
-    alert('Upload success')
+ async function  uploadProduct(params) {
+let ProductList= await fetch('https://65c0ebcbdc74300bce8cfdfb.mockapi.io/E-commerce/e-commmerce').then((data)=>{return data.json()}).then((data)=>{ return data.productList})
+let response = await fetch('https://65c0ebcbdc74300bce8cfdfb.mockapi.io/E-commerce/e-commmerce'/+clone.optionValue+1,{
+  method:"PATCH",
+  body:JSON.stringify({productList:clone}),
+  headers:{
+    'Content-Type':'application/json'
+  }
+})
   }
   useEffect(()=>{
    async function optiondata() {
@@ -66,10 +73,10 @@ export default  function Addproduct() {
               Submit
             </button>
           </div>
-       {output && <div className="col-12 mt-4 col-md-6">
-          <div className="row">
+       {output && <div className="col-12 mt-4 col-md-12">
+          <div className="row w-100 border">
             <div className="col-4">
-<img src={clone.url} alt="" height='100px'/>
+<img src={clone.url} alt="" className='w-100' height='100px'/>
             </div>
             <div className="col-8">
               <div className="row">
