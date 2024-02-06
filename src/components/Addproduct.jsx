@@ -12,7 +12,7 @@ export default  function Addproduct() {
   function Submits(params) {
     setclone(data);
     setclone((prev)=>{
-      console.log(prev)
+    
       return prev ; 
     })
     setdata({product:'',url:'',rate:'',offer:'',discountRate:0,optionValue:-1})
@@ -21,15 +21,15 @@ export default  function Addproduct() {
     }
   }
  async function  uploadProduct(params) {
-let old= await fetch('https://65c0ebcbdc74300bce8cfdfb.mockapi.io/E-commerce/e-commmerce/'+parseInt(clone.optionValue+1)).then((data)=>{return data.json()}).then((data)=>{ return data[0].productList})
- await console.log(clone)
+let old= await fetch('https://65c0ebcbdc74300bce8cfdfb.mockapi.io/E-commerce/e-commmerce/'+parseInt(clone.optionValue+1)).then((data)=>{return data.json()}).then((data)=>{  return {productList:data[0].productList,Product:data[0].Product}})
+ 
 // .map((data)=> { console.log(data[0].productList); return data[0].productList})
 // let copy = await olddata.splice(olddata.length,0,clone)
 //  await console.log('oldata0',copy);
 let productOld= await [clone];
 let response = await fetch('https://65c0ebcbdc74300bce8cfdfb.mockapi.io/E-commerce/e-commmerce/'+parseInt(clone.optionValue+1),{
   method:"PUT",
-  body:JSON.stringify({0:{productList:[...old,clone]}}),
+  body:JSON.stringify({0:{Product:old.Product,productList:[clone]}}),
   headers:{
     'Content-Type':'application/json'
   }
@@ -45,7 +45,7 @@ setclone(null)
         headers:{
           'Content-Type':'application/json'
         }
-      }).then((data)=>{return data.json()}).then((data)=>{console.log(data); setOption(data); })
+      }).then((data)=>{return data.json()}).then((data)=>{setOption(data); })
     }
     optiondata()
   },[])
@@ -55,9 +55,9 @@ setclone(null)
         <div className='col-12 col-md-6'>
           <div className="row">
             <div className="col-12 mt-2">
-              <select value={data.optionValue} onChange={(e)=>{setdata((prev)=>{ let sn=Number(e.target.value); return {...prev,optionValue:sn}})}} name="Prouct add" id=""className='form-select'>
+              <select value={data.optionValue} onInput={(e)=>{setdata((prev)=>{  let sn=Number(e.target.value); return {...prev,optionValue:sn}})}} name="Prouct add" id=""className='form-select'>
                 <option value="-1"> Select Option </option>
-                {opt.map((datas,id)=>{console.log(data); return <option value={id} key={id}>{datas.Product}</option>})}
+                {opt.map((datas,id)=>{ return <option value={id} key={id}>{datas[0].Product}</option>})}
               </select>
               <option value=""></option>
             </div>
@@ -88,7 +88,7 @@ setclone(null)
        {output && <div className="col-12 mt-4 col-md-12">
           <div className="row w-100 border">
             <div className="col-4">
-<img src={clone.url} alt="" className='w-100' height='100px'/>
+<img src={clone.url} alt="" className='w-100' height='200px'/>
             </div>
             <div className="col-8">
               <div className="row">
