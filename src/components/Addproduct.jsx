@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default  function Addproduct() {
+  let [opt,setOption]=useState([]);
   let [data,setdata]=useState({product:'',url:'',rate:'',offer:'',discountRate:0});
    let [output,setoutput]=useState(false);
    let [clone,setclone]=useState({product:'',url:'',rate:'',offer:'',discountRate:0})
@@ -18,11 +19,29 @@ export default  function Addproduct() {
   function uploadProduct(params) {
     alert('Upload success')
   }
+  useEffect(()=>{
+   async function optiondata() {
+      fetch('https://65c0ebcbdc74300bce8cfdfb.mockapi.io/E-commerce/e-commmerce',{
+        method:'GET',
+        headers:{
+          'Content-Type':'application/json'
+        }
+      }).then((data)=>{return data.json()}).then((data)=>{ setOption(data); data.map((datas)=>{})})
+    }
+    optiondata()
+  },[])
   return (
     <div className="row justify-content-center">
 
         <div className='col-12 col-md-6'>
           <div className="row">
+            <div className="col-12 mt-3">
+              <select name="Prouct add" id=""className='form-select'>
+                <option value="0"> Select Option </option>
+                {opt.map((datas,id)=>{ return <option value={id} key={id}>{datas.Product}</option>})}
+              </select>
+              <option value=""></option>
+            </div>
             <div className="col-12 mt-3">
               <label htmlFor="" className='form-label'>Product Name</label>
             </div>
