@@ -9,14 +9,14 @@ function NewProduct() {
 
         fetch('https://65c0ebcbdc74300bce8cfdfb.mockapi.io/E-commerce/e-commmerce',{
       method:'POST',
-      body:JSON.stringify(clone),
+      body:JSON.stringify([clone]),
       headers:{
         'Content-Type':'application/json'
       }
     }).then((data)=>{
 return data.json();
     }).then((data)=>{
-    console.log(data)})}
+    })}
   }
   return (
     <div className='row justify-content-center'>

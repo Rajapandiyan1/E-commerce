@@ -10,21 +10,33 @@ export default  function Addproduct() {
     setdata((prev)=>{return {...prev,discountRate:prev.rate-(prev.rate*prev.offer/100)}})
   }
   function Submits(params) {
-    setclone(data)
+    setclone(data);
+    setclone((prev)=>{
+      console.log(prev)
+      return prev ; 
+    })
     setdata({product:'',url:'',rate:'',offer:'',discountRate:0,optionValue:-1})
     if(data.offer != '' && data.product != '' &&data.rate != '' &&data.url != ''){
       setoutput(true)
     }
   }
  async function  uploadProduct(params) {
-let ProductList= await fetch('https://65c0ebcbdc74300bce8cfdfb.mockapi.io/E-commerce/e-commmerce').then((data)=>{return data.json()}).then((data)=>{ return data.productList})
-let response = await fetch('https://65c0ebcbdc74300bce8cfdfb.mockapi.io/E-commerce/e-commmerce'/+clone.optionValue+1,{
-  method:"PATCH",
-  body:JSON.stringify({productList:clone}),
+let old= await fetch('https://65c0ebcbdc74300bce8cfdfb.mockapi.io/E-commerce/e-commmerce/'+parseInt(clone.optionValue+1)).then((data)=>{return data.json()}).then((data)=>{ return data[0].productList})
+ await console.log(clone)
+// .map((data)=> { console.log(data[0].productList); return data[0].productList})
+// let copy = await olddata.splice(olddata.length,0,clone)
+//  await console.log('oldata0',copy);
+let productOld= await [clone];
+let response = await fetch('https://65c0ebcbdc74300bce8cfdfb.mockapi.io/E-commerce/e-commmerce/'+parseInt(clone.optionValue+1),{
+  method:"PUT",
+  body:JSON.stringify({0:{productList:[...old,clone]}}),
   headers:{
     'Content-Type':'application/json'
   }
-})
+}).then((data)=>{ if(data.status == 200){
+setoutput(false);
+setclone(null)
+}})
   }
   useEffect(()=>{
    async function optiondata() {
@@ -33,7 +45,7 @@ let response = await fetch('https://65c0ebcbdc74300bce8cfdfb.mockapi.io/E-commer
         headers:{
           'Content-Type':'application/json'
         }
-      }).then((data)=>{return data.json()}).then((data)=>{ setOption(data); data.map((datas)=>{})})
+      }).then((data)=>{return data.json()}).then((data)=>{console.log(data); setOption(data); })
     }
     optiondata()
   },[])
@@ -43,9 +55,9 @@ let response = await fetch('https://65c0ebcbdc74300bce8cfdfb.mockapi.io/E-commer
         <div className='col-12 col-md-6'>
           <div className="row">
             <div className="col-12 mt-2">
-              <select value={data.optionValue} onChange={(e)=>{setdata((prev)=>{return {...prev,optionValue:e.target.value}})}} name="Prouct add" id=""className='form-select'>
+              <select value={data.optionValue} onChange={(e)=>{setdata((prev)=>{ let sn=Number(e.target.value); return {...prev,optionValue:sn}})}} name="Prouct add" id=""className='form-select'>
                 <option value="-1"> Select Option </option>
-                {opt.map((datas,id)=>{ return <option value={id} key={id}>{datas.Product}</option>})}
+                {opt.map((datas,id)=>{console.log(data); return <option value={id} key={id}>{datas.Product}</option>})}
               </select>
               <option value=""></option>
             </div>
