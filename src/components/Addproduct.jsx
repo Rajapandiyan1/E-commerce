@@ -7,7 +7,7 @@ export default  function Addproduct() {
    let [clone,setclone]=useState({product:'',url:'',rate:'',offer:'',discountRate:0,optionValue:-1})
   function calculate(e) {
     setdata((prev)=>{ return {...prev,offer:e.target.value}});
-    setdata((prev)=>{return {...prev,discountRate:(prev.rate*prev.offer/100)-prev.rate}})
+    setdata((prev)=>{return {...prev,discountRate:prev.rate-(prev.rate*prev.offer/100)}})
   }
   function Submits(params) {
     setclone(data)
