@@ -23,9 +23,6 @@ export default  function Addproduct() {
  async function  uploadProduct(params) {
 let old= await fetch('https://65c0ebcbdc74300bce8cfdfb.mockapi.io/E-commerce/e-commmerce/'+parseInt(clone.optionValue+1)).then((data)=>{return data.json()}).then((data)=>{  return {productList:data[0].productList,Product:data[0].Product}})
  
-// .map((data)=> { console.log(data[0].productList); return data[0].productList})
-// let copy = await olddata.splice(olddata.length,0,clone)
-//  await console.log('oldata0',copy);
 let productOld= await [clone];
 let response = await fetch('https://65c0ebcbdc74300bce8cfdfb.mockapi.io/E-commerce/e-commmerce/'+parseInt(clone.optionValue+1),{
   method:"PUT",
@@ -88,15 +85,15 @@ setclone(null)
        {output && <div className="col-12 mt-4 col-md-12">
           <div className="row w-100 border">
             <div className="col-4">
-<img src={clone.url} alt="" className='w-100' height='200px'/>
+<img src={clone.url} alt="" className='w-100 ratio ratio-4x3' height='200px'/>
             </div>
             <div className="col-8">
               <div className="row">
-                <div className="col-12">
+                <div className="col-12 mt-2">
                  <span>Product name : </span> {clone.product}
                 </div>
-                <div className="col-12">
-                  <div><span>Product Rate : </span>{clone.rate}</div><div><span>Offer percentage : </span>{clone.offer} % </div><div><span>Discount Rate : </span>{clone.discountRate}</div>
+                <div className="col-12 mt-2">
+                  <div className='mt-2'><span>Product Rate : </span>{clone.rate}</div><div className='mt-2'><span>Offer percentage : </span>{clone.offer} % </div><div className='mt-2'><span>Discount Rate : </span>{clone.discountRate}</div>
                 </div>
               </div>
             </div>
