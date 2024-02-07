@@ -1,15 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function SearchProduct({prud,load}) {
+  let [data,setdata]=useState([])
+  useEffect(()=>{
+    console.log('sear',prud)
+   setdata(prud)
+  },[])
   return (
     <div className='col-12 col-lg-10'>
-      {load && <div className='w-100 d-flex justify-content-center align-items-center' style={{height:'100vh'}}>
+      {load && <div className='w-100 d-flex justify-content-center align-items-center' style={{height:'71vh'}}>
         <span className="spinner-border text-success"></span>
         </div>}
       { !load &&
-      prud.map((data,id)=>{return <div className="row border" key={id} style={{minHeight:'80px'}}>
-      <div className="col-5 d-flex align-items-center col-md-3 col-sm-4 col-lg-3">
-        <img src={data.url} className='w-100 ratio ratio-4x2'  alt="" />
+      data.map((data,id)=>{return <div className="row border" key={id} style={{minHeight:'80px'}}>
+      <div className="col-5 d-flex align-items-center col-md-3  col-sm-4 col-lg-3">
+        <img src={data.url}  className='w-100 ratio ratio-4x4'  alt="" />
       </div>
       
       <div className="col-7 col-md-9 col-sm-8 col-lg-9">

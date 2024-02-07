@@ -4,13 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react'
 import { setData } from './data/Searchdata';
 
-function NavProduct({sear}) {
+function NavProduct({sear,load}) {
     let home=useNavigate();
     let setStore=useDispatch()
     let [search,setSearch]=useState('');
     let searchdatas=useSelector((redux)=>{ return redux.search})
     useEffect(()=>{
-      console.log(searchdatas)
+        console.log(searchdatas)
         setSearch(searchdatas[1])
     },[])
     function homes(params) {
