@@ -14,6 +14,10 @@ body{
   .cImage{
     height: 290px;
 }
+.memo-text-1{
+  font-size:large;
+  font-weight:600;
+}
 .card-h{
   min-height: 120px !important;
 }
@@ -27,6 +31,10 @@ body{
 @media screen and (min-width:0px) and (max-width:576px) {
   .cImage{
     height: 150px;
+}
+.memo-text-1{
+  font-size:medium;
+  font-weight:600;
 }
 .offer-size{
   height: 120px;
@@ -45,6 +53,10 @@ body{
 .card-h{
   min-height: 110px;
 }
+.memo-text-1{
+  font-size:large;
+  font-weight:600;
+}
 .img-h{
   height: 80px;
 }
@@ -58,6 +70,10 @@ body{
 @media screen and (min-width:576px) and (max-width:768px) {
   .cImage{
     height: 210px;
+}
+.memo-text-1{
+  font-size:large;
+  font-weight:600;
 }
 .memo-text-m{
   font-size: larger;
@@ -78,6 +94,14 @@ body{
 @media screen and (min-width :0px) and (max-width:350px) {
   .memo-text{
     font-size:small;
+  }
+
+}
+@media screen and (min-width :0px) and (max-width:370px) {
+  .memo-text-1{
+    font-size:small;
+    font-size: 12px;
+    font-weight:600;
   }
 
 }
