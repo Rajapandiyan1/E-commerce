@@ -1,9 +1,12 @@
 import React from 'react'
 
-export default function SearchProduct({prud}) {
+export default function SearchProduct({prud,load}) {
   return (
     <div className='col-12 col-lg-10'>
-      {
+      {load && <div className='w-100 d-flex justify-content-center align-items-center' style={{height:'100vh'}}>
+        <span className="spinner-border text-success"></span>
+        </div>}
+      { !load &&
       prud.map((data,id)=>{return <div className="row border" key={id} style={{height:'250px'}}>
       <div className="col-4">
         <img src={data.url} className='w-100' height={'140px'} alt="" />

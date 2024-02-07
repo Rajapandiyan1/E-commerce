@@ -7,6 +7,7 @@ export default function Product() {
   let [search, setSearch2] = useState('');
   let [product, setProduct] = useState([]);
   let [hole,sethole]=useState([]);
+  let [loading,isloading]=useState(true)
   let searchdatas = useSelector((redux) => { return redux.search })
   useEffect(() => {
     let holeCopy=[];
@@ -41,12 +42,13 @@ export default function Product() {
           setProduct(Pdata)
 
         }
-      })
+      }).finally(()=>{
+      isloading(false)})
     }
   }, [search])
   return (<>
     <NavProduct sear={setSearch2} />
-    <ShowProudct prod={product} />
+    <ShowProudct prod={product}load={loading} />
   </>)
 
 
