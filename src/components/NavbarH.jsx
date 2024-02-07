@@ -29,7 +29,7 @@ export default function NavbarH() {
     },[])
     function Prod(params) {
         if(fil != ''){
-senddata(setData(fil))
+senddata(setData(['Search',fil]))
         
         moveProduct('/Product')}
     }

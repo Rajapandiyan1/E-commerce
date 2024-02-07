@@ -10,13 +10,14 @@ function NavProduct({sear}) {
     let [search,setSearch]=useState('');
     let searchdatas=useSelector((redux)=>{ return redux.search})
     useEffect(()=>{
+      console.log(searchdatas)
         setSearch(searchdatas[1])
     },[])
     function homes(params) {
         home('/E-commerce/')
     }
     function setS(params) {
-      setStore(setData(search))
+      setStore(setData("Search",search))
       sear(search)
     }
   return (
