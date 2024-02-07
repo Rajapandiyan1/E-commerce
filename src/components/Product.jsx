@@ -15,9 +15,10 @@ export default function Product() {
     
     if(searchdatas[0] == 'Home'){
       getProduct()
-
+ setfiltes('Home')
     }
     else if (searchdatas[0]== 'Search'){
+ setfiltes('Search')
       SearchProducts(searchdatas[1])
     }
     async function SearchProducts(params) {
@@ -42,6 +43,7 @@ export default function Product() {
           setProduct([])
         } else {
           let Pdata = finds[0].productList;
+        
           setProduct(Pdata)
 
         }
@@ -53,7 +55,7 @@ console.log(e.message)
   }, [search])
   return (<>
     <NavProduct sear={setSearch2} load={isloading} />
-    {filtes=='Home' ?  <ShowProudct prod={product}load={loading} /> :  <ShowProudct prod={product.filter((data)=> {  return (data.product.includes(searchdatas[1]) )})}load={loading} />}
+    {filtes=='Home' ?   <ShowProudct prod={product}load={loading} /> :  <ShowProudct prod={product.filter((data)=> {  return (data.product.includes(searchdatas[1]) )})}load={loading} />}
    
   </>)
 

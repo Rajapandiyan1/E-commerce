@@ -3,9 +3,8 @@ import React, { useEffect, useState } from 'react'
 export default function SearchProduct({prud,load}) {
   let [data,setdata]=useState([])
   useEffect(()=>{
-    console.log('sear',prud)
    setdata(prud)
-  },[])
+  },[prud])
   return (
     <div className='col-12 col-lg-10'>
       {load && <div className='w-100 d-flex justify-content-center align-items-center' style={{height:'71vh'}}>
