@@ -23,10 +23,10 @@ export default  function Addproduct() {
  async function  uploadProduct(params) {
 let old= await fetch('https://65c0ebcbdc74300bce8cfdfb.mockapi.io/E-commerce/e-commmerce/'+parseInt(clone.optionValue+1)).then((data)=>{return data.json()}).then((data)=>{  return {productList:data[0].productList,Product:data[0].Product}})
  
-let productOld= await [clone];
+let productOld= await console.log(old)
 let response = await fetch('https://65c0ebcbdc74300bce8cfdfb.mockapi.io/E-commerce/e-commmerce/'+parseInt(clone.optionValue+1),{
   method:"PUT",
-  body:JSON.stringify({0:{Product:old.Product,productList:[clone]}}),
+  body:JSON.stringify({0:{Product:old.Product,productList:[...old.productList,clone]}}),
   headers:{
     'Content-Type':'application/json'
   }
