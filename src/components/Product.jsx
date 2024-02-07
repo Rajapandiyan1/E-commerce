@@ -8,7 +8,7 @@ export default function Product() {
   let [product, setProduct] = useState([]);
   let searchdatas = useSelector((redux) => { return redux.search })
   useEffect(() => {
-    setSearch2(searchdatas[0])
+    setSearch2(searchdatas[1])
     async function getProduct() {
       fetch('https://65c0ebcbdc74300bce8cfdfb.mockapi.io/E-commerce/e-commmerce', {
         method: 'GET',

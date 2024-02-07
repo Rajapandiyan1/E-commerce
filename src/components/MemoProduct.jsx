@@ -12,14 +12,14 @@ import { useNavigate } from 'react-router-dom'
 export default function MemoProduct() {
   let ser=useDispatch();
   let navigate=useNavigate()
-  function viewProduct(search) {
-    ser(setData(search))
+  function viewProduct(com,search) {
+    ser(setData([com,search]))
     navigate('/Product')
   }
   return (
     <div className='row me-0 ms-0 mt-3'>
       <div className="col-sm-2 d-flex justify-content-center col-4 ">
-        <div className="card w-100 mt-1 mb-1 card-h" name={'Mobile'} onClick={(e)=>{viewProduct('Mobile')}}>
+        <div className="card w-100 mt-1 mb-1 card-h" name={'Mobile'} onClick={(e)=>{viewProduct('Home','Mobile')}}>
           <div className="card-img-top w-100">
             <img className='w-100 img-h'  src={mobile} alt="" />
           </div>
@@ -27,7 +27,7 @@ export default function MemoProduct() {
         </div>
       </div>
       <div className="col-sm-2 d-flex justify-content-center col-4 ">
-        <div className="card mt-1 mb-1 w-100 card-h" onClick={(e)=>{viewProduct('Criket Bat')}}>
+        <div className="card mt-1 mb-1 w-100 card-h" onClick={(e)=>{viewProduct('Home','Criket Bat')}}>
         <div className="card-img-top w-100">
           <img className='w-100 img-h p-1'  src={sport} alt="" />
         </div>
@@ -35,28 +35,28 @@ export default function MemoProduct() {
       </div></div>
 
       <div className="col-sm-2 d-flex justify-content-center col-4 ">
-        <div className="card mt-1 mb-1 w-100 card-h" onClick={(e)=>{viewProduct("Tv")}}>
+        <div className="card mt-1 mb-1 w-100 card-h" onClick={(e)=>{viewProduct('Home','Tv')}}>
         <div className="card-img-top w-100">
           <img className='w-100 img-h p-1'  src={tv} alt="" />
         </div>
         <label htmlFor="" className='memo-text text-center mb-2 font-w'>Tv</label>
       </div></div>
       <div className="col-sm-2 d-flex justify-content-center col-4 ">
-        <div className="w-100 card mt-1 mb-1 card-h" onClick={(e)=>{viewProduct('Camera')}}>
+        <div className="w-100 card mt-1 mb-1 card-h" onClick={(e)=>{viewProduct('Home','Camera')}}>
         <div className="card-img-top w-100">
           <img className='w-100 img-h p-1'  src={camera} alt="" />
         </div>
         <label htmlFor="" className='memo-text text-center mb-2 font-w'>Camera</label>
       </div></div>
       <div className="col-sm-2 d-flex justify-content-center col-4 ">
-        <div className="w-100 card mt-1 mb-1 card-h" onClick={(e)=>{viewProduct('Headset')}}>
+        <div className="w-100 card mt-1 mb-1 card-h" onClick={(e)=>{viewProduct('Home','Headset')}}>
         <div className="card-img-top w-100">
           <img className='w-100 img-h p-1 ne-1'  src={headset} alt="" />
         </div>
         <label htmlFor="" className='text-center memo-text mb-2 font-w'>Headset</label>
       </div></div>
       <div className="col-sm-2 d-flex justify-content-center col-4 ">
-        <div className="w-100 card mt-1 mb-1 card-h" onClick={(e)=>{viewProduct('Laptop')}}>
+        <div className="w-100 card mt-1 mb-1 card-h" onClick={(e)=>{viewProduct('Home','Laptop')}}>
         <div className="card-img-top w-100">
           <img className='w-100 img-h p-1'  src={laptop} alt="" />
         </div>
