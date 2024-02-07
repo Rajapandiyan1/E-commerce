@@ -27,7 +27,7 @@ export default function MemoProduct() {
         </div>
       </div>
       <div className="col-sm-2 d-flex justify-content-center col-4 ">
-        <div className="card mt-1 mb-1 w-100 card-h" onClick={(e)=>{viewProduct()}}>
+        <div className="card mt-1 mb-1 w-100 card-h" onClick={(e)=>{viewProduct('Criket Bat')}}>
         <div className="card-img-top w-100">
           <img className='w-100 img-h p-1'  src={sport} alt="" />
         </div>
@@ -35,28 +35,28 @@ export default function MemoProduct() {
       </div></div>
 
       <div className="col-sm-2 d-flex justify-content-center col-4 ">
-        <div className="card mt-1 mb-1 w-100 card-h" onClick={(e)=>{viewProduct()}}>
+        <div className="card mt-1 mb-1 w-100 card-h" onClick={(e)=>{viewProduct("Tv")}}>
         <div className="card-img-top w-100">
           <img className='w-100 img-h p-1'  src={tv} alt="" />
         </div>
-        <label htmlFor="" className='memo-text text-center mb-2 font-w'>Sports</label>
+        <label htmlFor="" className='memo-text text-center mb-2 font-w'>Tv</label>
       </div></div>
       <div className="col-sm-2 d-flex justify-content-center col-4 ">
-        <div className="w-100 card mt-1 mb-1 card-h" onClick={(e)=>{viewProduct()}}>
+        <div className="w-100 card mt-1 mb-1 card-h" onClick={(e)=>{viewProduct('Camera')}}>
         <div className="card-img-top w-100">
           <img className='w-100 img-h p-1'  src={camera} alt="" />
         </div>
         <label htmlFor="" className='memo-text text-center mb-2 font-w'>Camera</label>
       </div></div>
       <div className="col-sm-2 d-flex justify-content-center col-4 ">
-        <div className="w-100 card mt-1 mb-1 card-h" onClick={(e)=>{viewProduct()}}>
+        <div className="w-100 card mt-1 mb-1 card-h" onClick={(e)=>{viewProduct('Headset')}}>
         <div className="card-img-top w-100">
           <img className='w-100 img-h p-1 ne-1'  src={headset} alt="" />
         </div>
         <label htmlFor="" className='text-center memo-text mb-2 font-w'>Headset</label>
       </div></div>
       <div className="col-sm-2 d-flex justify-content-center col-4 ">
-        <div className="w-100 card mt-1 mb-1 card-h" onClick={(e)=>{viewProduct()}}>
+        <div className="w-100 card mt-1 mb-1 card-h" onClick={(e)=>{viewProduct('Laptop')}}>
         <div className="card-img-top w-100">
           <img className='w-100 img-h p-1'  src={laptop} alt="" />
         </div>

@@ -16,7 +16,7 @@ export default function Product() {
           'Content-Type': 'application/json'
         }
       }).then((data) => { return data.json() }).then((data) => { return data.find((data) => { return (data[0].Product == search) }) }).then((finds) => {
-        console.log('find ', finds); if (finds == undefined) {
+       if (finds == undefined) {
           setProduct([])
         } else {
           let Pdata = finds[0].productList;
