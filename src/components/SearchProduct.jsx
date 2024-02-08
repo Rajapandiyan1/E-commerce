@@ -13,7 +13,7 @@ export default function SearchProduct({prud,load}) {
       { !load &&
       data.map((data,id)=>{return <div className="row border" key={id} style={{minHeight:'80px'}}>
       <div className="col-5 d-flex align-items-center col-md-3  col-sm-4 col-lg-3">
-        <img src={data.url}  className='w-100 ratio ratio-4x4'  alt="" />
+        <img src={data.url}  className='ratioa w-100'  alt="" />
       </div>
       
       <div className="col-7 col-md-9 col-sm-8 col-lg-9">
