@@ -34,7 +34,7 @@ senddata(setData(['Search',fil]))
         moveProduct('/Product')}
     }
   return (
-    <div className="row bg-dark fixed-top me-0 ms-0 border pt-1 pb-1">
+    <div className="row bg-dark fixed-top me-0 ms-0 border  pb-1">
         <div className="memo-text-m ps-2 ps-sm-3 col-5 col-sm-5 col-lg-2 order-1 order-lg-1  mt-lg-0 justify-content-start align-items-center home-t d-flex   text-white mt-2">
             E-commerce
         </div>

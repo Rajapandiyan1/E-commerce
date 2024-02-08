@@ -18,6 +18,9 @@ body{
   font-size:large;
   font-weight:600;
 }
+.marg{
+  margin-top: 13vh !important;
+}
 .card-h{
   min-height: 120px !important;
 }
@@ -31,6 +34,9 @@ body{
 @media screen and (min-width:0px) and (max-width:576px) {
   .cImage{
     height: 150px;
+}
+.marg{
+  margin-top: 22vh !important;
 }
 .memo-text-1{
   font-size:medium;
@@ -57,6 +63,9 @@ body{
   font-size:large;
   font-weight:600;
 }
+.marg{
+  margin-top: 22vh !important;
+}
 .img-h{
   height: 80px;
 }
@@ -70,6 +79,9 @@ body{
 @media screen and (min-width:576px) and (max-width:768px) {
   .cImage{
     height: 210px;
+}
+.marg{
+  margin-top: 22vh !important;
 }
 .memo-text-1{
   font-size:large;
@@ -102,6 +114,9 @@ body{
     font-size:small;
     font-size: 12px;
     font-weight:600;
+  }
+  .marg{
+    margin-top: 22vh !important;
   }
 
 }

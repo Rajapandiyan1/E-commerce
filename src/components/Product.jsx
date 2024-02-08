@@ -34,7 +34,7 @@ export default function Product() {
       }).then((data)=>{ return data.json()}).then((data)=>{ return data.map((data)=>{let prouds=data[0]; return prouds})}).then((data)=>{return data.map((data)=>{ return data.productList.map((data,i)=>{ return data})})}).then((data)=>{data.map((data)=>{ data.map((data)=>{holeCopy.push(data)})})}).then((data)=>{ sethole(holeCopy);setProduct(holeCopy)}).finally(()=>{isloading(false)})
       setfiltes('Search')
       await setProduct((prev)=>{let data=prev.filter((data)=> {  return (data.product.toLowerCase().includes(search.toLocaleLowerCase()) )}); setfadta(data);  return data})
-      await setProduct((prev)=>{ console.log(prev); return prev})
+      await setProduct((prev)=>{ return prev})
     }
 
     setSearch2(searchdatas[1])
