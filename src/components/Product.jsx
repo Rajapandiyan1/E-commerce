@@ -17,9 +17,7 @@ export default function Product() {
   },[])
   useEffect(() => {
     setdir(searchdatas[0])
-    // if(search == ''){
-    //   isloading(false)
-    // }
+    
     let holeCopy=[];
     if(dir == 'Home'){
       getProduct()
