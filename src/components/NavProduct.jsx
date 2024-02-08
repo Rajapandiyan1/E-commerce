@@ -24,15 +24,15 @@ function NavProduct({sear,files,load}) {
       sear(search)
     }
   return (
-    <div className='row mt-2'>
+    <div className='row fixed-top fixed-top bg-dark pt-3 pb-3'>
         <div className="col-2 col-sm-1 ms-1 d-flex justify-content-center align-items-center" style={{fontSize:'25px'}}>
-        <i onClick={()=>{homes()}} className="fa fa-arrow-left"></i>
+        <i onClick={()=>{homes()}} className="text-white fa fa-arrow-left"></i>
         </div>
         <div className="col-7">
     <div className="input-group">
         <input type="search" placeholder='search product' value={search} onChange={(e)=>{setSearch((prev)=>{ return e.target.value })}} className='form-control ' name="" id="" />
         <div className="input-group-text d-flex justify-content-center align-items-center">
-        <i className='fa fa-search' onClick={()=>{
+        <i className='fa fa-search ' onClick={()=>{
           setS()
         }} style={{fontSize:'25px'}}></i>
 
@@ -40,7 +40,7 @@ function NavProduct({sear,files,load}) {
     </div>
         </div>
         <div className="col-2 ms-auto me-2 d-flex justify-content-center align-items-center" >
-            <i className="fa fa-bars" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" style={{fontSize:'25px'}}></i>
+            <i className="fa fa-bars text-white" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" style={{fontSize:'25px'}}></i>
         </div>
          
 <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">

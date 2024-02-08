@@ -7,7 +7,7 @@ export default function Carousel() {
     useEffect(()=>{
     },[])
   return (
-    <div className='row me-0 ms-0 mt-2'>
+    <div className='row me-0 ms-0' style={{marginTop:'23vh'}}>
       <div id="carouselExampleIndicators" className="carousel slide">
   <div className="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>

@@ -105,6 +105,16 @@ body{
   }
 
 }
+.home-t{
+  font-weight: 600 !important;
+}
 .ratioa{
   aspect-ratio: 4/3;
+}
+.posi{
+  position: relative;
+}
+.posi-f{
+  position:fixed;
+  top: 0;
 }
