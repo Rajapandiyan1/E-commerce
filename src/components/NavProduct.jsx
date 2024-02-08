@@ -4,20 +4,23 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react'
 import { setData } from './data/Searchdata';
 
-function NavProduct({sear,load}) {
+function NavProduct({sear,files,load}) {
     let home=useNavigate();
     let setStore=useDispatch()
     let [search,setSearch]=useState('');
-    let searchdatas=useSelector((redux)=>{ return redux.search})
+     let searchdatas=useSelector((redux)=>{ return redux.search})
     useEffect(()=>{
-        console.log(searchdatas)
-        setSearch(searchdatas[1])
+      setSearch(searchdatas[1])
+        // console.log(search)
+       console.log(searchdatas[1])
     },[])
     function homes(params) {
         home('/E-commerce/')
     }
     function setS(params) {
-      setStore(setData("Search",search))
+      console.log(search)
+      setStore(setData(['Search',search]))
+      files('Search')
       sear(search)
     }
   return (
