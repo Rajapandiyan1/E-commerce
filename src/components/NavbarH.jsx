@@ -3,17 +3,24 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
 import { setData } from './data/Searchdata';
 import { Authen } from './Api/Autho';
+import { datas } from './Api/Getdata';
+import { userData } from './Api/Post';
 
 export default function NavbarH() {
     let moveProduct =useNavigate();
     let [fil,fildatas]=useState('');
     let [admin,setadmin]=useState(false);
     let [inres,setinres]=useState('')
-    let senddata=useDispatch()
+    let senddata=useDispatch();
+    let [userd,setusers]=useState(['','']);
     function fildata(data) {
         fildatas(data)
     }
     useEffect(()=>{
+        let data=datas();
+        if(data){
+            userData(data).then((data)=>{ return data.users[0]}).then((data)=>{ setusers([data.displayName,data.email])})
+        }
         if(!Authen()){
             localStorage.removeItem('Dashboard')
         }
@@ -70,11 +77,11 @@ senddata(setData(['Search',fil]))
         
 <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
   <div className="offcanvas-header">
-    <h5 className="offcanvas-title" id="offcanvasBottomLabel">Profile</h5>
+    <h5 className="offcanvas-title" id="offcanvasBottomLabel">{(userd[0]!='') ?  userd[0] : 'User'}</h5>
     <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div className="offcanvas-body small">
-    
+    <h3>{userd[1]}</h3>
   </div>
 </div>
     </div>

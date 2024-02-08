@@ -9,7 +9,6 @@ import Register from './components/Login/Register';
 import User from './components/Login/User';
 import Addproduct from './components/Addproduct';
 import Orders from './components/Orders';
-import Feedback from './components/Feedback';
 import 'bootstrap/dist/css/bootstrap.css'
 import { Authen } from './components/Api/Autho';
 import { adminCheck } from './components/Api/Getdata';
@@ -28,7 +27,7 @@ function App() {
    <Route path='/admin' element={<User/>}>
 <Route path='addproduct' element={<Addproduct/>}/>
 <Route path='orders' element={<Orders/>}/>
-<Route path='feedback' element={<Feedback/>}/>
+
 <Route path='newProduct' element={<NewProduct/>}/>
   </Route>
   <Route path='*' element={<h1>page not found</h1>}/>

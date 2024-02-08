@@ -14,7 +14,7 @@ function User() {
 
   
   useEffect(()=>{
-
+ cer('/admin/addproduct')
     let token= datas();
       if(!Authen() && !adminCheck ()){
     cer('/E-commerce/')

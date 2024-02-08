@@ -25,9 +25,6 @@ export default function AdminNav({name}) {
                  <Link className='text-decoration-none list-group-item' to='/admin/orders'>
                  <div className="navbar-item me-2 ">orders</div>
                  </Link>
-                    <Link className='text-decoration-none list-group-item' to='/admin/feedback'>
-                    <div className="navbar-item me-2 ">Feed back</div>
-                    </Link>
                     <Link to='/admin/newProduct' className='text-decoration-none list-group-item'>
                     <div className="navbar-item me-2 ">New Product</div>
                     </Link>
