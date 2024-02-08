@@ -7,7 +7,7 @@ export default function SearchProduct({prud,load}) {
    setdata(prud)
   },[prud])
   return (
-    <div className='col-12 col-lg-12 marg'>
+    <div className='col-12 col-lg-12'>
       {load && <div className='w-100 d-flex justify-content-center align-items-center' style={{height:'71vh'}}>
         <span className="spinner-border text-success"></span>
         </div>}

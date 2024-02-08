@@ -13,9 +13,13 @@ export default function Product() {
   let [filtes,setfiltes]=useState('');
   let searchdatas = useSelector((redux) => { return redux.search })
   let [dir,setdir]=useState('')
-  
+  useEffect(()=>{
+  },[])
   useEffect(() => {
     setdir(searchdatas[0])
+    // if(search == ''){
+    //   isloading(false)
+    // }
     let holeCopy=[];
     if(dir == 'Home'){
       getProduct()

@@ -5,7 +5,7 @@ import SearchProduct from './SearchProduct'
 export default function ShowProudct({prod ,load}) {
  
   return (
-    <div className="row mt-lg-4 ms-0 me-0" style={{marginTop:'15vh'}}>
+    <div className="row pt-3 ms-0 me-0 marg-p" >
     <SearchProduct prud={prod} load={load}/>
     </div>
   )
