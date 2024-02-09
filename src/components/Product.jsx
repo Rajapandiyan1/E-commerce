@@ -43,7 +43,7 @@ export default function Product() {
         for(let datas of serch){
           for(let dats2 of splits){
             if(dats2.toLowerCase()==datas.toLowerCase()){
-             console.log(counts++)
+             counts++;
              }
           }
       } 

@@ -13,6 +13,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import { Authen } from './components/Api/Autho';
 import { adminCheck } from './components/Api/Getdata';
 import NewProduct from './components/NewProduct';
+import ProductDetails from './components/ProductDetails';
 // import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 function App() {
   return (
@@ -24,11 +25,13 @@ function App() {
   <Route path='/Product' element={<Product/>}/>
   <Route path='/login' element={<Login/>} />
   <Route path='/Register' element={<Register/>} />
+<Route path='/productdetails' element={<ProductDetails/>}/>
    <Route path='/admin' element={<User/>}>
 <Route path='addproduct' element={<Addproduct/>}/>
 <Route path='orders' element={<Orders/>}/>
 
 <Route path='newProduct' element={<NewProduct/>}/>
+
   </Route>
   <Route path='*' element={<h1>page not found</h1>}/>
 </Routes>
