@@ -10,7 +10,15 @@ export default function SearchProduct({prud,load}) {
   let nav=useNavigate()
   let [data,setdata]=useState([])
   const [show, setShow] = useState(false);
+  let [valid,isvalid]=useState(false)
   useEffect(()=>{
+    if(prud.length > 0){
+      isvalid(true)
+    }
+    else{
+      isvalid(false)
+      
+    }
    setdata(prud)
   },[prud])
   function ProductDet(datas) {
@@ -37,10 +45,11 @@ export default function SearchProduct({prud,load}) {
         </Modal.Body>
          
       </Modal>
+      {!valid  && <div className='col-12 d-flex justify-content-center align-items-center' style={{height:'100vh'}}>Product Not found</div>}
       {load && <div className='w-100 d-flex justify-content-center align-items-center' style={{height:'71vh'}}>
         <span className="spinner-border text-success"></span>
         </div>}
-      { !load &&
+      { !load && valid &&
       prud.map((data,id)=>{return <div className="row border" key={id} style={{minHeight:'80px'}}>
       <div className="col-5 d-flex align-items-center col-md-3  col-sm-4 col-lg-3">
         <img src={data.url}  className='ratioa w-100'  alt="" />
