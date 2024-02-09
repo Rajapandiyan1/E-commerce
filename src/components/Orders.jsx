@@ -2,22 +2,32 @@ import React, { useEffect, useState } from 'react'
 
 function Orders() {
   let [orders,setOrders]=useState([]);
-  let [load,isloading]=useState(true)
+  let [load,isloading]=useState(true);
+  let [valid,isvalid]=useState(true);
   useEffect(()=>{
+
+  },[orders])
+  useEffect(()=>{
+
     fetch('https://65c0ebcbdc74300bce8cfdfb.mockapi.io/E-commerce/Orders',{
                 method:'GET',
                 headers:{
                     'Content-Type':'application/json'
                 }
             }).then((data)=>{return data.json()}).then((data)=>{setOrders([...data]); isloading(false)})
-        
-  },[])
+            if(orders.length > 0){
+              isvalid(true)
+            }else{
+              isvalid(false)
+            }
+  },[orders])
   return (
     <div className='row'>
-     {load && <div className="col-12 d-flex justify-content-center align-items-center" style={{height:'75vh',marginTop:'10vh'}}>
+      {!valid && !load && <div className='col-12 d-flex justify-content-center align-items-center'  style={{height:'100vh'}}>Invalid Order</div>}
+     {load &&<div className="col-12 d-flex justify-content-center align-items-center" style={{height:'75vh',marginTop:'10vh'}}>
    <span className='spinner-border text-success'></span>
       </div>}
-    {!load && orders.map((data,id)=>{
+    {!load && valid && orders.map((data,id)=>{
      return <div className="col-12 mt-2 mb-2 border pt-2 pb-2" key={id}>
         <div className="row">
           <div className="col-4">

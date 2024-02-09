@@ -45,7 +45,7 @@ export default function SearchProduct({prud,load}) {
         </Modal.Body>
          
       </Modal>
-      {!valid  && <div className='col-12 d-flex justify-content-center align-items-center' style={{height:'100vh'}}>Product Not found</div>}
+      {!valid  && !load && <div className='col-12 d-flex justify-content-center align-items-center' style={{height:'71vh'}}>Product Not found</div>}
       {load && <div className='w-100 d-flex justify-content-center align-items-center' style={{height:'71vh'}}>
         <span className="spinner-border text-success"></span>
         </div>}
