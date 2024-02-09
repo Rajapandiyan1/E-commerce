@@ -9,7 +9,7 @@ export default function Product() {
   let [hole,sethole]=useState([]);
   let setP=useDispatch()
   let [loading,isloading]=useState(true);
-  let [fdata,setfadta]=useState([]);
+  // let [fdata,setfadta]=useState([]);
   let [filtes,setfiltes]=useState('');
   let searchdatas = useSelector((redux) => { return redux.search })
   let [dir,setdir]=useState('')
@@ -33,7 +33,7 @@ export default function Product() {
         headers: {
           'Content-Type': 'application/json'
         }
-      }).then((data)=>{ return data.json()}).then((data)=>{ return data.map((data)=>{let prouds=data[0]; return prouds})}).then((data)=>{return data.map((data)=>{ return data.productList.map((data,i)=>{ return data})})}).then((data)=>{data.map((data)=>{ data.map((data)=>{holeCopy.push(data)})})}).then((data)=>{ sethole(holeCopy);setProduct(holeCopy)}).finally(()=>{isloading(false)})
+      }).then((data)=>{ return data.json()}).then((data)=>{ return data.map((data)=>{let prouds=data[0]; return prouds})}).then((data)=>{return data.map((data)=>{ return data.productList.map((data,i)=>{ return data})})}).then((data)=>{data.map((data)=>{ data.map((data)=>{holeCopy.push(data)})})}).then((data)=>{ sethole(holeCopy);}).finally(()=>{isloading(false)})
       setfiltes('Search')
       await sethole((prev)=>{
         let data =prev.filter((data)=>{
@@ -48,13 +48,10 @@ export default function Product() {
           }
       } 
     if(serch.length==counts){
-      console.log(data)
-      setProduct((prev)=>{return [...prev,data]})
       return data
     }
     }); 
-      setfadta(data); })
-      await setProduct((prev)=>{ return prev})
+      setProduct(data) })
     }
 
     setSearch2(searchdatas[1])
@@ -82,7 +79,7 @@ export default function Product() {
   },[search])
   return (<>
     <NavProduct sear={setSearch2} files={setdir} load={isloading} />
-    {filtes=='Home' ?   <ShowProudct prod={product}load={loading} /> :  <ShowProudct prod={fdata}load={loading} />}
+    {filtes=='Home' ?   <ShowProudct prod={product}load={loading} /> :  <ShowProudct prod={product}load={loading} />}
    
   </>)
 
