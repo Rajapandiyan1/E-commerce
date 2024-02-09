@@ -35,7 +35,25 @@ export default function Product() {
         }
       }).then((data)=>{ return data.json()}).then((data)=>{ return data.map((data)=>{let prouds=data[0]; return prouds})}).then((data)=>{return data.map((data)=>{ return data.productList.map((data,i)=>{ return data})})}).then((data)=>{data.map((data)=>{ data.map((data)=>{holeCopy.push(data)})})}).then((data)=>{ sethole(holeCopy);setProduct(holeCopy)}).finally(()=>{isloading(false)})
       setfiltes('Search')
-      await setProduct((prev)=>{let data=prev.filter((data)=> {  return (data.product.toLowerCase().includes(search.toLocaleLowerCase()) )}); setfadta(data);  return data})
+      await sethole((prev)=>{
+        let data =prev.filter((data)=>{
+         let counts=0; 
+        let splits=data.product.split(' '); 
+        let serch=search.split(' ');
+        for(let datas of serch){
+          for(let dats2 of splits){
+            if(dats2.toLowerCase()==datas.toLowerCase()){
+             console.log(counts++)
+             }
+          }
+      } 
+    if(serch.length==counts){
+      console.log(data)
+      setProduct((prev)=>{return [...prev,data]})
+      return data
+    }
+    }); 
+      setfadta(data); })
       await setProduct((prev)=>{ return prev})
     }
 
