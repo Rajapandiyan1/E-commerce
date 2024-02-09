@@ -10,6 +10,7 @@ export default function NavbarH() {
     let moveProduct =useNavigate();
     let [fil,fildatas]=useState('');
     let [admin,setadmin]=useState(false);
+    let [log,islog]=useState(false)
     let [inres,setinres]=useState('')
     let senddata=useDispatch();
     let [userd,setusers]=useState(['','']);
@@ -23,6 +24,10 @@ export default function NavbarH() {
         }
         if(!Authen()){
             localStorage.removeItem('Dashboard')
+            setadmin(false)
+        }
+        else{
+            islog(true)
         }
     let token= localStorage.getItem('Dashboard');
     if(token != null){
@@ -31,14 +36,25 @@ export default function NavbarH() {
     }
     else{
         setinres(false)
+        setadmin(false)
         setinres('col-12')
     }
-    },[])
+    },[admin])
     function Prod(params) {
         if(fil != ''){
 senddata(setData(['Search',fil]))
         
         moveProduct('/Product')}
+    }
+    function logout(params) {
+        localStorage.removeItem('Token');
+        localStorage.removeItem('Dashboard');
+        if(!Authen()){
+            setadmin(false)
+        }
+        else{
+            setadmin(true)
+        }
     }
   return (
     <div className="row bg-dark fixed-top me-0 ms-0 border  pb-1">
@@ -81,7 +97,14 @@ senddata(setData(['Search',fil]))
     <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div className="offcanvas-body small">
-    <h3>{userd[1]}</h3>
+    {log && <h5>{userd[1]}</h5>}
+    {!log && <h5>User</h5>}
+    <h5>My Order</h5>
+    {!log && <div className='row'>
+        <div className="col-12 mt3"><button onClick={()=>{ moveProduct('/Register')}} className="btn btn-success">Register</button></div>
+        <div className="col-12 mt-3"><button onClick={()=>{ moveProduct('/login')}} className="btn btn-primary">Login</button></div>
+    </div> }
+    <div>{!log && <button onClick={()=>{logout()}} className="btn btn-warning">Log out</button>}</div>
   </div>
 </div>
     </div>
