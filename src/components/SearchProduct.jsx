@@ -3,20 +3,40 @@ import { useDispatch, useSelector } from 'react-redux'
 import ProductDetails from './ProductDetails'
 import { useNavigate } from 'react-router-dom'
 import { setProduct, setProducts } from './data/ProductdataStore'
-
+import { Modal } from 'react-bootstrap';
+import { Authen } from './Api/Autho'
 export default function SearchProduct({prud,load}) {
   let Pstore=useDispatch()
   let nav=useNavigate()
   let [data,setdata]=useState([])
+  const [show, setShow] = useState(false);
   useEffect(()=>{
    setdata(prud)
   },[prud])
   function ProductDet(datas) {
-    Pstore(setProducts(datas))
-    nav('/productdetails')
+    if(Authen()){
+      Pstore(setProducts(datas))
+      nav('/productdetails')
+    }
+    else{
+      setShow(true);
+    }
   }
   return (
     <div className='col-12 col-lg-12'>
+      <Modal show={show} onHide={setShow}>
+        <Modal.Header closeButton>
+          <Modal.Title>Alert Message</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>You have Already account please Login or Register New Account</p>
+          <div className="row justify-content-end pe-5">
+            <div className="col-2"  onClick={()=>{nav('/login')}}><button className="btn btn-primary">Login</button></div>
+            <div className="col-2" onClick={()=>{nav('/Register')}}><button className="btn btn-success">Register</button></div>
+          </div>
+        </Modal.Body>
+         
+      </Modal>
       {load && <div className='w-100 d-flex justify-content-center align-items-center' style={{height:'71vh'}}>
         <span className="spinner-border text-success"></span>
         </div>}
