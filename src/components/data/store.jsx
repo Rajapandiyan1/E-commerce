@@ -3,6 +3,7 @@ import {configureStore} from '@reduxjs/toolkit'
 import Searchdata from './Searchdata'
 import { Productdatas } from './Productdata'
 import { productdataStores } from './ProductdataStore'
+import { userdatas1 } from './Userdata'
 
  
 export let store = configureStore({
@@ -11,5 +12,6 @@ export let store = configureStore({
         search:Searchdata,
         productData:Productdatas,
         ProductDetails:productdataStores,
+        userdataof:userdatas1
     }
 })

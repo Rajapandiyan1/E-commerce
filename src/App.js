@@ -16,6 +16,7 @@ import NewProduct from './components/NewProduct';
 import ProductDetails from './components/ProductDetails';
 // import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 function App() {
+  
   return (
     <div className="container-fluid">
 <Provider store={store}>

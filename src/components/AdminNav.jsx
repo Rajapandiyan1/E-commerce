@@ -1,17 +1,19 @@
 import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet, useNavigate } from 'react-router-dom'
 
 export default function AdminNav({name}) {
+    let navs=useNavigate();
   return (
             <>
 <div className="row">
         <div className="col-12 ps-0 pe-0">
             <div className="navbar bg-dark navbar-expand-md">
-                <div className="navbar-brand text-white ps-4">
+                <span onClick={()=>{navs('/E-commerce/')}} className='d-flex justify-content-center mt-2'><i className='fa fa-arrow-left text-white ps-3'></i></span>
+                <div className="navbar-brand text-white ps-4 pt-2">
                     E - commerce
                 </div>
                 <div className="navbar-toggler">
-                    <div className="fa fa-bars text-white" data-bs-toggle="collapse" data-bs-target="#admin1"></div>
+                    <div className="fa fa-bars mt-2 text-white" data-bs-toggle="collapse" data-bs-target="#admin1"></div>
                 </div>
                 <div className="collapse navbar-collapse" id='admin1'>
 

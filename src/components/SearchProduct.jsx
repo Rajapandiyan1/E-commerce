@@ -39,8 +39,8 @@ export default function SearchProduct({prud,load}) {
         <Modal.Body>
           <p>You have Already account please Login or Register New Account</p>
           <div className="row justify-content-end pe-5">
-            <div className="col-2"  onClick={()=>{nav('/login')}}><button className="btn btn-primary">Login</button></div>
-            <div className="col-2" onClick={()=>{nav('/Register')}}><button className="btn btn-success">Register</button></div>
+            <div className="col-2 me-5"  onClick={()=>{nav('/login')}}><button className="btn btn-primary">Login</button></div>
+            <div className="col-2 me-3" onClick={()=>{nav('/Register')}}><button className="btn btn-success">Register</button></div>
           </div>
         </Modal.Body>
          

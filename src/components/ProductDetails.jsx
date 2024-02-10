@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import GetUserDetails from './GetUserDetails'
-
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 function ProductDetails() {
     let dataforProduct=useSelector((data)=>{return data.ProductDetails[0]})
     let homes=useNavigate()
@@ -20,28 +20,20 @@ function ProductDetails() {
         <i onClick={()=>{homes('/E-commerce/')}} className="text-white fa fa-arrow-left"></i>
         </div>
         <div className="col-2 ms-auto me-2 d-flex justify-content-center align-items-center" >
-            <i className="fa fa-bars text-white" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" style={{fontSize:'25px'}}></i>
+          <i className="fa fa-bars text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight1" style={{fontSize:'25px'}}></i>
         </div>
          
-<div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasBottom3" aria-labelledby="offcanvasBottomLabel">
-  <div className="offcanvas-header">
-    <h5 className="offcanvas-title" id="offcanvasBottomLabel1">Profile</h5>
-    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight1" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div className="offcanvas-body small">
-    
+  <div class="offcanvas-body">
+    ...
   </div>
 </div>
     </div>
-    <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasBottom3" aria-labelledby="offcanvasBottomLabel">
-  <div className="offcanvas-header">
-    <h5 className="offcanvas-title" id="offcanvasBottomLabel1">Profile</h5>
-    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div className="offcanvas-body small">
     
-  </div>
-</div>
 </div>
 <div className="row">
 

@@ -3,15 +3,19 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react'
 import { setData } from './data/Searchdata';
+import { CheckAdmin } from './data/CheckAdmin';
 
 function NavProduct({sear,files,load}) {
     let home=useNavigate();
     let setStore=useDispatch()
+    let [admin,setadmins]=useState(false)
     let [search,setSearch]=useState('');
      let searchdatas=useSelector((redux)=>{ return redux.search})
+     let searchdatas1=useSelector((redux)=>{ return redux.userdataof})
+
     useEffect(()=>{
       setSearch(searchdatas[1])
-      
+     CheckAdmin(setadmins)
     },[])
     function homes(params) {
         home('/E-commerce/')
@@ -43,7 +47,7 @@ function NavProduct({sear,files,load}) {
          
 <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
   <div className="offcanvas-header">
-    <h5 className="offcanvas-title" id="offcanvasBottomLabel1">Profile</h5>
+  <h5 className="offcanvas-title" id="offcanvasBottomLabel">{(searchdatas1[0]!='') ?  searchdatas1[0].name : 'User'} {admin && <span className='badge text-bg-success'>Owner</span>}</h5>
     <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div className="offcanvas-body small">
