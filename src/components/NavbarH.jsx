@@ -5,6 +5,7 @@ import { setData } from './data/Searchdata';
 import { Authen } from './Api/Autho';
 import { datas } from './Api/Getdata';
 import { userData } from './Api/Post';
+import { CheckAdmin } from './data/CheckAdmin';
 
 export default function NavbarH() {
     let moveProduct =useNavigate();
@@ -18,27 +19,49 @@ export default function NavbarH() {
         fildatas(data)
     }
     useEffect(()=>{
-        let data=datas();
-        if(data){
-            userData(data).then((data)=>{ return data.users[0]}).then((data)=>{ setusers([data.displayName,data.email])})
+        function admins(params) {
+            
+            CheckAdmin(setadmin)
         }
-        if(!Authen()){
-            localStorage.removeItem('Dashboard')
+        admins();
+        if(log){
+            setinres('col-8 col-sm-9 col-md-10')
+        
+        }else{
+            setinres(false)
             setadmin(false)
+            setinres('col-12')
+        }
+        if(admin){
+            setinres('col-8 col-sm-9 col-md-10')
+        
+        }else{
+            setinres(false)
+            setadmin(false)
+            setinres('col-10 col-sm-11')
+        }
+    },[admin])
+    useEffect(()=>{
+        async function user(params) {
+            
+            let data=datas();
+            if(data){
+               await userData(data).then((data)=>{ return data.users[0]}).then((data)=>{ 
+               setusers([data.displayName,data.email]);})
+            }
+            if(!Authen()){
+                localStorage.removeItem('Dashboard')
+                setadmin(false)
+            }
+        }
+          user()
+        if(Authen()){
+           islog(true)
         }
         else{
-            islog(true)
+            islog(false)
         }
     let token= localStorage.getItem('Dashboard');
-    if(token != null){
-        setadmin(true)
-        setinres('col-8 col-sm-9 col-md-10')
-    }
-    else{
-        setinres(false)
-        setadmin(false)
-        setinres('col-12')
-    }
     },[admin])
     function Prod(params) {
         if(fil != ''){
@@ -46,14 +69,17 @@ senddata(setData(['Search',fil]))
         
         moveProduct('/Product')}
     }
-    function logout(params) {
+   async  function logout(params) {
         localStorage.removeItem('Token');
         localStorage.removeItem('Dashboard');
-        if(!Authen()){
-            setadmin(false)
+        if(Authen()){
+            alert('not')
+            islog(true)
+            setadmin(true)
         }
         else{
-            setadmin(true)
+            setadmin(false)
+            islog(false)
         }
     }
   return (
@@ -68,11 +94,11 @@ senddata(setData(['Search',fil]))
         <div className="col-2 col-sm-1 col-lg-1 pe-0 ps-0  col-md-1 col-lg-1 order-3 order-lg-4 mt-lg-0 justify-content-md-end justify-content-center align-items-center  d-flex mt-2">
             <button className="btn btn-primary btn-sm home-t" onClick={()=> {moveProduct('/login')}}>
             Login</button></div>
-            {admin && <div className="col-4 pe-0 ms-lg-4 d-none d-lg-flex col-sm-2 col-lg-1 mt-lg-1 mb-lg-1 order-lg-5 ps-0 justify-content-sm-end justify-content-center order-6 mt-1  d-flex align-items-center home-t">
+            {(admin) ? <div className="col-4 pe-0 ms-lg-4 d-none d-lg-flex col-sm-2 col-lg-1 mt-lg-1 mb-lg-1 order-lg-5 ps-0 justify-content-sm-end justify-content-center order-6 mt-1  d-flex align-items-center home-t">
             <button onClick={()=>{moveProduct('/admin') }} className="btn home-t btn-primary btn-sm memo-text">
                 Dashboard
             </button>
-        </div>}
+        </div> : <div className='col-2 pe-0 ms-lg-1 d-none d-lg-flex col-sm-2 col-lg-1 mt-lg-1 mb-lg-1 order-lg-5 ps-0 justify-content-sm-center justify-content-center order-6 mt-1  d-flex align-items-center home-t'><i class="text-white fas fa-shopping-cart"></i></div>}
             <div className="col-2 col-lg-1 ps-0 pe-0 col-sm-1 col-md-1  order-lg-5 mt-lg-1 mb-lg-1 order-4 mt-lg-0  mt-2 d-flex ms-1 justify-content-center align-items-center">
             <i className="fa fa-bars text-white" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" style={{fontSize:'24px'}}></i>
             </div>
@@ -85,11 +111,11 @@ senddata(setData(['Search',fil]))
             </div>
 
         </div>
-        {admin && <div className="col-4 pe-3 col-md-2 d-lg-none col-sm-3 col-lg-1 mt-lg-1 mb-lg-1 order-lg-5 ps-0 justify-content-center  order-5 mt-1  d-flex align-items-center">
+        {(admin) ? <div className="col-4 pe-3 col-md-2 d-lg-none col-sm-3 col-lg-1 mt-lg-1 mb-lg-1 order-lg-5 ps-0 justify-content-center  order-5 mt-1  d-flex align-items-center">
             <button onClick={()=>{moveProduct('/admin') }} className="btn btn-primary btn-sm memo-text home-t">
                 Dashboard
             </button>
-        </div>}
+        </div> : <div className='col-2 pe-3 col-md-1 d-lg-none col-sm-2 col-lg-1 mt-lg-1 mb-lg-1 order-lg-5 ps-0 justify-content-center  order-5 mt-1  d-flex align-items-center text-white'><i class="text-white fas fa-shopping-cart"></i></div> }
         
 <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
   <div className="offcanvas-header">
@@ -98,13 +124,12 @@ senddata(setData(['Search',fil]))
   </div>
   <div className="offcanvas-body small">
     {log && <h5>{userd[1]}</h5>}
-    {!log && <h5>User</h5>}
-    <h5>My Order</h5>
-    {!log && <div className='row'>
-        <div className="col-12 mt3"><button onClick={()=>{ moveProduct('/Register')}} className="btn btn-success">Register</button></div>
-        <div className="col-12 mt-3"><button onClick={()=>{ moveProduct('/login')}} className="btn btn-primary">Login</button></div>
+    <h5 className='mt-4 mb-4'>My Order</h5>
+    {!log && <div className='row mt-5'>
+        <div className="col-6 "><button onClick={()=>{ moveProduct('/Register')}} className="btn btn-success">Register</button></div>
+        <div className="col-6 "><button onClick={()=>{ moveProduct('/login')}} className="btn btn-primary">Login</button></div>
     </div> }
-    <div>{!log && <button onClick={()=>{logout()}} className="btn btn-warning">Log out</button>}</div>
+    <div>{log && <button onClick={()=>{logout()}} className="btn btn-warning">Log out</button>}</div>
   </div>
 </div>
     </div>
