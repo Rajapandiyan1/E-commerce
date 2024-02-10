@@ -8,9 +8,9 @@ export function Navbar({login}) {
         home('/E-commerce/')
     }
   return (
-    <div className="row mt-1"> 
+    <div className="row bg-dark pt-2 pb-2"> 
     <div className="col-2 col-sm-1 ms-1 d-flex justify-content-center align-items-center" style={{fontSize:'25px'}}>
-    <i onClick={()=>{homes()}} className="fa fa-arrow-left"></i>
+    <i onClick={()=>{homes()}} className="fa fa-arrow-left text-white"></i>
     
     </div>
     <div className="ms-auto me-3 col-2 col-sm-1 d-flex justify-content-center align-items-center">
@@ -18,7 +18,7 @@ export function Navbar({login}) {
             {login}</button>
     </div>
     <div className="col-2 col-sm-1 d-flex justify-content-center align-items-center">
-    <i className="fa fa-bars" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom2" style={{fontSize:'24px'}}></i>
+    <i className="fa fa-bars text-white" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom2" style={{fontSize:'24px'}}></i>
         
     </div>
        

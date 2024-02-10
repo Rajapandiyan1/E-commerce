@@ -40,7 +40,7 @@ export default function NavbarH() {
         }else{
             setinres(false)
             setadmin(false)
-            setinres('col-10 col-sm-11')
+            setinres('col-10 col-sm-10')
         }
     },[admin])
     useEffect(()=>{
@@ -100,7 +100,7 @@ senddata(setData(['Search',fil]))
             <button onClick={()=>{moveProduct('/admin') }} className="btn home-t btn-primary btn-sm memo-text">
                 Dashboard
             </button>
-        </div> : <div className='col-2 pe-0 ms-lg-1 d-none d-lg-flex col-sm-2 col-lg-1 mt-lg-1 mb-lg-1 order-lg-5 ps-0 justify-content-sm-center justify-content-center order-6 mt-1  d-flex align-items-center home-t'><i className="text-white fas fa-shopping-cart"></i></div>}
+        </div> : <div onClick={()=>{moveProduct('/addcard')}} className='col-2 pe-0 ms-lg-1 d-none d-lg-flex col-sm-2 col-lg-1 mt-lg-1 mb-lg-1 order-lg-5 ps-0 justify-content-sm-center justify-content-center order-6 mt-1  d-flex align-items-center home-t'><i className="text-white fas fa-shopping-cart"></i></div>}
             <div className="col-2 col-lg-1 ps-0 pe-0 col-sm-1 col-md-1  order-lg-5 mt-lg-1 mb-lg-1 order-4 mt-lg-0  mt-2 d-flex ms-1 justify-content-center align-items-center">
             <i className="fa fa-bars text-white" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" style={{fontSize:'24px'}}></i>
             </div>
@@ -117,7 +117,7 @@ senddata(setData(['Search',fil]))
             <button onClick={()=>{moveProduct('/admin') }} className="btn btn-primary btn-sm memo-text home-t">
                 Dashboard
             </button>
-        </div> : <div className='col-2 pe-3 col-md-1 d-lg-none col-sm-2 col-lg-1 mt-lg-1 mb-lg-1 order-lg-5 ps-0 justify-content-center  order-5 mt-1  d-flex align-items-center text-white'><i className="text-white fas fa-shopping-cart"></i></div> }
+        </div> : <div onClick={()=>{moveProduct('/addcard')}} className='col-2 pe-3 col-md-1 d-lg-none col-sm-2 col-lg-1 mt-lg-1 mb-lg-1 order-lg-5 ps-0 justify-content-center  order-5 mt-1  d-flex align-items-center text-white'><i className="text-white fas fa-shopping-cart"></i></div> }
         
 <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
   <div className="offcanvas-header">

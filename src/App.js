@@ -14,6 +14,7 @@ import { Authen } from './components/Api/Autho';
 import { adminCheck } from './components/Api/Getdata';
 import NewProduct from './components/NewProduct';
 import ProductDetails from './components/ProductDetails';
+import Addcard from './components/Addcard';
 // import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 function App() {
   
@@ -23,6 +24,7 @@ function App() {
 <BrowserRouter>
 <Routes>
   <Route path='/E-commerce/' element={<Home/>}/>
+  <Route path='/addcard' element={<Addcard/>}/>
   <Route path='/Product' element={<Product/>}/>
   <Route path='/login' element={<Login/>} />
   <Route path='/Register' element={<Register/>} />

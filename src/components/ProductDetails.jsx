@@ -1,15 +1,21 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import GetUserDetails from './GetUserDetails'
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import { adminCheck } from './Api/Getdata'
+import { CheckAdmin } from './data/CheckAdmin'
 function ProductDetails() {
     let dataforProduct=useSelector((data)=>{return data.ProductDetails[0]})
+    let [admin,setadmins]=useState(false)
     let homes=useNavigate()
-
+  let userdata=useSelector((data)=>{ return data.userdataof})
     useEffect(()=>{
-        
+        CheckAdmin(setadmins)
     },[])
+    function logout(params) {
+      localStorage.removeItem('Token')
+      homes('/E-commerce')
+    }
   return (
     <>
     
@@ -25,11 +31,12 @@ function ProductDetails() {
          
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight1" aria-labelledby="offcanvasRightLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">{(userdata[0]!='') ?  userdata[0].name : 'User'} {admin && <span className='badge text-bg-success'>Owner</span>}</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
-    ...
+    <h6>{userdata[0].email}</h6>
+  <button onClick={()=>{logout()}} className="btn btn-warning">Log out</button>
   </div>
 </div>
     </div>

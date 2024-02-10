@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { datas } from './Api/Getdata'
 import { userData } from './Api/Post';
+import { useNavigate } from 'react-router-dom';
 function GetUserDetails({pdl}) {
     let [loginEmail,setLoginEmail]=useState('')
+    let [submit,setsubmit]=useState(false);
+    let navs=useNavigate()
     useEffect(()=>{
         let token=datas();
         if(token){
@@ -13,7 +16,7 @@ setLoginEmail()
     let [userdata,setuserdata]=useState({fullname:'',email:'',phone:'',address:'',order:'Ordered',UserEmail:loginEmail})
     function submits(params) {
         let clone=userdata
-        setuserdata({fullname:'',email:'',phone:'',address:''})
+        setsubmit(true)
         if(clone.address != '' && clone.fullname != '' && clone.email != '' && clone.phone != ''){
             fetch('https://65c0ebcbdc74300bce8cfdfb.mockapi.io/E-commerce/Orders',{
                 method:'POST',
@@ -21,7 +24,12 @@ setLoginEmail()
                 headers:{
                     'Content-Type':'application/json'
                 }
-            }).then((data)=>{return data.json()})
+            }).then((data)=>{return data.json()}).then((data)=>{
+                setuserdata({fullname:'',email:'',phone:'',address:''});
+                navs('/E-commerce/')
+            }).finally(()=>{
+              setsubmit(false)
+            })
         }
     }
   return (
@@ -54,7 +62,7 @@ setLoginEmail()
                 <textarea value={userdata.address} onInput={(e)=>{setuserdata((prev)=>{ return {...prev,address:e.target.value}})}} className='form-control border-dark'></textarea>
             </div>
             <div className="col-12 col-lg-7 col-md-8 mt-2 d-flex justify-content-end">
-                <button onClick={()=>{submits()}} className="btn btn-success">
+                <button disabled={submit} onClick={()=>{submits()}} className="btn btn-success">
                     Submit
                 </button>
             </div>
