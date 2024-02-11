@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { setProduct, setProducts } from './data/ProductdataStore'
 import { Modal } from 'react-bootstrap';
 import { Authen } from './Api/Autho'
+import { addcar } from './data/Addcards'
 export default function SearchProduct({prud,load}) {
   let Pstore=useDispatch()
   let nav=useNavigate()
@@ -29,6 +30,10 @@ export default function SearchProduct({prud,load}) {
     else{
       setShow(true);
     }
+  }
+  function addcs(data) {
+    console.log(data)
+    Pstore(addcar(data.id))
   }
   return (
     <div className='col-12 col-lg-12'>
@@ -66,7 +71,7 @@ export default function SearchProduct({prud,load}) {
                 <button className="btn btn-primary  btn-sm w-100" onClick={()=>{ ProductDet(data)}}>Buy</button>
                   </div>
                   <div className="col-6">
-                <button className="btn btn-warning btn-sm w-100">Add Card</button>
+                <button className="btn btn-warning btn-sm w-100" onClick={()=>{addcs(data)}}>Add Card</button>
                   </div>
                 </div>
     </div>})}

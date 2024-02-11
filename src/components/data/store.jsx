@@ -4,6 +4,7 @@ import Searchdata from './Searchdata'
 import { Productdatas } from './Productdata'
 import { productdataStores } from './ProductdataStore'
 import { userdatas1 } from './Userdata'
+import { addcards } from './Addcards'
 
  
 export let store = configureStore({
@@ -12,6 +13,7 @@ export let store = configureStore({
         search:Searchdata,
         productData:Productdatas,
         ProductDetails:productdataStores,
-        userdataof:userdatas1
+        userdataof:userdatas1,
+        card:addcards
     }
 })

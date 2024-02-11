@@ -19,39 +19,41 @@ export default function Product() {
     setdir(searchdatas[0])
     
     let holeCopy=[];
-    if(dir == 'Home'){
-      getProduct()
- setfiltes('Home')
-    }
-    else if (dir== 'Search'){
+//     if(dir == 'Home'){
+//       getProduct()
+//  setfiltes('Home')
+//     }
+    if (dir== 'Search'){
  setfiltes('Search')
       SearchProducts(search)
     }
     async function SearchProducts(params) {
+      isloading(true)
        await fetch ('https://65c0ebcbdc74300bce8cfdfb.mockapi.io/E-commerce/e-commmerce', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
         }
-      }).then((data)=>{ return data.json()}).then((data)=>{ return data.map((data)=>{let prouds=data[0]; return prouds})}).then((data)=>{return data.map((data)=>{ return data.productList.map((data,i)=>{ return data})})}).then((data)=>{data.map((data)=>{ data.map((data)=>{holeCopy.push(data)})})}).then((data)=>{ sethole(holeCopy);}).finally(()=>{isloading(false)})
+      }).then((data)=>{ return data.json()}).then((data)=>{ return data.map((data)=>{let prouds=data[0]; return prouds})}).then((data)=>{return data.map((data)=>{ return data.productList.map((data,i)=>{ return data})})}).then((data)=>{data.map((data)=>{ data.map((data)=>{holeCopy.push(data)})})}).then((data)=>{ let holec=holeCopy.map((data,id)=>{return {...data,'id':id}}); sethole(holec);}).finally(()=>{isloading(false)})
       setfiltes('Search')
       await sethole((prev)=>{
-        let data =prev.filter((data)=>{
+        let data =prev.filter((datas)=>{
          let counts=0; 
-        let splits=data.product.split(' '); 
+        let splits=datas.product.split(' '); 
         let serch=search.split(' ');
-        for(let datas of serch){
+        for(let datas1 of serch){
           for(let dats2 of splits){
-            if(dats2.toLowerCase()==datas.toLowerCase()){
-             counts++;
-             }
+            if(dats2.toLowerCase()==datas1.toLowerCase()){
+              counts++;
+            }
           }
-      } 
-    if(serch.length==counts){
-      return data
+        } 
+        if(serch.length==counts){
+      return prev
     }
     }); 
-      setProduct(data) })
+      setProduct(data)
+     })
     }
 
     setSearch2(searchdatas[1])
