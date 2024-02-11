@@ -19,7 +19,7 @@ import Addcard from './components/Addcard';
 function App() {
   
   return (
-    <div className="container-fluid me-0 pe-0">
+    <div className="container-fluid ">
 <Provider store={store}>
 <BrowserRouter>
 <Routes>

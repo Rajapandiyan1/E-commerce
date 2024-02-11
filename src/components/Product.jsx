@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import NavProduct from './NavProduct'
 import { useDispatch, useSelector } from 'react-redux';
 import ShowProudct from './ShowProudct';
+import { setHole } from './data/HoleProduct';
 
 export default function Product() {
   let [search, setSearch2] = useState('');
@@ -34,7 +35,7 @@ export default function Product() {
         headers: {
           'Content-Type': 'application/json'
         }
-      }).then((data)=>{ return data.json()}).then((data)=>{ return data.map((data)=>{let prouds=data[0]; return prouds})}).then((data)=>{return data.map((data)=>{ return data.productList.map((data,i)=>{ return data})})}).then((data)=>{data.map((data)=>{ data.map((data)=>{holeCopy.push(data)})})}).then((data)=>{ let holec=holeCopy.map((data,id)=>{return {...data,'id':id}}); sethole(holec);}).finally(()=>{isloading(false)})
+      }).then((data)=>{ return data.json()}).then((data)=>{ return data.map((data)=>{let prouds=data[0]; return prouds})}).then((data)=>{return data.map((data)=>{ return data.productList.map((data,i)=>{ return data})})}).then((data)=>{data.map((data)=>{ data.map((data)=>{holeCopy.push(data)})})}).then((data)=>{ let holec=holeCopy.map((data,id)=>{return {...data,'id':id}}); sethole(holec); setP(setHole(holec))}).finally(()=>{isloading(false)})
       setfiltes('Search')
       await sethole((prev)=>{
         let data =prev.filter((datas)=>{

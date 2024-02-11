@@ -5,6 +5,7 @@ import { Productdatas } from './Productdata'
 import { productdataStores } from './ProductdataStore'
 import { userdatas1 } from './Userdata'
 import { addcards } from './Addcards'
+import { HoleProducts } from './HoleProduct'
 
  
 export let store = configureStore({
@@ -14,6 +15,7 @@ export let store = configureStore({
         productData:Productdatas,
         ProductDetails:productdataStores,
         userdataof:userdatas1,
-        card:addcards
+        card:addcards,
+        HolePro:HoleProducts
     }
 })

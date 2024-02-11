@@ -3,10 +3,13 @@ import { useSelector } from 'react-redux'
 
 function Addcard() {
     let carddata=useSelector((data)=>{ return data.card})
+    let Holeproduc=useSelector((data)=>{ return data.HolePro[0]})
+
     useEffect(()=>{
-      let addcards=new Set(carddata)
-   console.log(addcards)
-    },[carddata])
+      let clone=[];
+      let addcards=new Set(carddata);
+ 
+    },[])
   return (
     <div className='row'>
        {carddata.map((data,id)=>{
