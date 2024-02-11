@@ -1,0 +1,149 @@
+.memo-text-m{
+  font-size: medium;
+}
+.log-h{
+height: 30px !important;
+}
+.font-w{
+  font-weight: 700;
+}
+body{
+  font-family: 'Times New Roman', Times, serif;
+}
+@media screen and (min-width:992px) and (max-width:1400px){
+  .cImage{
+    height: 290px;
+}
+.marg-p{
+  margin-top: 70px !important;
+}
+.memo-text-1{
+  font-size:large;
+  font-weight:600;
+}
+.marg{
+  margin-top: 70px !important;
+}
+.card-h{
+  min-height: 120px !important;
+}
+.img-h{
+  height: 110px;
+}
+.offer-size{
+  height: 130px;
+}
+}
+@media screen and (min-width:0px) and (max-width:576px) {
+  .cImage{
+    height: 150px;
+}
+.marg{
+  margin-top: 120px !important;
+}
+.marg-p{
+  margin-top: 70px !important;
+}
+.memo-text-1{
+  font-size:medium;
+  font-weight:600;
+}
+.offer-size{
+  height: 120px;
+}
+.card-h{
+  min-height: 100px;
+}
+.img-h{
+  height: 80px;
+}
+}
+@media screen and (min-width:768px) and (max-width:992px) {
+  .cImage{
+    height: 210px;
+}
+.marg-p{
+  margin-top: 70px !important;
+}
+.card-h{
+  min-height: 110px;
+}
+.memo-text-1{
+  font-size:large;
+  font-weight:600;
+}
+.marg{
+  margin-top: 120px !important;
+}
+.img-h{
+  height: 80px;
+}
+.offer-size{
+  height: 130px;
+}
+.memo-text{
+  font-size: small;
+}
+}
+@media screen and (min-width:576px) and (max-width:768px) {
+  .cImage{
+    height: 210px;
+}
+.marg{
+  margin-top: 120px !important;
+}
+.marg-p{
+  margin-top: 70px !important;
+}
+.memo-text-1{
+  font-size:large;
+  font-weight:600;
+}
+.memo-text-m{
+  font-size: larger;
+}
+.card-h{
+  min-height: 110px;
+}
+.img-h{
+  height: 70px;
+}
+.offer-size{
+  height: 130px;
+}
+.memo-text{
+  font-size: small !important;
+}
+}
+@media screen and (min-width :0px) and (max-width:350px) {
+  .memo-text{
+    font-size:small;
+  }
+  .marg-p{
+    margin-top: 70px !important;
+  }
+}
+@media screen and (min-width :0px) and (max-width:370px) {
+  .memo-text-1{
+    font-size:small;
+    font-size: 12px;
+    font-weight:600;
+  }
+  .marg{
+    margin-top: 120px !important;
+  }
+
+}
+.home-t{
+  font-weight: 600 !important;
+}
+.ratioa{
+  aspect-ratio: 4/3;
+}
+.posi{
+  position: relative;
+}
+.posi-f{
+  position:fixed;
+  top: 0;
+}
