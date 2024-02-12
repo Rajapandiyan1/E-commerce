@@ -3,7 +3,11 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Authen } from './Api/Autho'
 import { setProducts } from './data/ProductdataStore'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { CheckAdmin } from './data/CheckAdmin';
+import { setUserdata } from './data/Userdata';
+import { userData } from './Api/Post';
+import { datas } from './Api/Getdata';
 
 
 function Addcard() {
@@ -12,9 +16,34 @@ function Addcard() {
   let [carddataof,setcard]=useState([]);
   let [show,setShow]=useState(false);
   let [valid,setvalid]=useState(true)
+  let [userd,setusers]=useState(['','']);
+  let [admin,setadmin]=useState(false);
+  let [log,islog]=useState(false)
+  let usdata=useDispatch()
+
 let Pstore=useDispatch()
   let nav=useNavigate()
     useEffect(()=>{
+      CheckAdmin(setadmin)
+      if(Authen()){
+        islog(true)
+     }
+     else{
+         islog(false)
+     }
+     async function user(params) {
+            
+      let data=datas()
+      if(data){
+         await userData(data).then((data)=>{ return data.users[0]}).then((data)=>{ 
+         setusers([data.displayName,data.email]); usdata(setUserdata({name:data.displayName,email:data.email}))}).catch((e)=>{ console.log(e)})
+      }
+      if(!Authen()){
+          localStorage.removeItem('Dashboard')
+          setadmin(false)
+      }
+  }
+    user()
       let clone=[];
       let addcards=new Set(carddata);
       let data=addcards.entries()
@@ -49,8 +78,46 @@ let Pstore=useDispatch()
     }else{return data} })
     setcard(e)
   }
+  async  function logout(params) {
+    localStorage.removeItem('Token');
+    localStorage.removeItem('Dashboard');
+    if(Authen()){
+        islog(true)
+        setadmin(true)
+    }
+    else{
+        setadmin(false)
+        islog(false)
+    }
+}
   return (
     <div className='row'>
+        
+<div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasBottom6" aria-labelledby="offcanvasBottomLabel">
+  <div className="offcanvas-header">
+    <h5 className="offcanvas-title" id="offcanvasBottomLabel">{(userd[0]!='') ?  userd[0] : 'User'} {admin && <span className='badge text-bg-success'>Owner</span>}</h5>
+    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div className="offcanvas-body small">
+    {log && <h5>{userd[1]}</h5>}
+    <h5 className='mt-4 mb-4'><Link className='text-decoration-none' to={'/Myorder'}>My Order</Link></h5>
+    {!log && <div className='row mt-5'>
+        <div className="col-6 "><button onClick={()=>{ nav('/Register')}} className="btn btn-success">Register</button></div>
+        <div className="col-6 "><button onClick={()=>{ nav('/login')}} className="btn btn-primary">Login</button></div>
+    </div> }
+    <div>{log && <button onClick={()=>{logout()}} className="btn btn-warning">Log out</button>}</div>
+  </div>
+</div>
+      <div className="col-12">
+        <div className="row bg-dark pt-3 pb-3 fixed-top">
+          <div className="col-2 ms-3">
+            <i className='fa text-white fa-arrow-left' onClick={()=>{nav('/E-commerce/')}} style={{fontSize:'23px'}}></i>
+          </div>
+          <div className="col-1 ms-auto">
+            <i className="fa fa-bars text-white" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom6" style={{fontSize:'23px'}}></i>
+          </div>
+        </div>
+      </div>
       <Modal show={show} onHide={setShow}>
         <Modal.Header closeButton>
           <Modal.Title>Alert Message</Modal.Title>
