@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { setData } from './data/Searchdata';
 import { Authen } from './Api/Autho';
 import { datas } from './Api/Getdata';
@@ -125,7 +125,7 @@ senddata(setData(['Search',fil]))
   </div>
   <div className="offcanvas-body small">
     {log && <h5>{userd[1]}</h5>}
-    <h5 className='mt-4 mb-4'>My Order</h5>
+    <h5 className='mt-4 mb-4'><Link className='text-decoration-none' to={'/Myorder'}>My Order</Link></h5>
     {!log && <div className='row mt-5'>
         <div className="col-6 "><button onClick={()=>{ moveProduct('/Register')}} className="btn btn-success">Register</button></div>
         <div className="col-6 "><button onClick={()=>{ moveProduct('/login')}} className="btn btn-primary">Login</button></div>

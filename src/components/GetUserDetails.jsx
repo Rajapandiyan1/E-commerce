@@ -12,9 +12,9 @@ function GetUserDetails({pdl}) {
     useEffect(()=>{
         let token=datas();
         if(token){
-            userData(token).then((data)=>{})
+            userData(token).then((data)=>{ setLoginEmail(data.users[0].email)})
         }
-setLoginEmail()
+        
     },[])
     let [userdata,setuserdata]=useState({fullname:'',email:'',phone:'',address:'',order:'Ordered',UserEmail:loginEmail})
     function submits(params) {
@@ -23,7 +23,7 @@ setLoginEmail()
         if(clone.address != '' && clone.fullname != '' && clone.email != '' && clone.phone != ''){
             fetch('https://65c0ebcbdc74300bce8cfdfb.mockapi.io/E-commerce/Orders',{
                 method:'POST',
-                body:JSON.stringify({...userdata,Product:pdl}),
+                body:JSON.stringify({...userdata,Product:pdl,UserEmail:loginEmail}),
                 headers:{
                     'Content-Type':'application/json'
                 }

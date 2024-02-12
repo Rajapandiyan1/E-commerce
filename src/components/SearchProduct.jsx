@@ -24,7 +24,7 @@ export default function SearchProduct({prud,load}) {
   },[prud])
   function ProductDet(datas) {
     if(Authen()){
-      Pstore(setProducts(datas))
+      Pstore(setProducts([datas]))
       nav('/productdetails')
     }
     else{
