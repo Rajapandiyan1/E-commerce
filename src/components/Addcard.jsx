@@ -64,7 +64,10 @@ let Pstore=useDispatch()
         </Modal.Body>
          
       </Modal>
-      {valid && <div className='col-12'>Invalid data of addcards</div>}
+      {valid && <div className='col-12 d-flex justify-content-center align-items-center' style={{height:'100vh'}}>
+            <div className='' >Invalid data of addcards</div>
+            </div>
+      }
        {  !valid && carddataof.map((data,id)=>{
         return <div className="col-12"key={id}>
 <div className="row">

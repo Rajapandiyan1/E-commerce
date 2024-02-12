@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Authen } from './Api/Autho';
 import { userData } from './Api/Post';
 import { datas } from './Api/Getdata';
+import { Link } from 'react-router-dom';
 
 function MyOrder() {
     let [login,setlogin]=useState(false);
@@ -33,11 +34,18 @@ function MyOrder() {
         })
     },[])
   return (
-    <div className='row'>
-        {load && <div className='col-12 d-flex justify-content-center align-items-center' style={{height:'100vh'}}>
+    <div className='row mt-5'>
+        {!login && <div className='col-12 d-flex justify-content-center align-items-center' style={{height:'100vh'}}>
+            <div className="row">
+                <div className="col-12">
+                    Alreary Account created Please <Link to={'/login'} className='text-decoration-none'>Login</Link> or <Link to={'/Register'} className='text-decoration-none'>Register</Link>
+                </div>
+            </div>
+            </div>}
+        { load && <div className='col-12 d-flex justify-content-center align-items-center' style={{height:'100vh'}}>
             <div className='spinner-border text-primary ' ></div>
             </div>}
-       { !load && mrord.map((data,id)=>{
+       {login && !load && mrord.map((data,id)=>{
            return data.Product.map((da,id)=>{
                 return <div className="col-12" key={id}> 
                 <div className="row">
