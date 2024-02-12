@@ -8,7 +8,6 @@ function Addcard() {
     useEffect(()=>{
       let clone=[];
       let addcards=new Set(carddata);
- 
     },[])
   return (
     <div className='row'>
