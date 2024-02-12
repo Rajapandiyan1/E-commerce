@@ -20,15 +20,21 @@ count=0;
                     'Content-Type':'application/json'
                 }
             }).then((data)=>{return data.json()}).then((data)=>{console.log(data); return data}).then((data)=>{setOrders([...data]); return data; }).then((data)=>{
-              console.log(data)
+              setOrders((prev)=>{
+                console.log(prev.length);
+                if(prev.length > 0){
+                  console.log('lenght greater to 2')
+                  isvalid(true)
+                }else{
+                  isvalid(false)
+                }
+                return prev
+              })
             }).finally(()=>{
               isloading(false)
             })
-            if(orders.length > 0){
-              isvalid(true)
-            }else{
-              isvalid(false)
-            }
+            
+
   },[])
   return (
     <div className='row'>
