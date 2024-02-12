@@ -1,0 +1,97 @@
+0000000000000000000000000000000000000000 ec801811703f5dedb29f97de982c4adec69624b1 Rajapandiyan <rajapandiyan1163@gmail.com> 1706843939 +0530	commit (initial): Initialize project using Create React App
+ec801811703f5dedb29f97de982c4adec69624b1 f12251b4d9211c415c16d8b296d32c04e33c26ef Rajapandiyan <rajapandiyan1163@gmail.com> 1706881499 +0530	commit: Intial stage of E-commerce Project
+f12251b4d9211c415c16d8b296d32c04e33c26ef 5d12a7dcac5c883504fa697adebe06bad0bd9ac2 Rajapandiyan <rajapandiyan1163@gmail.com> 1706883636 +0530	commit: Navbar some mistake reset
+5d12a7dcac5c883504fa697adebe06bad0bd9ac2 b3e49413593451d3baf67a1d9f87d2c2e4667f2e Rajapandiyan <rajapandiyan1163@gmail.com> 1706889228 +0530	commit: navbar work resposive as mobile
+b3e49413593451d3baf67a1d9f87d2c2e4667f2e a13c00eafcdc68dcd435ccfe8a4525373a5d96b1 Rajapandiyan <rajapandiyan1163@gmail.com> 1706890244 +0530	commit: deploy add and root page add in E-commerce/
+a13c00eafcdc68dcd435ccfe8a4525373a5d96b1 4d4d416ac08d0bb2c748a60ddc8f20e6700fc91b Rajapandiyan <rajapandiyan1163@gmail.com> 1706890507 +0530	commit: root path work in router
+4d4d416ac08d0bb2c748a60ddc8f20e6700fc91b 1689b483f1d37c8c1cb535136517dd3a8ec275b2 Rajapandiyan <rajapandiyan1163@gmail.com> 1706935657 +0530	commit: carousel and image add
+1689b483f1d37c8c1cb535136517dd3a8ec275b2 08071190277967ecd134a782b68a150644920faa Rajapandiyan <rajapandiyan1163@gmail.com> 1706936170 +0530	commit: carousel and css add in image resposive
+08071190277967ecd134a782b68a150644920faa 3d4af59adbddfdd8006dfa02c139f2504827e461 Rajapandiyan <rajapandiyan1163@gmail.com> 1706954196 +0530	commit: memo product add and image download
+3d4af59adbddfdd8006dfa02c139f2504827e461 a40a72f76b65e179ae6f9ee7b6fa43bfebd2370e Rajapandiyan <rajapandiyan1163@gmail.com> 1706955053 +0530	commit: card width ajustment
+a40a72f76b65e179ae6f9ee7b6fa43bfebd2370e b2cd729c72e087e45dfe7474cc846b7aa9dca869 Rajapandiyan <rajapandiyan1163@gmail.com> 1706955315 +0530	commit: card border remove
+b2cd729c72e087e45dfe7474cc846b7aa9dca869 aae5761eb20d5f3f3fb18af50acb67ae76816d60 Rajapandiyan <rajapandiyan1163@gmail.com> 1706960475 +0530	merge master-1: Fast-forward
+aae5761eb20d5f3f3fb18af50acb67ae76816d60 6e74e15cc5a95985c21feb31ddac4d5d53d20270 Rajapandiyan <rajapandiyan1163@gmail.com> 1706968447 +0530	commit: alignment work in offer box and css add
+6e74e15cc5a95985c21feb31ddac4d5d53d20270 bc4c3cd6fc2919df149947dd781da63ce376922c Rajapandiyan <rajapandiyan1163@gmail.com> 1706973439 +0530	commit: redux store create
+bc4c3cd6fc2919df149947dd781da63ce376922c 32b747788c505b27e2a9c71eeaff44401ef7702c Rajapandiyan <rajapandiyan1163@gmail.com> 1706976457 +0530	commit: redux store work form search data share
+32b747788c505b27e2a9c71eeaff44401ef7702c 51f0b53b901a08196830c73c2fef6d991033d634 Rajapandiyan <rajapandiyan1163@gmail.com> 1706977143 +0530	commit: home navbar add in canvas in right in home
+51f0b53b901a08196830c73c2fef6d991033d634 1c8e4f4d85e758fe64563c7d80650d9cbc4e49f0 Rajapandiyan <rajapandiyan1163@gmail.com> 1706977238 +0530	commit: product navbar add in canvas in right in home
+1c8e4f4d85e758fe64563c7d80650d9cbc4e49f0 e5f6e19a0611b30cdf554162b4795154b44b2f30 Rajapandiyan <rajapandiyan1163@gmail.com> 1706977469 +0530	commit: add tabindex to tabIndex
+e5f6e19a0611b30cdf554162b4795154b44b2f30 243a404401bdea76a2518932e8a2d43b30b2592b Rajapandiyan <rajapandiyan1163@gmail.com> 1707020212 +0530	commit: offer box alignment and footer add
+243a404401bdea76a2518932e8a2d43b30b2592b 984860752f7d5990da7ed0190d625632e868f93e Rajapandiyan <rajapandiyan1163@gmail.com> 1707023758 +0530	commit: search data share product commponenets
+984860752f7d5990da7ed0190d625632e868f93e 83f9d538161033e272258a155255c2692be26213 Rajapandiyan <rajapandiyan1163@gmail.com> 1707023860 +0530	commit (amend): search data share product commponenets
+83f9d538161033e272258a155255c2692be26213 6755ca248cd14f46eb7ee8ecb0a40e882059efdd Rajapandiyan <rajapandiyan1163@gmail.com> 1707025881 +0530	commit: show search product and filter option of intial stage
+6755ca248cd14f46eb7ee8ecb0a40e882059efdd d804c7c0cfc7594f4f6fa6deca02f8372a6d34b8 Rajapandiyan <rajapandiyan1163@gmail.com> 1707029449 +0530	commit: login and register add componenet
+d804c7c0cfc7594f4f6fa6deca02f8372a6d34b8 e4bb818324b02ebbb07f2aea92276bd85a4caef9 Rajapandiyan <rajapandiyan1163@gmail.com> 1707032370 +0530	commit: Login page alignment in center
+e4bb818324b02ebbb07f2aea92276bd85a4caef9 4a8ba62bd5bf6f02171035bcb629b085a040c629 Rajapandiyan <rajapandiyan1163@gmail.com> 1707032457 +0530	commit (amend): Login page alignment in center
+4a8ba62bd5bf6f02171035bcb629b085a040c629 059ed982b1f0504da6fef3e2b7cddd21e3883228 Rajapandiyan <rajapandiyan1163@gmail.com> 1707033375 +0530	commit: register page alignment work
+059ed982b1f0504da6fef3e2b7cddd21e3883228 d75d79f566f52da2de3e5d98e482813865257aee Rajapandiyan <rajapandiyan1163@gmail.com> 1707034088 +0530	commit: remove login and rgister navbar
+d75d79f566f52da2de3e5d98e482813865257aee ff6790912b6bb3b75b5d6d292940daec86b2078e Rajapandiyan <rajapandiyan1163@gmail.com> 1707034901 +0530	commit: regiter alignment in margin top
+ff6790912b6bb3b75b5d6d292940daec86b2078e b9949f5bf795c16b58690cd2b5cc1ca4871de943 Rajapandiyan <rajapandiyan1163@gmail.com> 1707035018 +0530	commit (amend): regiter alignment in margin top
+b9949f5bf795c16b58690cd2b5cc1ca4871de943 488629d1b2415167e61073fc2de4342605dae506 Rajapandiyan <rajapandiyan1163@gmail.com> 1707035350 +0530	commit (amend): regiter alignment in margin top and col-10 to col-11
+488629d1b2415167e61073fc2de4342605dae506 78b1b7c894c57a2690f9efba915525d3ccaff2c4 Rajapandiyan <rajapandiyan1163@gmail.com> 1707035866 +0530	commit (amend): regiter alignment in margin top and col-10 to col-11
+78b1b7c894c57a2690f9efba915525d3ccaff2c4 879bfd9bd1a236e97fad2f4e95942ec2e2ba84b4 Rajapandiyan <rajapandiyan1163@gmail.com> 1707035899 +0530	commit (amend): regiter alignment in margin top and col-10 to col-11
+879bfd9bd1a236e97fad2f4e95942ec2e2ba84b4 18ed4f20057b734f3fe3bbe5d712c2219fa491a6 Rajapandiyan <rajapandiyan1163@gmail.com> 1707036195 +0530	commit (amend): regiter alignment in margin top and col-10 to col-11
+18ed4f20057b734f3fe3bbe5d712c2219fa491a6 cf48492e350c99b461ed5f2348e9c1873f01e07e Rajapandiyan <rajapandiyan1163@gmail.com> 1707036853 +0530	commit (amend): regiter alignment in margin top and col-10 to col-11 and alert remove
+cf48492e350c99b461ed5f2348e9c1873f01e07e 9693e37343209bc70bcd8300e9e4bb42442fcdd6 Rajapandiyan <rajapandiyan1163@gmail.com> 1707040034 +0530	commit: Login page and register page navbar
+9693e37343209bc70bcd8300e9e4bb42442fcdd6 ec2493efa0ff8f86e9ad9c718f16f67d28cc99d7 Rajapandiyan <rajapandiyan1163@gmail.com> 1707040143 +0530	commit: Login page and register page navbar and button me-3 and in navbar Log $ Reg
+ec2493efa0ff8f86e9ad9c718f16f67d28cc99d7 398c7eb0a22e14223585ba9705776bd98b92ba24 Rajapandiyan <rajapandiyan1163@gmail.com> 1707040323 +0530	commit (amend): Login page and register page navbar and button me-3 and in navbar Log $ Reg
+398c7eb0a22e14223585ba9705776bd98b92ba24 d96a2ae0c3f30ecac3b94bbf403cf00f5fd81ba5 Rajapandiyan <rajapandiyan1163@gmail.com> 1707042454 +0530	commit: login page center alignment work
+d96a2ae0c3f30ecac3b94bbf403cf00f5fd81ba5 7b5ef526b7174f4ebbea11ce6650bad8c27c8a83 Rajapandiyan <rajapandiyan1163@gmail.com> 1707043232 +0530	commit: login add email and password margin top
+7b5ef526b7174f4ebbea11ce6650bad8c27c8a83 a1b03f9d5057b1d72f5823f1fa273ac4027b2169 Rajapandiyan <rajapandiyan1163@gmail.com> 1707057885 +0530	commit: login and register col-md-9 to col-md-7
+a1b03f9d5057b1d72f5823f1fa273ac4027b2169 cac3d4ff5e3f430453f32e9a48b5afe7ad35102b Rajapandiyan <rajapandiyan1163@gmail.com> 1707058933 +0530	commit: remove margin top in login page of email and pass
+cac3d4ff5e3f430453f32e9a48b5afe7ad35102b 31a1473bfbe0fd38b219b449dcdc76d3305eb7fd Rajapandiyan <rajapandiyan1163@gmail.com> 1707061095 +0530	commit: login alignment
+31a1473bfbe0fd38b219b449dcdc76d3305eb7fd 557f1f3f3acd08d0e6c6a99d3200e200008b1216 Rajapandiyan <rajapandiyan1163@gmail.com> 1707065454 +0530	commit: addmin component add in navbar for home page
+557f1f3f3acd08d0e6c6a99d3200e200008b1216 755bac0cf2da02a06fb585a473c5915b0ed9e04e Rajapandiyan <rajapandiyan1163@gmail.com> 1707065917 +0530	commit: navbar resposive add
+755bac0cf2da02a06fb585a473c5915b0ed9e04e 3c0043751f9c077a45aa7bb132c057f987b2f76f Rajapandiyan <rajapandiyan1163@gmail.com> 1707067061 +0530	commit: dashbord button resposive
+3c0043751f9c077a45aa7bb132c057f987b2f76f 998a14145451196ae16145e28258195c8760c500 Rajapandiyan <rajapandiyan1163@gmail.com> 1707107816 +0530	commit: admin work button
+998a14145451196ae16145e28258195c8760c500 647e97fb93ac9213b0386eaa49e126e30a1ceca7 Rajapandiyan <rajapandiyan1163@gmail.com> 1707112592 +0530	commit: home navbar work as admin page move
+647e97fb93ac9213b0386eaa49e126e30a1ceca7 191084324317b9b30db417f81cb06064b3e6aa29 Rajapandiyan <rajapandiyan1163@gmail.com> 1707113253 +0530	commit (amend): home navbar work as admin page move
+191084324317b9b30db417f81cb06064b3e6aa29 34290d28e2355342727124120788bc033db969c8 Rajapandiyan <rajapandiyan1163@gmail.com> 1707121596 +0530	commit: home navbar aligment work
+34290d28e2355342727124120788bc033db969c8 48f45ff2c44d8aa75e1086e91171bf8ebaf1bcb5 Rajapandiyan <rajapandiyan1163@gmail.com> 1707122541 +0530	commit (amend): home navbar aligment work
+48f45ff2c44d8aa75e1086e91171bf8ebaf1bcb5 28705913a76be906866dfed9cb0b2648bb4c72f2 Rajapandiyan <rajapandiyan1163@gmail.com> 1707129171 +0530	commit: admin page designed in order addproduct feedback
+28705913a76be906866dfed9cb0b2648bb4c72f2 a04ca4bec52444c333d97a4b8e937e71e8869089 Rajapandiyan <rajapandiyan1163@gmail.com> 1707130456 +0530	commit: admin navbar ajustment
+a04ca4bec52444c333d97a4b8e937e71e8869089 bdc5acb08648f188cf243d888ed0b3df12aa04e4 Rajapandiyan <rajapandiyan1163@gmail.com> 1707132748 +0530	commit: admin page alignment work
+bdc5acb08648f188cf243d888ed0b3df12aa04e4 1ca89d34c9d6c934c6a48d742b2738c1221adc15 Rajapandiyan <rajapandiyan1163@gmail.com> 1707141829 +0530	commit: admin secure
+1ca89d34c9d6c934c6a48d742b2738c1221adc15 15c15d585de41f6b0694092e4c4bd8d727fbed80 Rajapandiyan <rajapandiyan1163@gmail.com> 1707145411 +0530	commit: add product detail get form also ready in 45%
+15c15d585de41f6b0694092e4c4bd8d727fbed80 ef7a46083a9b56b316d71417cde9f79dbe8654c3 Rajapandiyan <rajapandiyan1163@gmail.com> 1707147625 +0530	commit: product add in webpage componet added
+ef7a46083a9b56b316d71417cde9f79dbe8654c3 2ff029df6ac6cd9d129265784d1f7ad0e1aab38d Rajapandiyan <rajapandiyan1163@gmail.com> 1707205241 +0530	commit: add product option set
+2ff029df6ac6cd9d129265784d1f7ad0e1aab38d 86e9a53609b4d792adefba4c816e6f230d0ccb23 Rajapandiyan <rajapandiyan1163@gmail.com> 1707206615 +0530	commit: product upload button cancel
+86e9a53609b4d792adefba4c816e6f230d0ccb23 afe2e1500ce702eff6b47bc085be512c15938c7e Rajapandiyan <rajapandiyan1163@gmail.com> 1707207620 +0530	commit: discount rate calculte
+afe2e1500ce702eff6b47bc085be512c15938c7e 53c3448c540dab2932a44b9e27a56f5a4591d94a Rajapandiyan <rajapandiyan1163@gmail.com> 1707208516 +0530	commit: add oroduct image w-100
+53c3448c540dab2932a44b9e27a56f5a4591d94a feabd7e780ffc29a19912daa525d0fc342f96df8 Rajapandiyan <rajapandiyan1163@gmail.com> 1707208690 +0530	commit (amend): add oroduct image w-100
+feabd7e780ffc29a19912daa525d0fc342f96df8 eb66e4e2600d11a2988ea86d04cfcc1816629495 Rajapandiyan <rajapandiyan1163@gmail.com> 1707234538 +0530	commit: add almost complete in 70%
+eb66e4e2600d11a2988ea86d04cfcc1816629495 30699b80a37a39d7e2032161d8a0cda0ea88c0d3 Rajapandiyan <rajapandiyan1163@gmail.com> 1707237686 +0530	commit: add product probelm solve
+30699b80a37a39d7e2032161d8a0cda0ea88c0d3 39dc7ba4ba5ad543bf313c7f418faf3debdab41b Rajapandiyan <rajapandiyan1163@gmail.com> 1707238188 +0530	commit: add product output is responsive set
+39dc7ba4ba5ad543bf313c7f418faf3debdab41b 94ba0b287f8c5092034e0d16a83016b88ea7f656 Rajapandiyan <rajapandiyan1163@gmail.com> 1707282548 +0530	commit: addproduct page old value of product get new value add problem solve
+94ba0b287f8c5092034e0d16a83016b88ea7f656 e54986371ff2d3953d25eb9da2aaa6c3e447ef02 Rajapandiyan <rajapandiyan1163@gmail.com> 1707286819 +0530	commit: search in product for not find set solution
+e54986371ff2d3953d25eb9da2aaa6c3e447ef02 86ea2e475d428742d320996d8efacc002bbfaa82 Rajapandiyan <rajapandiyan1163@gmail.com> 1707292702 +0530	commit: add product in website
+86ea2e475d428742d320996d8efacc002bbfaa82 da15043c6c622c65a678d9150c958a5f73666bb9 Rajapandiyan <rajapandiyan1163@gmail.com> 1707298819 +0530	commit: search card and search bar
+da15043c6c622c65a678d9150c958a5f73666bb9 63cf31af0b6686612846d9f006d46d5785e55fa5 Rajapandiyan <rajapandiyan1163@gmail.com> 1707303029 +0530	commit: product list hole copy get
+63cf31af0b6686612846d9f006d46d5785e55fa5 8396bc2c049e75ab3e1107e1aeafc9c7d2988d6b Rajapandiyan <rajapandiyan1163@gmail.com> 1707313595 +0530	commit: loading add in product page
+8396bc2c049e75ab3e1107e1aeafc9c7d2988d6b 5d16b7521948d5a092415d8017cea2a9e8bd66c0 Rajapandiyan <rajapandiyan1163@gmail.com> 1707316228 +0530	commit: product resposive img set
+5d16b7521948d5a092415d8017cea2a9e8bd66c0 8a47f0a37c49556fad7bb308154bfda880d378fd Rajapandiyan <rajapandiyan1163@gmail.com> 1707316769 +0530	commit: Product show data modify in redux data share
+8a47f0a37c49556fad7bb308154bfda880d378fd f79a24c6a5aa375a7a1cd1f137d8685c0683b001 Rajapandiyan <rajapandiyan1163@gmail.com> 1707321772 +0530	commit: home search
+f79a24c6a5aa375a7a1cd1f137d8685c0683b001 120c81ddb6e61c9ce12d6fd97a02ad7fc5cae3e2 Rajapandiyan <rajapandiyan1163@gmail.com> 1707322576 +0530	commit: search product and card click work procces sucess
+120c81ddb6e61c9ce12d6fd97a02ad7fc5cae3e2 a00d49cca329947bed0e35ebfbe9f9b4ccb78277 Rajapandiyan <rajapandiyan1163@gmail.com> 1707368402 +0530	commit: product img responsive set
+a00d49cca329947bed0e35ebfbe9f9b4ccb78277 395f798c158edd73621c16706d3db1b8c73e68d6 Rajapandiyan <rajapandiyan1163@gmail.com> 1707381501 +0530	commit: home search and prodcut page search work success
+395f798c158edd73621c16706d3db1b8c73e68d6 5461914bcbe281950a1917bbd443f80846cf7344 Rajapandiyan <rajapandiyan1163@gmail.com> 1707383059 +0530	commit: product search show first full product next filer probelm solve
+5461914bcbe281950a1917bbd443f80846cf7344 de2282141027c3f191ccad8fd8c7119823935b39 Rajapandiyan <rajapandiyan1163@gmail.com> 1707385773 +0530	commit: Home Navabar and Product Navbar postion top
+de2282141027c3f191ccad8fd8c7119823935b39 c160000120a07f784bbd1d7fbd5dd42e32611e1c Rajapandiyan <rajapandiyan1163@gmail.com> 1707387691 +0530	commit: carousel margin top add responsive
+c160000120a07f784bbd1d7fbd5dd42e32611e1c f44f6025eb8771a1a05a8d2980d871d314815f8d Rajapandiyan <rajapandiyan1163@gmail.com> 1707388439 +0530	commit: remove style
+f44f6025eb8771a1a05a8d2980d871d314815f8d 45199736c0500fe16fd372454621f185f1a9d04b Rajapandiyan <rajapandiyan1163@gmail.com> 1707389358 +0530	commit: product margin top add
+45199736c0500fe16fd372454621f185f1a9d04b 2ec13ec67e019af28e35dcd19668050817b4e340 Rajapandiyan <rajapandiyan1163@gmail.com> 1707400246 +0530	commit: product navbar and home navbar margin top resposive
+2ec13ec67e019af28e35dcd19668050817b4e340 b1ca7cd9bd08933344ababba84562c776c594711 Rajapandiyan <rajapandiyan1163@gmail.com> 1707401930 +0530	commit: remove check condition load
+b1ca7cd9bd08933344ababba84562c776c594711 fe51a1f34eab0398feec8ecd528814512fcf035c Rajapandiyan <rajapandiyan1163@gmail.com> 1707404305 +0530	commit: home navbar data add in name and email
+fe51a1f34eab0398feec8ecd528814512fcf035c 1db42890d10d5fe254ff6a5864b4cdefbde8b9d0 Rajapandiyan <rajapandiyan1163@gmail.com> 1707459278 +0530	commit: search algorithms write to work and one work balance of first how full next filter problem
+1db42890d10d5fe254ff6a5864b4cdefbde8b9d0 3c30a117ba58f075e49a87a82ed73ab21c4b7f61 Rajapandiyan <rajapandiyan1163@gmail.com> 1707459817 +0530	commit: search problem solve
+3c30a117ba58f075e49a87a82ed73ab21c4b7f61 2931d970f91673db312a549d8e8e1471331557e7 Rajapandiyan <rajapandiyan1163@gmail.com> 1707473519 +0530	commit: user order and owner view order
+2931d970f91673db312a549d8e8e1471331557e7 5d42b0ef721bc4a975a239e6ff071a76d23cd2e4 Rajapandiyan <rajapandiyan1163@gmail.com> 1707493637 +0530	commit: check Buy product in Register or Login message
+5d42b0ef721bc4a975a239e6ff071a76d23cd2e4 91ca648f344db2093d808adb08216fb2fc0c483a Rajapandiyan <rajapandiyan1163@gmail.com> 1707494291 +0530	commit: order page loading set
+91ca648f344db2093d808adb08216fb2fc0c483a 1e8096f064312e0bebc2d612c743749678ea4c77 Rajapandiyan <rajapandiyan1163@gmail.com> 1707494950 +0530	commit: product not found message message set
+1e8096f064312e0bebc2d612c743749678ea4c77 4c73aef9320e73996549f1fdd6853cbd478f1644 Rajapandiyan <rajapandiyan1163@gmail.com> 1707496295 +0530	commit: product page product not valid message added
+4c73aef9320e73996549f1fdd6853cbd478f1644 67a0c8e0bf5e6707bd64d17618ca0f6ae8b0689f Rajapandiyan <rajapandiyan1163@gmail.com> 1707498754 +0530	commit: log out process sucess
+67a0c8e0bf5e6707bd64d17618ca0f6ae8b0689f d985ad438141bd7d94b47749f5a80a0b0c80c175 Rajapandiyan <rajapandiyan1163@gmail.com> 1707540913 +0530	commit: logout page work and add card added in home navbar
+d985ad438141bd7d94b47749f5a80a0b0c80c175 0d34bf1964f96f0a0ad27d16800ba930ee17c961 Rajapandiyan <rajapandiyan1163@gmail.com> 1707557928 +0530	commit: Proudct details off canvas work
+0d34bf1964f96f0a0ad27d16800ba930ee17c961 f0e3851a08b364282bbc2208c000870c99de2f89 Rajapandiyan <rajapandiyan1163@gmail.com> 1707560672 +0530	commit: add card component added
+f0e3851a08b364282bbc2208c000870c99de2f89 f6cd92b24eb2c2a1036a47c07ff30eb78e89a869 Rajapandiyan <rajapandiyan1163@gmail.com> 1707645690 +0530	commit: add card work id send add page and re search loading set
+f6cd92b24eb2c2a1036a47c07ff30eb78e89a869 5ef2bf7bbcf4e7b265e78ffe9426349dec643761 Rajapandiyan <rajapandiyan1163@gmail.com> 1707648755 +0530	commit: addcard data get
