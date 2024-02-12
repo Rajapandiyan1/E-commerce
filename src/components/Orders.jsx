@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { reset } from './data/ProductdataStore';
 
 function Orders() {
   let [orders,setOrders]=useState([]);
+  let dis=useDispatch()
   let [load,isloading]=useState(true);
   let [valid,isvalid]=useState(true);
   useEffect(()=>{
@@ -14,13 +17,13 @@ function Orders() {
                 headers:{
                     'Content-Type':'application/json'
                 }
-            }).then((data)=>{return data.json()}).then((data)=>{setOrders([...data]); isloading(false)})
+            }).then((data)=>{return data.json()}).then((data)=>{ return data}).then((data)=>{setOrders([...data]); isloading(false)})
             if(orders.length > 0){
               isvalid(true)
             }else{
               isvalid(false)
             }
-  },[orders])
+  },[])
   return (
     <div className='row'>
       {!valid && !load && <div className='col-12 d-flex justify-content-center align-items-center'  style={{height:'100vh'}}>Invalid Order</div>}

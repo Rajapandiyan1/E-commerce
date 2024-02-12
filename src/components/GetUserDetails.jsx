@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { datas } from './Api/Getdata'
 import { userData } from './Api/Post';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { reset } from './data/ProductdataStore';
 function GetUserDetails({pdl}) {
     let [loginEmail,setLoginEmail]=useState('')
     let [submit,setsubmit]=useState(false);
+    let dis=useDispatch()
     let navs=useNavigate()
     useEffect(()=>{
         let token=datas();
@@ -25,6 +28,8 @@ setLoginEmail()
                     'Content-Type':'application/json'
                 }
             }).then((data)=>{return data.json()}).then((data)=>{
+                
+                dis(reset(0));
                 setuserdata({fullname:'',email:'',phone:'',address:''});
                 navs('/E-commerce/')
             }).finally(()=>{

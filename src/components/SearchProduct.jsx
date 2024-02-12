@@ -32,7 +32,6 @@ export default function SearchProduct({prud,load}) {
     }
   }
   function addcs(data) {
-    console.log(data)
     Pstore(addcar(data.id))
   }
   return (

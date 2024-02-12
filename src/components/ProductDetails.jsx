@@ -5,12 +5,13 @@ import GetUserDetails from './GetUserDetails'
 import { adminCheck } from './Api/Getdata'
 import { CheckAdmin } from './data/CheckAdmin'
 function ProductDetails() {
-    let dataforProduct=useSelector((data)=>{return data.ProductDetails[0]})
+    let dataforProduct=useSelector((data)=>{ let d= data.ProductDetails[0]; return d})
     let [admin,setadmins]=useState(false)
     let homes=useNavigate()
   let userdata=useSelector((data)=>{ return data.userdataof})
     useEffect(()=>{
-        CheckAdmin(setadmins)
+        CheckAdmin(setadmins);
+        console.log(dataforProduct)
     },[])
     function logout(params) {
       localStorage.removeItem('Token')
@@ -29,12 +30,12 @@ function ProductDetails() {
           <i className="fa fa-bars text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight1" style={{fontSize:'25px'}}></i>
         </div>
          
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight1" aria-labelledby="offcanvasRightLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasRightLabel">{(userdata[0]!='') ?  userdata[0].name : 'User'} {admin && <span className='badge text-bg-success'>Owner</span>}</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasRight1" aria-labelledby="offcanvasRightLabel">
+  <div className="offcanvas-header">
+    <h5 className="offcanvas-title" id="offcanvasRightLabel">{(userdata[0]!='') ?  userdata[0].name : 'User'} {admin && <span className='badge text-bg-success'>Owner</span>}</h5>
+    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div class="offcanvas-body">
+  <div className="offcanvas-body">
     <h6>{userdata[0].email}</h6>
   <button onClick={()=>{logout()}} className="btn btn-warning">Log out</button>
   </div>
@@ -42,22 +43,29 @@ function ProductDetails() {
     </div>
     
 </div>
-<div className="row">
+
+    </div>
+<div className="row border mt-3" style={{height:'230px',overflowY:'scroll'}}>
+{dataforProduct.map((data,id)=>{
+  return <div className="col-12 mt-2 mb-2" key={id}>
+    <div className="row">
 
 
 <div className="col-5 d-flex align-items-center col-md-3  col-sm-4 col-lg-3">
-        <img src={dataforProduct.url}  className='ratioa w-100'  alt="" />
+        <img src={data.url}  className='ratioa w-100'  alt="" />
       </div>
       
       <div className="col-7 col-md-9 col-sm-8 col-lg-9">
-      <div className='memo-text-1'><span className='memo-text-1'>Product  : </span>{dataforProduct.product}</div>
+      <div className='memo-text-1'><span className='memo-text-1'>Product  : </span>{data.product}</div>
 
-     <div className='mt-1 memo-text-1'><span className='memo-text-1'>Product Rate : </span>{dataforProduct.rate}</div>
-    <div  className='mt-1 memo-text-1'><span className='memo-text-1'>Offer percentage : </span>{Math.round(dataforProduct.offer)} % </div><div className='mt-1 memo-text-1'><span className='memo-text-1'>Discount Rate : </span>{Math.round(dataforProduct.discountRate)}</div>
+     <div className='mt-1 memo-text-1'><span className='memo-text-1'>Product Rate : </span>{data.rate}</div>
+    <div  className='mt-1 memo-text-1'><span className='memo-text-1'>Offer percentage : </span>{Math.round(data.offer)} % </div><div className='mt-1 memo-text-1'><span className='memo-text-1'>Discount Rate : </span>{Math.round(data.discountRate)}</div>
+    <div className='mt-1 memo-text-1'> Quantity : {data.Quan}</div>
                 </div>
-</div>
-
     </div>
+  </div>
+})}
+</div>
     <GetUserDetails pdl={dataforProduct}/>
     </>
   )
