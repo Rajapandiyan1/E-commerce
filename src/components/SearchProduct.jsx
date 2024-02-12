@@ -32,7 +32,11 @@ export default function SearchProduct({prud,load}) {
     }
   }
   function addcs(data) {
-    Pstore(addcar(data.id))
+    if(Authen()){
+      Pstore(addcar(data.id))
+    }else{
+      setShow(true)
+    }
   }
   return (
     <div className='col-12 col-lg-12'>
