@@ -2,15 +2,48 @@ import React, { useEffect, useState } from 'react'
 import { Authen } from './Api/Autho';
 import { userData } from './Api/Post';
 import { datas } from './Api/Getdata';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { setUserdata } from './data/Userdata';
+import { useDispatch } from 'react-redux';
 
 function MyOrder() {
     let [login,setlogin]=useState(false);
     let [mrord,setmy]=useState([]);
-    let [load,isloading]=useState(true)
+    let [load,isloading]=useState(true);
+    let nav=useNavigate()
+  let [admin,setadmin]=useState(false);
+  let [log,islog]=useState(false)
+  let [userd,setusers]=useState(['','']);
+  let usdata=useDispatch()
     let emails;
+    async  function logout(params) {
+        localStorage.removeItem('Token');
+        localStorage.removeItem('Dashboard');
+        if(Authen()){
+            islog(true)
+            setadmin(true)
+        }
+        else{
+            setadmin(false)
+            islog(false)
+        }
+    }
     useEffect(()=>{
         isloading(true)
+        
+     async function user(params) {
+            
+        let data=datas()
+        if(data){
+           await userData(data).then((data)=>{ return data.users[0]}).then((data)=>{ 
+           setusers([data.displayName,data.email]); usdata(setUserdata({name:data.displayName,email:data.email}))}).catch((e)=>{ console.log(e)})
+        }
+        if(!Authen()){
+            localStorage.removeItem('Dashboard')
+            setadmin(false)
+        }
+    }
+      user()
         if(Authen()){
             setlogin(true);
             let token=datas()
@@ -35,6 +68,31 @@ function MyOrder() {
     },[])
   return (
     <div className='row mt-5'>
+          
+<div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasBottom7" aria-labelledby="offcanvasBottomLabel">
+  <div className="offcanvas-header">
+    <h5 className="offcanvas-title" id="offcanvasBottomLabel">{(userd[0]!='') ?  userd[0] : 'User'} {admin && <span className='badge text-bg-success'>Owner</span>}</h5>
+    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div className="offcanvas-body small">
+    {log && <h5>{userd[1]}</h5>}
+    {!log && <div className='row mt-5'>
+        <div className="col-6 "><button onClick={()=>{ nav('/Register')}} className="btn btn-success">Register</button></div>
+        <div className="col-6 "><button onClick={()=>{ nav('/login')}} className="btn btn-primary">Login</button></div>
+    </div> }
+    <div>{log && <button onClick={()=>{logout()}} className="btn btn-warning">Log out</button>}</div>
+  </div>
+</div>
+        <div className="col-12">
+        <div className="row bg-dark pt-3 pb-3 fixed-top">
+          <div className="col-2 ms-3">
+            <i className='fa text-white fa-arrow-left' onClick={()=>{nav('/E-commerce/')}} style={{fontSize:'23px'}}></i>
+          </div>
+          <div className="col-1 ms-auto">
+            <i className="fa fa-bars text-white" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom7" style={{fontSize:'23px'}}></i>
+          </div>
+        </div>
+      </div>
         {!login && <div className='col-12 d-flex justify-content-center align-items-center' style={{height:'100vh'}}>
             <div className="row">
                 <div className="col-12">
