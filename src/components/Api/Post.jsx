@@ -31,7 +31,6 @@ export let userData=async (token)=>{
   }).then((dat)=>{    
     return dat.json()
      }).then((data)=>{
-      console.log(data);
       return data
      })
 }

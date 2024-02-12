@@ -5,13 +5,13 @@ import GetUserDetails from './GetUserDetails'
 import { adminCheck } from './Api/Getdata'
 import { CheckAdmin } from './data/CheckAdmin'
 function ProductDetails() {
-    let dataforProduct=useSelector((data)=>{ let d= data.ProductDetails[0]; return d})
+    let dataforProduct=useSelector((data)=>{console.log(data[0]); let d= data.ProductDetails[0]; console.log(d); return d})
     let [admin,setadmins]=useState(false)
     let homes=useNavigate()
   let userdata=useSelector((data)=>{ return data.userdataof})
     useEffect(()=>{
+      console.log(dataforProduct)
         CheckAdmin(setadmins);
-        console.log(dataforProduct)
     },[])
     function logout(params) {
       localStorage.removeItem('Token')

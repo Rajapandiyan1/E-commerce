@@ -29,11 +29,11 @@ setLoginEmail()
                 }
             }).then((data)=>{return data.json()}).then((data)=>{
                 
-                dis(reset(0));
                 setuserdata({fullname:'',email:'',phone:'',address:''});
                 navs('/E-commerce/')
             }).finally(()=>{
-              setsubmit(false)
+                setsubmit(false)
+                
             })
         }
     }
