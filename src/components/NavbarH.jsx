@@ -47,9 +47,10 @@ export default function NavbarH() {
         async function user(params) {
             
             let data=datas();
+            console.log(data)
             if(data){
                await userData(data).then((data)=>{ return data.users[0]}).then((data)=>{ 
-               setusers([data.displayName,data.email]); usdata(setUserdata({name:data.displayName,email:data.email}))})
+               setusers([data.displayName,data.email]); usdata(setUserdata({name:data.displayName,email:data.email}))}).catch((e)=>{ console.log(e)})
             }
             if(!Authen()){
                 localStorage.removeItem('Dashboard')
@@ -75,7 +76,6 @@ senddata(setData(['Search',fil]))
         localStorage.removeItem('Token');
         localStorage.removeItem('Dashboard');
         if(Authen()){
-            alert('not')
             islog(true)
             setadmin(true)
         }

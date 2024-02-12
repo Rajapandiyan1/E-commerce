@@ -36,7 +36,6 @@ let Pstore=useDispatch()
   function submits(params) {
     
     if(Authen()){
-console.log(carddataof)
       Pstore(setProducts(carddataof))
       nav('/productdetails')
     }
