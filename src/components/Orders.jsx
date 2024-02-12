@@ -3,13 +3,14 @@ import { useDispatch } from 'react-redux';
 import { reset } from './data/ProductdataStore';
 
 function Orders() {
-  let [count,setcount]=useState(0);
+  // let [count,setcount]=useState(0);
+  let count=0;
   let [orders,setOrders]=useState([]);
   let dis=useDispatch()
   let [load,isloading]=useState(true);
   let [valid,isvalid]=useState(true);
   useEffect(()=>{
-
+count=0;
   },[orders])
   useEffect(()=>{
     
@@ -18,7 +19,11 @@ function Orders() {
                 headers:{
                     'Content-Type':'application/json'
                 }
-            }).then((data)=>{return data.json()}).then((data)=>{console.log(data); return data}).then((data)=>{setOrders([...data]); isloading(false)})
+            }).then((data)=>{return data.json()}).then((data)=>{console.log(data); return data}).then((data)=>{setOrders([...data]); return data; }).then((data)=>{
+              console.log(data)
+            }).finally(()=>{
+              isloading(false)
+            })
             if(orders.length > 0){
               isvalid(true)
             }else{
@@ -34,8 +39,7 @@ function Orders() {
       
     {!load && valid && orders.map((data,id)=>{
      return data.Product.map((daas)=>{
-//  {setcount((prev)=> {return prev+1 })}
-    return <div className="col-12 mt-2 mb-2 border pt-2 pb-2" key={count}>
+    return <div className="col-12 mt-2 mb-2 border pt-2 pb-2" key={count++}>
         <div className="row">
           <div className="col-4">
             <img className='w-100 ratioa' src={daas.url} alt="" />
