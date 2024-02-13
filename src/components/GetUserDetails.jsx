@@ -47,7 +47,7 @@ function GetUserDetails({pdl}) {
                 
             })
         }else{
-            console.log(dar)
+            // console.log(dar)
             setsubmit(false)
         }
     }

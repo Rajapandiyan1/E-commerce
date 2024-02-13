@@ -5,12 +5,12 @@ import GetUserDetails from './GetUserDetails'
 import { adminCheck } from './Api/Getdata'
 import { CheckAdmin } from './data/CheckAdmin'
 function ProductDetails() {
-    let dataforProduct=useSelector((data)=>{console.log(data[0]); let d= data.ProductDetails[0]; console.log(d); return d})
+    let dataforProduct=useSelector((data)=>{let d= data.ProductDetails[0]; console.log(d); return d})
     let [admin,setadmins]=useState(false)
     let homes=useNavigate()
   let userdata=useSelector((data)=>{ return data.userdataof})
     useEffect(()=>{
-      console.log(dataforProduct)
+      // console.log(dataforProduct)
         CheckAdmin(setadmins);
     },[])
     function logout(params) {
@@ -48,19 +48,19 @@ function ProductDetails() {
 <div className="row border mt-5 rounded-3" style={{height:'200px',overflowY:'scroll'}}>
 {dataforProduct.map((data,id)=>{
   return <div className="col-12 mt-2 mb-2" key={id}>
-    <div className="row">
+    <div className="row justify-content-center">
 
 
-<div className="col-5 d-flex align-items-center col-md-3  col-sm-4 col-lg-3">
+<div className="col-6 col-sm-5 d-flex align-items-center col-lg-3">
         <img src={data.url}  className='ratioa w-100'  alt="" />
       </div>
       
-      <div className="col-7 col-md-9 col-sm-8 col-lg-9">
+      <div className="col-12 col-sm-7  col-lg-9">
       <div className='memo-text-1'><span className='memo-text-1'>Product  : </span>{data.product}</div>
 
      <div className='mt-1 memo-text-1'><span className='memo-text-1'>Product Rate : </span>{data.rate}</div>
     <div  className='mt-1 memo-text-1'><span className='memo-text-1'>Offer percentage : </span>{Math.round(data.offer)} % </div><div className='mt-1 memo-text-1'><span className='memo-text-1'>Discount Rate : </span>{Math.round(data.discountRate)}</div>
-    <div className='mt-1 memo-text-1'> Quantity : {data.Quan}</div>
+    <div className='mt-1 memo-text-1'> Quantity :  {(data.Quan==undefined ? 1 :data.Quan )}</div>
                 </div>
     </div>
   </div>
