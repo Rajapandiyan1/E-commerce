@@ -21,52 +21,53 @@ export default function NavbarH() {
         fildatas(data)
     }
     useEffect(()=>{
-        if(Authen()){
-            islog(true)
-         }
-         else{
-             islog(false)
-         }
-        function admins(params) {
-            
-            CheckAdmin(setadmin)
-        }
-        admins();
-        if(log){
-            setinres('col-8 col-sm-9 col-md-10')
-        
-        }else{
-            setinres(false)
-            setadmin(false)
-            setinres('col-12')
-        }
-        if(admin){
-            setinres('col-8 col-sm-9 col-md-10')
-        
-        }else{
-            setinres(false)
-            setadmin(false)
-            setinres('col-10 col-sm-10 col-md-11')
-        }
+      
     },[admin])
+   
     useEffect(()=>{
-
-        async function user(params) {
-        let data=datas();
-        if(data){
-            await userData(data).then((data)=>{ console.log(data); return data})
-           await userData(data).then((data)=>{ 
-            // console.log(data);
-            let dat=[data.displayName,data.email];
-           setusers(dat);
-           let obj= {name:data.displayName,email:data.email}; 
-           usdata(setUserdata(obj)); return data}).catch((e)=>{ console.log(e)})
-        }
-    }
-    user()
-    },[])
-    useEffect(()=>{
+        async function adm(params) {
+            if(Authen()){
+                islog(true)
+             }
+             else{
+                 islog(false)
+             }
+            function admins(params) {
+                
+                CheckAdmin(setadmin)
+            }
+            admins();
+            if(log){
+                setinres('col-8 col-sm-9 col-md-10')
             
+            }else{
+                setinres(false)
+                setadmin(false)
+                setinres('col-12')
+            }
+            if(admin){
+                setinres('col-8 col-sm-9 col-md-10')
+            
+            }else{
+                setinres(false)
+                setadmin(false)
+                setinres('col-10 col-sm-10 col-md-11')
+            } 
+        }
+        adm()
+        async function user(params) {
+            let datas1=datas();
+            if(datas1){
+               await userData(datas1).then((data)=>{ 
+                // console.log(data);
+                let dat=[data.displayName,data.email];
+               setusers(dat);
+               let obj= {name:data.displayName,email:data.email}; 
+               usdata(setUserdata(obj)); return data}).catch((e)=>{ console.log(e)})
+            }
+        }
+        user();
+        user()
             if(!Authen()){
                 localStorage.removeItem('Dashboard')
                 setadmin(false)
