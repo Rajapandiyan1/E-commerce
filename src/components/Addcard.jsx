@@ -155,8 +155,8 @@ function rest(params) {
             <div className='' >Invalid data of addcards</div>
             </div>
       }
-    { valid &&  <div className='row mb-3 justify-content-end' style={{marginTop:'20px'}}>
-  <div className="col-5"><button onClick={()=>{ rest();  }} className="btn btn-danger">Reset All</button></div></div>}
+    { valid &&  <div className='row me-0 mb-3 pe-0 ' style={{marginTop:'20px'}}>
+  <div className="col-5 d-flex justify-content-end ms-auto me-0 pe-0"><button onClick={()=>{ rest();  }} className="btn-sm btn btn-danger">Reset All</button></div></div>}
 
        {  valid && carddataof.map((data,id)=>{
         return <div className="col-12"key={id}>
@@ -172,8 +172,11 @@ function rest(params) {
                 <div className="col-12 mt-2">
                   <div className='mt-2'><span>Product Rate : </span>{data.rate}</div><div className='mt-2'><span>Offer percentage : </span>{data.offer} % </div><div className='mt-2'><span>Discount Rate : </span>{data.discountRate}</div>
                 </div>
+                <div className="col-12">
+
+<label htmlFor="customRange2" className="form-label">Quantity : <span>{data.Quan}</span></label>
+                </div>
                 <div className="col-4">
-<label htmlFor="customRange2" className="form-label">Quantity : {data.Quan}</label>
 <input type="range" className="form-range" onInput={(e)=>{edits(id,e.target.value)}} defaultValue={1} min="1" max="5" id="customRange2"/>
 </div>
 <div className="col-12">
