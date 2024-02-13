@@ -152,10 +152,17 @@ function rest(params) {
         </Modal.Body>
          
       </Modal>
-      {!valid && <div className='col-12 d-flex justify-content-center align-items-center' style={{height:'100vh'}}>
+      {!valid && log && <div className='col-12 d-flex justify-content-center align-items-center' style={{height:'100vh'}}>
             <div className='' >Invalid data of addcards</div>
             </div>
       }
+      {!log && !valid  && <div className='col-12 d-flex justify-content-center align-items-center' style={{height:'100vh'}}>
+            <div className="row">
+                <div className="col-12">
+                    Alreary Account created Please <Link to={'/login'} className='text-decoration-none'>Login</Link> or <Link to={'/Register'} className='text-decoration-none'>Register</Link>
+                </div>
+            </div>
+            </div>}
     { valid &&  <div className='row me-0 mb-3 pe-0 ' style={{marginTop:'20px'}}>
   <div className="col-5 d-flex justify-content-end ms-auto me-0 pe-0"><button onClick={()=>{ rest();  }} className="btn-sm btn btn-danger">Reset All</button></div></div>}
 
