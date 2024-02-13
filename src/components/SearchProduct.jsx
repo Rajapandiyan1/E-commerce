@@ -47,12 +47,17 @@ export default function SearchProduct({prud,load}) {
   }
   return (
     <div className='col-12 col-lg-12'>
+      <div className="row">
+        <div className="col-12 d-flex justify-content-center">
       <Toast className='z' show={showToast} onClose={() => setShowToast(false)} delay={3000} autohide>
         <Toast.Header className='bg-success'>
           <strong className={`ms-auto text-white text-${toastType}`}>{toastType === 'success' ? 'Success' : 'Error'}</strong>
         </Toast.Header>
         <Toast.Body className='fw'>Add card Successfully </Toast.Body>
       </Toast>
+
+        </div>
+      </div>
       <Modal show={show} onHide={setShow}>
         <Modal.Header closeButton>
           <Modal.Title>Alert Message</Modal.Title>

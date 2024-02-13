@@ -53,12 +53,14 @@ function GetUserDetails({pdl}) {
     }
   return (
     <div className='row justify-content-center mb-5'>
+        <div className="col-12 d-flex justify-content-center">
         <Toast className='z' show={showToast} onClose={() => setShowToast(false)} delay={3000} autohide>
         <Toast.Header className='bg-success'>
           <strong className={`ms-auto text-white text-${toastType}`}>{toastType === 'success' ? 'Success' : 'Error'}</strong>
         </Toast.Header>
         <Toast.Body className='fw'>Order Successfully </Toast.Body>
       </Toast>
+        </div>
         <div className="col-12 mt-2 mb-2 col-lg-7 col-md-8">
             <h1>Order Details</h1>
         </div>

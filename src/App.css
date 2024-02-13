@@ -3,8 +3,15 @@
 color: bisque;
 }
 
-
-
+.z{
+  position: absolute;
+  z-index: 100;
+  width: 90% !important
+  /* left: 30vw; */
+}
+.fw{
+  font-weight:800;
+}
 .memo-text-m{
   font-size: medium;
 }
