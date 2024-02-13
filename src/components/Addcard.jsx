@@ -192,7 +192,7 @@ function rest(params) {
            
        }) }
        {  valid && <div className="col-12 mt-4 mb-4 d-flex justify-content-end">
-        <button className="btn-success btn me-5" onClick={()=>{ submits()}}>Buy</button>
+        <button className="btn-success btn me-2" onClick={()=>{ submits()}}>Buy</button>
        </div>}
     </div>
   )

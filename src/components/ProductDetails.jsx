@@ -45,7 +45,7 @@ function ProductDetails() {
 </div>
 
     </div>
-<div className="row border mt-3" style={{height:'230px',overflowY:'scroll'}}>
+<div className="row border mt-5 rounded-3" style={{height:'200px',overflowY:'scroll'}}>
 {dataforProduct.map((data,id)=>{
   return <div className="col-12 mt-2 mb-2" key={id}>
     <div className="row">
