@@ -67,7 +67,6 @@ export default function NavbarH() {
             }
         }
         user();
-        user()
             if(!Authen()){
                 localStorage.removeItem('Dashboard')
                 setadmin(false)
