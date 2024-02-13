@@ -170,7 +170,7 @@ function rest(params) {
                  <span>Product name : </span> {data.product}
                 </div>
                 <div className="col-12 mt-2">
-                  <div className='mt-2'><span>Product Rate : </span>{data.rate}</div><div className='mt-2'><span>Offer percentage : </span>{data.offer} % </div><div className='mt-2'><span>Discount Rate : </span>{data.discountRate}</div>
+                  <div className='mt-2'><span>Product Rate : </span>{data.rate}</div><div className='mt-2'><span>Offer percentage : </span>{data.offer} % </div><div className='mt-2'><span>Discount Rate : </span>{Math.round(data.discountRate)}</div>
                 </div>
                 <div className="col-12">
 

@@ -117,7 +117,7 @@ function MyOrder() {
      <span className='hov-text'>Product name : </span> {da.product}
     </div>
     <div className="col-12 mt-2">
-      <div className='mt-2'><span className='hov-text'>Product Rate : </span>{da.rate}</div><div className='mt-2'><span className='hov-text'>Offer percentage : </span>{da.offer} % </div><div className='mt-2'><span className='hov-text'>Discount Rate : </span>{da.discountRate}</div>
+      <div className='mt-2'><span className='hov-text'>Product Rate : </span>{da.rate}</div><div className='mt-2'><span className='hov-text'>Offer percentage : </span>{da.offer} % </div><div className='mt-2'><span className='hov-text'>Discount Rate : </span>{Math.round(da.discountRate)}</div>
     </div>
     <div className="col-12 mb-1">
       <span className='hov-text'>Quantity : <span>{da.Quan==undefined ? '1' : da.Quan}</span></span>
