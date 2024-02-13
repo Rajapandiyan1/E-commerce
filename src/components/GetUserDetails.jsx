@@ -11,6 +11,7 @@ function GetUserDetails({pdl}) {
     const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
   const [toastType, setToastType] = useState('');
+  let [checkdata,setcheck]=useState({name:false,email:false,phone:false,address:false});
     let dis=useDispatch();
     let dar=useSelector((data)=>{return data.ProductDetails})
     let navs=useNavigate()
@@ -23,8 +24,23 @@ function GetUserDetails({pdl}) {
     },[])
     let [userdata,setuserdata]=useState({fullname:'',email:'',phone:'',address:'',order:'Ordered',UserEmail:loginEmail})
     function submits(params) {
+        console.log(checkdata)
+        let cop;
+        setcheck({name:false,email:false,phone:false,address:false})
         let clone=userdata
         setsubmit(true)
+        if(clone.email==''){
+            setcheck((prev)=>{ return {...prev,email:true}})
+        }
+        if(clone.phone==''){
+            setcheck((prev)=>{ return {...prev,phone:true}})
+        }if(clone.address==''){
+            setcheck((prev)=>{ return {...prev,address:true}})
+        }if(clone.fullname==''){
+            setcheck((prev)=>{ return {...prev,name:true}})
+        }
+        setcheck((prev)=>{cop=prev;return prev });
+        console.log(cop)
         if(clone.address != '' && clone.fullname != '' && clone.email != '' && clone.phone != ''){
             fetch('https://65c0ebcbdc74300bce8cfdfb.mockapi.io/E-commerce/Orders',{
                 method:'POST',
@@ -47,7 +63,6 @@ function GetUserDetails({pdl}) {
                 
             })
         }else{
-            // console.log(dar)
             setsubmit(false)
         }
     }
@@ -69,24 +84,28 @@ function GetUserDetails({pdl}) {
         </div>
             <div className="col-12 col-md-8 col-lg-7">
                 <input type="text" disabled={submit} value={userdata.fullname} onInput={(e)=>{setuserdata((prev)=>{ return {...prev,fullname:e.target.value}})}} className="form-control border border-dark" />
+                {checkdata.name && <label className='form-label text-danger'> Enter your fullname</label>}
             </div>
             <div className="col-12 col-lg-7 col-md-8">
             <label htmlFor="" className="form-label">Mobile Number</label>
         </div>
             <div className="col-12 col-md-8 col-lg-7">
                 <input type="number" disabled={submit} value={userdata.phone} onInput={(e)=>{setuserdata((prev)=>{ return {...prev,phone:e.target.value}})}} className="form-control border border-dark" />
+                {checkdata.phone && <label className='form-lable text-danger'>Enter your phone number</label>}
             </div>
             <div className="col-12 col-lg-7 col-md-8">
             <label htmlFor="" className="form-label"> Email</label>
         </div>
             <div className="col-12 col-md-8 col-lg-7">
                 <input type="email" disabled={submit} value={userdata.email} onInput={(e)=>{setuserdata((prev)=>{ return {...prev,email:e.target.value}})}} className="form-control border border-dark" />
+                {checkdata.email && <label className='form-label text-danger'>Enter your email</label>}
             </div>
             <div className="col-12 col-lg-7 col-md-8">
             <label htmlFor="" className="form-label"> Address</label>
         </div>
             <div className="col-12 col-md-8 col-lg-7">
                 <textarea disabled={submit} value={userdata.address} onInput={(e)=>{setuserdata((prev)=>{ return {...prev,address:e.target.value}})}} className='form-control border-dark'></textarea>
+           {checkdata.address && <label className='form-label text-danger'>Enter your address</label>}
             </div>
             <div className="col-12 col-lg-7 col-md-8 mt-2 d-flex justify-content-end">
                 <button disabled={submit} onClick={()=>{submits()}} className="btn btn-success">

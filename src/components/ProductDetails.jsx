@@ -5,7 +5,7 @@ import GetUserDetails from './GetUserDetails'
 import { adminCheck } from './Api/Getdata'
 import { CheckAdmin } from './data/CheckAdmin'
 function ProductDetails() {
-    let dataforProduct=useSelector((data)=>{let d= data.ProductDetails[0]; console.log(d); return d})
+    let dataforProduct=useSelector((data)=>{let d= data.ProductDetails[0];  return d})
     let [admin,setadmins]=useState(false)
     let homes=useNavigate()
   let userdata=useSelector((data)=>{ return data.userdataof})
