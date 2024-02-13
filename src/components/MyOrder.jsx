@@ -105,22 +105,22 @@ function MyOrder() {
             </div>}
        {login && !load && mrord.map((data,id)=>{
            return data.Product.map((da,id)=>{
-                return <div className="col-12" key={id}> 
-                <div className="row">
+                return <div className="col-12 " key={id}> 
+                <div className="row border rounded hov-order  m-1">
 
-<div className="col-3">
+<div className="col-3 d-flex align-items-center">
 <img src={da.url} alt="" className='w-100 ratioa' />
 </div>
-<div className="col-9">
+<div className="col-9 hov-bg rounded-3">
   <div className="row">
     <div className="col-12 mt-2">
-     <span>Product name : </span> {da.product}
+     <span className='hov-text'>Product name : </span> {da.product}
     </div>
     <div className="col-12 mt-2">
-      <div className='mt-2'><span>Product Rate : </span>{da.rate}</div><div className='mt-2'><span>Offer percentage : </span>{da.offer} % </div><div className='mt-2'><span>Discount Rate : </span>{da.discountRate}</div>
+      <div className='mt-2'><span className='hov-text'>Product Rate : </span>{da.rate}</div><div className='mt-2'><span className='hov-text'>Offer percentage : </span>{da.offer} % </div><div className='mt-2'><span className='hov-text'>Discount Rate : </span>{da.discountRate}</div>
     </div>
-    <div className="col-12">
-      <span>Quantity : <span>{da.Quan==undefined ? '1' : da.Quan}</span></span>
+    <div className="col-12 mb-1">
+      <span className='hov-text'>Quantity : <span>{da.Quan==undefined ? '1' : da.Quan}</span></span>
     </div>
   </div>
 </div>

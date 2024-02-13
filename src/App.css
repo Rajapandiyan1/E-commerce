@@ -1,3 +1,10 @@
+.hov-order:hover > .hov-bg{
+  background: teal;
+color: bisque;
+}
+
+
+
 .memo-text-m{
   font-size: medium;
 }

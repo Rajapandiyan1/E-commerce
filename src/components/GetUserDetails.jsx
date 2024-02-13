@@ -51,25 +51,25 @@ function GetUserDetails({pdl}) {
             <label htmlFor="" className="form-label"> Full Name</label>
         </div>
             <div className="col-12 col-md-8 col-lg-7">
-                <input type="text" value={userdata.fullname} onInput={(e)=>{setuserdata((prev)=>{ return {...prev,fullname:e.target.value}})}} className="form-control border border-dark" />
+                <input type="text" disabled={submit} value={userdata.fullname} onInput={(e)=>{setuserdata((prev)=>{ return {...prev,fullname:e.target.value}})}} className="form-control border border-dark" />
             </div>
             <div className="col-12 col-lg-7 col-md-8">
             <label htmlFor="" className="form-label">Mobile Number</label>
         </div>
             <div className="col-12 col-md-8 col-lg-7">
-                <input type="number" value={userdata.phone} onInput={(e)=>{setuserdata((prev)=>{ return {...prev,phone:e.target.value}})}} className="form-control border border-dark" />
+                <input type="number" disabled={submit} value={userdata.phone} onInput={(e)=>{setuserdata((prev)=>{ return {...prev,phone:e.target.value}})}} className="form-control border border-dark" />
             </div>
             <div className="col-12 col-lg-7 col-md-8">
             <label htmlFor="" className="form-label"> Email</label>
         </div>
             <div className="col-12 col-md-8 col-lg-7">
-                <input type="email" value={userdata.email} onInput={(e)=>{setuserdata((prev)=>{ return {...prev,email:e.target.value}})}} className="form-control border border-dark" />
+                <input type="email" disabled={submit} value={userdata.email} onInput={(e)=>{setuserdata((prev)=>{ return {...prev,email:e.target.value}})}} className="form-control border border-dark" />
             </div>
             <div className="col-12 col-lg-7 col-md-8">
             <label htmlFor="" className="form-label"> Address</label>
         </div>
             <div className="col-12 col-md-8 col-lg-7">
-                <textarea value={userdata.address} onInput={(e)=>{setuserdata((prev)=>{ return {...prev,address:e.target.value}})}} className='form-control border-dark'></textarea>
+                <textarea disabled={submit} value={userdata.address} onInput={(e)=>{setuserdata((prev)=>{ return {...prev,address:e.target.value}})}} className='form-control border-dark'></textarea>
             </div>
             <div className="col-12 col-lg-7 col-md-8 mt-2 d-flex justify-content-end">
                 <button disabled={submit} onClick={()=>{submits()}} className="btn btn-success">
