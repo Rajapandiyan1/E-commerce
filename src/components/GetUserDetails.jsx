@@ -18,7 +18,7 @@ function GetUserDetails({pdl}) {
     useEffect(()=>{
         let token=datas();
         if(token){
-            userData(token).then((data)=>{ setLoginEmail(data.users[0].email)})
+            userData(token).then((data)=>{ setLoginEmail(data.email)})
         }
         
     },[])

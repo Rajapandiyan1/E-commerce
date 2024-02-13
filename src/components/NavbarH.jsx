@@ -54,8 +54,8 @@ export default function NavbarH() {
         async function user(params) {
         let data=datas();
         if(data){
-            await userData(data).then((data)=>{return data.users[0]}).then((data)=>{ console.log(data); return data})
-           await userData(data).then((data)=>{return data.users[0]}).then((data)=>{ 
+            await userData(data).then((data)=>{ console.log(data); return data})
+           await userData(data).then((data)=>{ 
             // console.log(data);
             let dat=[data.displayName,data.email];
            setusers(dat);
@@ -129,7 +129,7 @@ senddata(setData(['Search',fil]))
         
 <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
   <div className="offcanvas-header">
-    <h5 className="offcanvas-title" id="offcanvasBottomLabel">{(userd[0]!='') ?  userd[0] : 'User'} {admin && <span className='badge text-bg-success'>Owner</span>}</h5>
+    <h5 className="offcanvas-title" id="offcanvasBottomLabel">{(userd[0]!='' && log ) ?  userd[0] : 'User'} {admin && <span className='badge text-bg-success'>Owner</span>}</h5>
     <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div className="offcanvas-body small">
