@@ -93,7 +93,7 @@ function MyOrder() {
           </div>
         </div>
       </div>
-        {!login && <div className='col-12 d-flex justify-content-center align-items-center' style={{height:'100vh'}}>
+        {!login && load && <div className='col-12 d-flex justify-content-center align-items-center' style={{height:'100vh'}}>
             <div className="row">
                 <div className="col-12">
                     Alreary Account created Please <Link to={'/login'} className='text-decoration-none'>Login</Link> or <Link to={'/Register'} className='text-decoration-none'>Register</Link>
@@ -106,12 +106,12 @@ function MyOrder() {
        {login && !load && mrord.map((data,id)=>{
            return data.Product.map((da,id)=>{
                 return <div className="col-12 " key={id}> 
-                <div className="row border rounded hov-order  m-1">
+                <div className="row justify-content-center border rounded hov-order  m-1">
 
-<div className="col-3 d-flex align-items-center">
+<div className="col-6 col-sm-3 mt-3 mt-sm-0 d-flex align-items-center">
 <img src={da.url} alt="" className='w-100 ratioa' />
 </div>
-<div className="col-9 hov-bg rounded-3">
+<div className="col-12 col-sm-9 hov-bg rounded-3">
   <div className="row">
     <div className="col-12 mt-2">
      <span className='hov-text'>Product name : </span> {da.product}
