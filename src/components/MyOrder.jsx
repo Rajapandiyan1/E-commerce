@@ -114,7 +114,6 @@ function MyOrder() {
         { load && <div className='col-12 d-flex justify-content-center align-items-center' style={{height:'100vh'}}>
             <div className='spinner-border text-primary ' ></div>
             </div>}
-            {console.log(mrord)}
        {login && !load && mrord.map((data,id)=>{
            return data.Product.map((da,id)=>{
                 return <div className="col-12 " key={id}> 

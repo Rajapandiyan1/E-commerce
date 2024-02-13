@@ -40,7 +40,7 @@ export default function NavbarH() {
         }else{
             setinres(false)
             setadmin(false)
-            setinres('col-10 col-sm-10')
+            setinres('col-10 col-sm-10 col-md-11')
         }
     },[admin])
     useEffect(()=>{
@@ -100,7 +100,7 @@ senddata(setData(['Search',fil]))
                 Dashboard
             </button>
         </div> : <div onClick={()=>{moveProduct('/addcard')}} className='col-2 pe-0 ms-lg-1 d-none d-lg-flex col-sm-2 col-lg-1 mt-lg-1 mb-lg-1 order-lg-5 ps-0 justify-content-sm-center justify-content-center order-6 mt-1  d-flex align-items-center home-t'><i style={{fontSize:'20px'}} className="text-white fas fa-shopping-cart"></i></div>}
-            <div className="col-2 col-lg-1 ps-0 pe-0 col-sm-1 col-md-1  order-lg-5 mt-lg-1 mb-lg-1 order-4 mt-lg-0  mt-2 d-flex ms-1 justify-content-center align-items-center">
+            <div className="col-2  col-lg-1 ps-0 pe-0 col-sm-1 col-md-1  order-lg-5 mt-lg-1 mb-lg-1 order-4 mt-lg-0  mt-2 d-flex ms-1 justify-content-center align-items-center">
             <i className="fa fa-bars text-white" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" style={{fontSize:'24px'}}></i>
             </div>
         <div className={' col-lg-4  order-lg-2 order-5 mb-lg-1 mt-lg-1 justify-content-center align-items-center d-flex  mt-3 mb-2 '+inres}>
