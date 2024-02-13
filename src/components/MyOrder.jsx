@@ -67,7 +67,7 @@ function MyOrder() {
         })
     },[])
   return (
-    <div className='row mt-5'>
+    <div className='row ' style={{marginTop:'70px'}}>
           
 <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasBottom7" aria-labelledby="offcanvasBottomLabel">
   <div className="offcanvas-header">
@@ -84,11 +84,11 @@ function MyOrder() {
   </div>
 </div>
         <div className="col-12">
-        <div className="row bg-dark pt-3 pb-3 fixed-top">
+        <div className="row justify-content-between bg-dark pt-3 pb-3 fixed-top">
           <div className="col-2 ms-3">
             <i className='fa text-white fa-arrow-left' onClick={()=>{nav('/E-commerce/')}} style={{fontSize:'23px'}}></i>
           </div>
-          <div className="col-1 ms-auto">
+          <div className="col-1 me-5">
             <i className="fa fa-bars text-white" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom7" style={{fontSize:'23px'}}></i>
           </div>
         </div>
@@ -119,7 +119,9 @@ function MyOrder() {
     <div className="col-12 mt-2">
       <div className='mt-2'><span>Product Rate : </span>{da.rate}</div><div className='mt-2'><span>Offer percentage : </span>{da.offer} % </div><div className='mt-2'><span>Discount Rate : </span>{da.discountRate}</div>
     </div>
-    
+    <div className="col-12">
+      <span>Quantity : <span>{da.Quan==undefined ? '1' : da.Quan}</span></span>
+    </div>
   </div>
 </div>
 
