@@ -160,11 +160,11 @@ function rest(params) {
 
        {  valid && carddataof.map((data,id)=>{
         return <div className="col-12"key={id}>
-<div className="row">
-            <div className="col-3">
+<div className="row justify-content-center border m-1 rounded-3">
+            <div className="col-6 mt-3 mt-sm-0 col-sm-3 d-flex align-items-center">
 <img src={data.url} alt="" className='w-100 ratioa' />
             </div>
-            <div className="col-9">
+            <div className="col-12 col-sm-9">
               <div className="row">
                 <div className="col-12 mt-2">
                  <span>Product name : </span> {data.product}
@@ -176,11 +176,11 @@ function rest(params) {
 
 <label htmlFor="customRange2" className="form-label">Quantity : <span>{data.Quan}</span></label>
                 </div>
-                <div className="col-4">
+                <div className="col-8 col-md-6">
 <input type="range" className="form-range" onInput={(e)=>{edits(id,e.target.value)}} defaultValue={1} min="1" max="5" id="customRange2"/>
 </div>
-<div className="col-12">
-  <button className="btn btn-warning" onClick={()=>{Cancels(id)}}>Cancel</button>
+<div className="col-12 d-flex justify-content-end mb-3">
+  <button className="btn btn-warning btn-sm " onClick={()=>{Cancels(id)}}>Cancel</button>
 </div>
               </div>
             </div>
