@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import ProductDetails from './ProductDetails'
 import { useNavigate } from 'react-router-dom'
 import { setProduct, setProducts } from './data/ProductdataStore'
-import { Modal } from 'react-bootstrap';
+import { Modal, Toast } from 'react-bootstrap';
 import { Authen } from './Api/Autho'
 import { addcar } from './data/Addcards'
 export default function SearchProduct({prud,load}) {
@@ -12,6 +12,9 @@ export default function SearchProduct({prud,load}) {
   let [data,setdata]=useState([])
   const [show, setShow] = useState(false);
   let [valid,isvalid]=useState(false)
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
+  const [toastType, setToastType] = useState('');
   useEffect(()=>{
     if(prud.length > 0){
       isvalid(true)
@@ -31,9 +34,12 @@ export default function SearchProduct({prud,load}) {
       setShow(true);
     }
   }
-  function addcs(data) {
+  function addcs(data,message, type) {
     if(Authen()){
       // this line add in success or faild toast in add card
+      setToastMessage(message);
+    setToastType(type);
+    setShowToast(true);
       Pstore(addcar(data.id))
     }else{
       setShow(true)
@@ -41,6 +47,12 @@ export default function SearchProduct({prud,load}) {
   }
   return (
     <div className='col-12 col-lg-12'>
+      <Toast className='z' show={showToast} onClose={() => setShowToast(false)} delay={3000} autohide>
+        <Toast.Header className='bg-success'>
+          <strong className={`ms-auto text-white text-${toastType}`}>{toastType === 'success' ? 'Success' : 'Error'}</strong>
+        </Toast.Header>
+        <Toast.Body className='fw'>Add card Successfully </Toast.Body>
+      </Toast>
       <Modal show={show} onHide={setShow}>
         <Modal.Header closeButton>
           <Modal.Title>Alert Message</Modal.Title>
@@ -75,7 +87,7 @@ export default function SearchProduct({prud,load}) {
                 <button className="btn btn-primary  btn-sm w-100" onClick={()=>{ ProductDet(data)}}>Buy</button>
                   </div>
                   <div className="col-6">
-                <button className="btn btn-warning btn-sm w-100" onClick={()=>{addcs(data)}}>Add Card</button>
+                <button className="btn btn-warning btn-sm w-100"  onClick={()=>{addcs(data,'Success!', 'success')}}>Add Card</button>
                   </div>
                 </div>
     </div>})}

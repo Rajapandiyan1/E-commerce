@@ -1,4 +1,4 @@
-import { Modal } from 'react-bootstrap';
+import { Modal, Toast } from 'react-bootstrap';
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Authen } from './Api/Autho'
@@ -16,7 +16,8 @@ function Addcard() {
     let Holeproduc=useSelector((data)=>{ return data.HolePro[0]})
   let [carddataof,setcard]=useState([]);
   let [show,setShow]=useState(false);
-  let [valid,setvalid]=useState(true)
+  
+  let [valid,setvalid]=useState(false)
   let [userd,setusers]=useState(['','']);
   let [admin,setadmin]=useState(false);
   let [log,islog]=useState(false)
