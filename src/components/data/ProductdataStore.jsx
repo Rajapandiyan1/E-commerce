@@ -8,10 +8,8 @@ let productdataStore=createSlice({
             // state={...action.payload};
             state[0]=action.payload;
         },
-        reset:(state,action)=>{
-            state.length=0;
-        }
+        
     }
 })
 export let productdataStores=productdataStore.reducer;
-export let {setProducts,reset}=productdataStore.actions
+export let {setProducts}=productdataStore.actions

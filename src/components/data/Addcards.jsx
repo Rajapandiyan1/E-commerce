@@ -7,10 +7,13 @@ let add=createSlice({
         addcar:(state,action)=>{
 state.push(action.payload)
         },
-        remc:(state,action)=>{
-            state.splice(action.payload,0)
+        remo:(state,action)=>{
+            state.splice(action.payload,1)
+        },
+        reset:(state,action)=>{
+            state.length=0;
         }
     }
 })
 export let addcards=add.reducer;
-export let {addcar,remc}=add.actions;
+export let {addcar,remo,reset}=add.actions;

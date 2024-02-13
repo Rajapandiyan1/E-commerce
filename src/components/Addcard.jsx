@@ -2,12 +2,13 @@ import { Modal } from 'react-bootstrap';
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Authen } from './Api/Autho'
-import { setProducts } from './data/ProductdataStore'
+import {  setProducts } from './data/ProductdataStore'
 import { Link, useNavigate } from 'react-router-dom'
 import { CheckAdmin } from './data/CheckAdmin';
 import { setUserdata } from './data/Userdata';
 import { userData } from './Api/Post';
 import { datas } from './Api/Getdata';
+import { addcards, remc, remo, reset } from './data/Addcards';
 
 
 function Addcard() {
@@ -22,16 +23,28 @@ function Addcard() {
   let usdata=useDispatch()
 
 let Pstore=useDispatch()
+useEffect(()=>{
+  if(carddata.length > 0){
+    
+     setvalid(true)
+   }
+   else{
+     setvalid(false)
+   }
+},[carddataof])
+
   let nav=useNavigate()
-    useEffect(()=>{
-      CheckAdmin(setadmin)
-      if(Authen()){
-        islog(true)
-     }
-     else{
-         islog(false)
-     }
-     async function user(params) {
+  useEffect(()=>{
+    //  console.log(carddata)
+    CheckAdmin(setadmin)
+    if(Authen()){
+      islog(true)
+    }
+    else{
+      islog(false)
+    }
+    async function user(params) {
+       
             
       let data=datas()
       if(data){
@@ -50,17 +63,14 @@ let Pstore=useDispatch()
       for(let d of data){
         clone.push(d[0])
       }
+     
       let carddatas=clone.map((datas)=>{ let d= Holeproduc.filter((data)=>{ return (data.id==datas)});
+      
       return d[0];
     });
    let d2= carddatas.map((data1,id)=>{ return {...data1,Quan:1}})
  setcard(d2)
- setcard((prev)=>{
-  if(prev.length > 0){
-    setvalid(false)
-  }
-  return prev
- })
+
   },[])
   function submits(params) {
     
@@ -90,8 +100,18 @@ let Pstore=useDispatch()
         islog(false)
     }
 }
+function Cancels(id) {
+  setcard((prev)=>{ return prev.filter((data,ids)=>{ return (ids!=id)})});
+  
+  usdata(remo(id))
+  setvalid(false)
+}
+function rest(params) {
+  usdata(reset()); 
+  setcard([])
+}
   return (
-    <div className='row'>
+    <div className='row ' style={{marginTop:'70px'}}>
         
 <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasBottom6" aria-labelledby="offcanvasBottomLabel">
   <div className="offcanvas-header">
@@ -109,11 +129,11 @@ let Pstore=useDispatch()
   </div>
 </div>
       <div className="col-12">
-        <div className="row bg-dark pt-3 pb-3 fixed-top">
+        <div className="row justify-content-between bg-dark pt-3 pb-3 fixed-top">
           <div className="col-2 ms-3">
             <i className='fa text-white fa-arrow-left' onClick={()=>{nav('/E-commerce/')}} style={{fontSize:'23px'}}></i>
           </div>
-          <div className="col-1 ms-auto">
+          <div className="col-1 me-5">
             <i className="fa fa-bars text-white" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom6" style={{fontSize:'23px'}}></i>
           </div>
         </div>
@@ -131,14 +151,16 @@ let Pstore=useDispatch()
         </Modal.Body>
          
       </Modal>
-      {valid && <div className='col-12 d-flex justify-content-center align-items-center' style={{height:'100vh'}}>
+      {!valid && <div className='col-12 d-flex justify-content-center align-items-center' style={{height:'100vh'}}>
             <div className='' >Invalid data of addcards</div>
             </div>
       }
-       {  !valid && carddataof.map((data,id)=>{
+    { valid &&  <div className='row mb-3 justify-content-end' style={{marginTop:'20px'}}>
+  <div className="col-5"><button onClick={()=>{ rest();  }} className="btn btn-danger">Reset All</button></div></div>}
+
+       {  valid && carddataof.map((data,id)=>{
         return <div className="col-12"key={id}>
 <div className="row">
-
             <div className="col-3">
 <img src={data.url} alt="" className='w-100 ratioa' />
             </div>
@@ -154,6 +176,9 @@ let Pstore=useDispatch()
 <label htmlFor="customRange2" className="form-label">Quantity : {data.Quan}</label>
 <input type="range" className="form-range" onInput={(e)=>{edits(id,e.target.value)}} defaultValue={1} min="1" max="5" id="customRange2"/>
 </div>
+<div className="col-12">
+  <button className="btn btn-warning" onClick={()=>{Cancels(id)}}>Cancel</button>
+</div>
               </div>
             </div>
             
@@ -163,7 +188,7 @@ let Pstore=useDispatch()
         
            
        }) }
-       {  !valid && <div className="col-12 mt-4 mb-4 d-flex justify-content-end">
+       {  valid && <div className="col-12 mt-4 mb-4 d-flex justify-content-end">
         <button className="btn-success btn me-5" onClick={()=>{ submits()}}>Buy</button>
        </div>}
     </div>

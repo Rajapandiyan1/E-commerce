@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { datas } from './Api/Getdata'
 import { userData } from './Api/Post';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { reset } from './data/ProductdataStore';
+import { useDispatch, useSelector } from 'react-redux';
+// import { reset } from './data/ProductdataStore';
 function GetUserDetails({pdl}) {
     let [loginEmail,setLoginEmail]=useState('')
     let [submit,setsubmit]=useState(false);
-    let dis=useDispatch()
+    let dis=useDispatch();
+    let dar=useSelector((data)=>{return data.ProductDetails})
     let navs=useNavigate()
     useEffect(()=>{
         let token=datas();
@@ -30,11 +31,15 @@ function GetUserDetails({pdl}) {
             }).then((data)=>{return data.json()}).then((data)=>{
                 
                 setuserdata({fullname:'',email:'',phone:'',address:''});
+                // This line write to Toast message of success and faild
                 navs('/E-commerce/')
             }).finally(()=>{
                 setsubmit(false)
                 
             })
+        }else{
+            console.log(dar)
+            setsubmit(false)
         }
     }
   return (

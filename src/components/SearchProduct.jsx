@@ -33,6 +33,7 @@ export default function SearchProduct({prud,load}) {
   }
   function addcs(data) {
     if(Authen()){
+      // this line add in success or faild toast in add card
       Pstore(addcar(data.id))
     }else{
       setShow(true)
