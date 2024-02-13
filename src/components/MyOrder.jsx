@@ -10,6 +10,7 @@ function MyOrder() {
     let [login,setlogin]=useState(false);
     let [mrord,setmy]=useState([]);
     let [load,isloading]=useState(true);
+    let [valid,setvalid]=useState(false);
     let nav=useNavigate()
   let [admin,setadmin]=useState(false);
   let [log,islog]=useState(false)
@@ -30,7 +31,12 @@ function MyOrder() {
     }
     useEffect(()=>{
         isloading(true)
-        
+        if(mrord.length > 0){
+          setvalid(true)
+        }
+        else{
+          setvalid(false)
+        }
      async function user(params) {
             
         let data=datas()
@@ -93,7 +99,12 @@ function MyOrder() {
           </div>
         </div>
       </div>
-        {!login && load && <div className='col-12 d-flex justify-content-center align-items-center' style={{height:'100vh'}}>
+      {!valid && login && !load && <div className='row'>
+        <div className='col-12 d-flex justify-content-center align-items-center' style={{height:'100vh'}}>
+          Invalid Order
+        </div>
+      </div> }
+        {!login && !valid && !load && <div className='col-12 d-flex justify-content-center align-items-center' style={{height:'100vh'}}>
             <div className="row">
                 <div className="col-12">
                     Alreary Account created Please <Link to={'/login'} className='text-decoration-none'>Login</Link> or <Link to={'/Register'} className='text-decoration-none'>Register</Link>
@@ -103,6 +114,7 @@ function MyOrder() {
         { load && <div className='col-12 d-flex justify-content-center align-items-center' style={{height:'100vh'}}>
             <div className='spinner-border text-primary ' ></div>
             </div>}
+            {console.log(mrord)}
        {login && !load && mrord.map((data,id)=>{
            return data.Product.map((da,id)=>{
                 return <div className="col-12 " key={id}> 
