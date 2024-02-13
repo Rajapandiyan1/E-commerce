@@ -13,6 +13,7 @@ function ProductDetails() {
       // console.log(dataforProduct)
         CheckAdmin(setadmins);
     },[])
+    
     function logout(params) {
       localStorage.removeItem('Token')
       homes('/E-commerce')

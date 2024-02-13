@@ -50,23 +50,27 @@ export default function NavbarH() {
         }
     },[admin])
     useEffect(()=>{
+
         async function user(params) {
+        let data=datas();
+        if(data){
+            await userData(data).then((data)=>{return data.users[0]}).then((data)=>{ console.log(data); return data})
+           await userData(data).then((data)=>{return data.users[0]}).then((data)=>{ 
+            // console.log(data);
+            let dat=[data.displayName,data.email];
+           setusers(dat);
+           let obj= {name:data.displayName,email:data.email}; 
+           usdata(setUserdata(obj)); return data}).catch((e)=>{ console.log(e)})
+        }
+    }
+    user()
+    },[])
+    useEffect(()=>{
             
-            let data=datas();
-            if(data){
-               await userData(data).then((data)=>{return data.users[0]}).then((data)=>{ 
-                // console.log(data);
-                let dat=[data.displayName,data.email];
-               setusers(dat);
-               let obj= {name:data.displayName,email:data.email}; 
-               usdata(setUserdata(obj)); return data}).catch((e)=>{ console.log(e)})
-            }
             if(!Authen()){
                 localStorage.removeItem('Dashboard')
                 setadmin(false)
             }
-        }
-          user()
         
     let token= localStorage.getItem('Dashboard');
     },[admin])

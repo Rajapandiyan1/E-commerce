@@ -1,5 +1,5 @@
 const API_BASE='https://identitytoolkit.googleapis.com/v1'
-const POST='/accounts:signUp?key=AIzaSyBgwHS0_ECn3ApnGvwH_e23EzWFvynNUTs';
+const POST='/accounts:signUp?key=AIzaSyDL5f22UyXyw2lqw4p9YQj6Kdl23VKPxQQ';
 const Log='/accounts:signInWithPassword'
 export let Post= async(data)=>
  {
@@ -12,7 +12,7 @@ export let Post= async(data)=>
   }).then((dat)=>{ return dat.json()})
 }
 export let Logi=async (data)=>{
-  return fetch(`${API_BASE}${Log}?key=AIzaSyBgwHS0_ECn3ApnGvwH_e23EzWFvynNUTs`,{
+  return fetch(`${API_BASE}${Log}?key=AIzaSyDL5f22UyXyw2lqw4p9YQj6Kdl23VKPxQQ`,{
     method:"POST",
     body:JSON.stringify(data),
     headers:{
@@ -22,7 +22,7 @@ export let Logi=async (data)=>{
      return dat.json()})
 }
 export let userData=async (token)=>{
-  return fetch(`https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyBgwHS0_ECn3ApnGvwH_e23EzWFvynNUTs`,{
+  return fetch(`https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyDL5f22UyXyw2lqw4p9YQj6Kdl23VKPxQQ`,{
     method:"POST",
     body:JSON.stringify({"idToken":token}),
     headers:{
