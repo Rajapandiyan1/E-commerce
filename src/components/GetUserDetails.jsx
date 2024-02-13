@@ -3,10 +3,14 @@ import { datas } from './Api/Getdata'
 import { userData } from './Api/Post';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { Toast } from 'react-bootstrap';
 // import { reset } from './data/ProductdataStore';
 function GetUserDetails({pdl}) {
     let [loginEmail,setLoginEmail]=useState('')
     let [submit,setsubmit]=useState(false);
+    const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
+  const [toastType, setToastType] = useState('');
     let dis=useDispatch();
     let dar=useSelector((data)=>{return data.ProductDetails})
     let navs=useNavigate()
@@ -30,11 +34,16 @@ function GetUserDetails({pdl}) {
                 }
             }).then((data)=>{return data.json()}).then((data)=>{
                 
-                setuserdata({fullname:'',email:'',phone:'',address:''});
+                setToastMessage('Success!');
+                setToastType('success');
+                setShowToast(true);
                 // This line write to Toast message of success and faild
-                navs('/E-commerce/')
             }).finally(()=>{
-                setsubmit(false)
+                setTimeout(() => {
+                    navs('/E-commerce/')
+                    setuserdata({fullname:'',email:'',phone:'',address:''});
+                    setsubmit(false)
+                }, 4000);
                 
             })
         }else{
@@ -44,6 +53,12 @@ function GetUserDetails({pdl}) {
     }
   return (
     <div className='row justify-content-center mb-5'>
+        <Toast className='z' show={showToast} onClose={() => setShowToast(false)} delay={3000} autohide>
+        <Toast.Header className='bg-success'>
+          <strong className={`ms-auto text-white text-${toastType}`}>{toastType === 'success' ? 'Success' : 'Error'}</strong>
+        </Toast.Header>
+        <Toast.Body className='fw'>Order Successfully </Toast.Body>
+      </Toast>
         <div className="col-12 mt-2 mb-2 col-lg-7 col-md-8">
             <h1>Order Details</h1>
         </div>
