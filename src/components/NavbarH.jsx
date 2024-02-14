@@ -25,7 +25,9 @@ export default function NavbarH() {
     },[admin])
    
     useEffect(()=>{
+        
         async function adm(params) {
+            
             if(Authen()){
                 islog(true)
              }
@@ -59,11 +61,10 @@ export default function NavbarH() {
             let datas1=datas();
             if(datas1){
                await userData(datas1).then((data)=>{ 
-                // console.log(data);
                 let dat=[data.displayName,data.email];
                setusers(dat);
                let obj= {name:data.displayName,email:data.email}; 
-               usdata(setUserdata(obj)); return data}).catch((e)=>{ console.log(e)})
+               usdata(setUserdata(obj));return data}).catch((e)=>{ console.log(e)})
             }
         }
         user();

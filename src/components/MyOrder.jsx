@@ -41,8 +41,8 @@ function MyOrder() {
             
         let data=datas()
         if(data){
-           await userData(data).then((data)=>{ return data.users[0]}).then((data)=>{ 
-           setusers([data.displayName,data.email]); usdata(setUserdata({name:data.displayName,email:data.email}))}).catch((e)=>{ console.log(e)})
+           await userData(data).then((data)=>{return data}).then((data)=>{ 
+           setusers([data.displayName,data.email]); usdata(setUserdata({name:data.displayName,email:data.email})); return data}).catch((e)=>{ console.log(e)})
         }
         if(!Authen()){
             localStorage.removeItem('Dashboard')
@@ -53,24 +53,38 @@ function MyOrder() {
         if(Authen()){
             setlogin(true);
             let token=datas()
-            userData(token).then((data)=>{ emails=data.users[0].email })
+            userData(token).then((data)=>{ emails=data.email })
         }
         else{
             setlogin(false)
         }
-        fetch('https://65c0ebcbdc74300bce8cfdfb.mockapi.io/E-commerce/Orders',{
+        
+    },[])
+    useEffect(()=>{
+      async function filte(params) {
+       await fetch('https://65c0ebcbdc74300bce8cfdfb.mockapi.io/E-commerce/Orders',{
             method:'GET',
             headers:{
                 'Content-Type':'application/json'
             }
         }).then((data)=>{ return data.json()}).then((dat)=>{
+          
             return dat.filter((datass)=>{ if(datass.UserEmail==emails){
                 let d=datass.Product;
                 return d;
             }});
-        }).then((data)=>{ setmy(data)}).finally(()=>{
+        }).then((data)=>{console.log(data);
+          if(data.length > 0){
+            setvalid(true)
+          }
+          else{
+            setvalid(false)
+          }
+          setmy(data); return data}).finally(()=>{
             isloading(false)
         })
+      }
+      filte()
     },[])
   return (
     <div className='row ' style={{marginTop:'70px'}}>
@@ -112,6 +126,7 @@ function MyOrder() {
             </div>
             </div>}
         { load && <div className='col-12 d-flex justify-content-center align-items-center' style={{height:'100vh'}}>
+
             <div className='spinner-border text-primary ' ></div>
             </div>}
        {login && !load && mrord.map((data,id)=>{
