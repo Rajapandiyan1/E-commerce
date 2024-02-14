@@ -5,6 +5,7 @@ import { datas } from './Api/Getdata';
 import { Link, useNavigate } from 'react-router-dom';
 import { setUserdata } from './data/Userdata';
 import { useDispatch } from 'react-redux';
+import { CheckAdmin } from './data/CheckAdmin';
 
 function MyOrder() {
     let [login,setlogin]=useState(false);
@@ -22,15 +23,15 @@ function MyOrder() {
         localStorage.removeItem('Dashboard');
         if(Authen()){
             islog(true)
-            setadmin(true)
         }
         else{
-            setadmin(false)
+            // setadmin(false)
             islog(false)
         }
     }
     useEffect(()=>{
         isloading(true)
+        CheckAdmin(setadmin);
         // if(mrord.length > 0){
         //   setvalid(true)
         // }

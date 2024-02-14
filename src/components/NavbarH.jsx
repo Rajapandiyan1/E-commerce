@@ -22,17 +22,39 @@ export default function NavbarH() {
     }
     useEffect(()=>{
       function adminandlog (){
+          CheckAdmin(setadmin)
         if(Authen()){
             islog(true)
         }
         else{
             islog(false)
         }
-        CheckAdmin(setadmin)
         if(!Authen()){
             localStorage.removeItem('Dashboard')
-            setadmin(false)
+            // setadmin(false)
         }
+        islog((prev)=>{
+            if(prev){
+                setinres('col-8 col-sm-9 col-md-9')
+                
+            }else{
+                setinres('col-9')
+            }
+            return prev
+        })
+        setadmin((prev)=>{
+
+            if(prev){
+
+                setinres('col-8 col-sm-9 col-md-9')
+            
+            }else{
+                console.log('not adf')
+                setadmin(false)
+                setinres('col-9 col-sm-9 col-md-10')
+            } 
+            return prev
+        })
       }
       adminandlog()
     },[])
@@ -40,23 +62,18 @@ export default function NavbarH() {
     useEffect(()=>{
 
         async function resposive(params) {
-            
-            if(log){
-                setinres('col-8 col-sm-9 col-md-10')
-            
-            }else{
-                setinres(false)
-                setadmin(false)
-                setinres('col-12')
+        // setadmin((prev)=>{
+        //     console.log(prev);
+        //     return prev
+        // })
+            if(Authen()){
+                islog(true)
             }
-            if(admin){
-                setinres('col-8 col-sm-9 col-md-10')
+            else{
+                islog(false)
+            }
             
-            }else{
-                setinres(false)
-                setadmin(false)
-                setinres('col-10 col-sm-10 col-md-10')
-            } 
+            console.log(admin)
         }
         resposive()
     },[])
@@ -95,7 +112,7 @@ export default function NavbarH() {
         }
     }
   return (
-    <div className="row bg-dark fixed-top me-0 ms-0 border  pb-1">
+    <div className="row bg-dark fixed-top me-0 ms-0 border justify-content-between  pb-1">
         <div className="memo-text-m ps-2 ps-sm-3 col-5 col-sm-5 col-lg-2 order-1 order-lg-1  mt-lg-0 justify-content-start align-items-center home-t d-flex   text-white mt-2">
             E-commerce
         </div>
@@ -106,7 +123,7 @@ export default function NavbarH() {
         <div className="col-2 col-sm-1 col-lg-1 pe-0 ps-0  col-md-1 col-lg-1 order-3 order-lg-4 mt-lg-0 justify-content-md-end justify-content-center align-items-center  d-flex mt-2">
             <button className="btn btn-primary btn-sm home-t" onClick={()=> {moveProduct('/login')}}>
             Login</button></div>
-            {(admin) ? <div className="col-4 pe-0 ms-lg-4 d-none d-lg-flex col-sm-2 col-lg-1 mt-lg-1 mb-lg-1 order-lg-5 ps-0 justify-content-sm-end justify-content-center order-6 mt-1  d-flex align-items-center home-t">
+            {(admin) ? <div className="col-2 pe-0 ms-lg-4 d-none d-lg-flex justify-content-end col-sm-2 col-lg-1 mt-lg-1 mb-lg-1 order-lg-5 ps-0 justify-content-sm-end justify-content-center order-6 mt-1  d-flex align-items-center home-t">
             <button onClick={()=>{moveProduct('/admin') }} className="btn home-t btn-primary btn-sm memo-text">
                 Dashboard
             </button>
@@ -123,7 +140,7 @@ export default function NavbarH() {
             </div>
 
         </div>
-        {(admin) ? <div className="col-4 pe-3 col-md-2 d-lg-none col-sm-3 col-lg-1 mt-lg-1 mb-lg-1 order-lg-5 ps-0 justify-content-center  order-5 mt-1  d-flex align-items-center">
+        {(admin) ? <div className="col-3 pe-5 col-md-2 d-lg-none col-sm-3 col-lg-1 mt-lg-1 mb-lg-1 order-lg-5 ps-0 justify-content-center  order-5 mt-1  d-flex align-items-center">
             <button onClick={()=>{moveProduct('/admin') }} className="btn btn-primary btn-sm memo-text home-t">
                 Dashboard
             </button>

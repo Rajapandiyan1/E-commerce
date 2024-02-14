@@ -6,6 +6,7 @@ export  let CheckAdmin=async (admin)=>{
     if(token){
        await userData(token).then((data)=>{
             if(data.email=='rajapandiyan444@gmail.com'){
+                console.log('admin')
             admin(true);
         }
          return data})
