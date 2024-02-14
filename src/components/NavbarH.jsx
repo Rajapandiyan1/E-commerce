@@ -21,24 +21,26 @@ export default function NavbarH() {
         fildatas(data)
     }
     useEffect(()=>{
-      
-    },[admin])
+      function adminandlog (){
+        if(Authen()){
+            islog(true)
+        }
+        else{
+            islog(false)
+        }
+        CheckAdmin(setadmin)
+        if(!Authen()){
+            localStorage.removeItem('Dashboard')
+            setadmin(false)
+        }
+      }
+      adminandlog()
+    },[])
    
     useEffect(()=>{
-        
-        async function adm(params) {
+
+        async function resposive(params) {
             
-            if(Authen()){
-                islog(true)
-             }
-             else{
-                 islog(false)
-             }
-            function admins(params) {
-                
-                CheckAdmin(setadmin)
-            }
-            admins();
             if(log){
                 setinres('col-8 col-sm-9 col-md-10')
             
@@ -56,7 +58,11 @@ export default function NavbarH() {
                 setinres('col-10 col-sm-10 col-md-11')
             } 
         }
-        adm()
+        resposive()
+    },[])
+
+    useEffect(()=>{
+        
         async function user(params) {
             let datas1=datas();
             if(datas1){
@@ -68,19 +74,14 @@ export default function NavbarH() {
             }
         }
         user();
-            if(!Authen()){
-                localStorage.removeItem('Dashboard')
-                setadmin(false)
-            }
-        
-    let token= localStorage.getItem('Dashboard');
     },[admin])
+        
     function Prod(params) {
         if(fil != ''){
-senddata(setData(['Search',fil]))
-        
+        senddata(setData(['Search',fil]))
         moveProduct('/Product')}
     }
+    // log out step
    async  function logout(params) {
         localStorage.removeItem('Token');
         localStorage.removeItem('Dashboard');
