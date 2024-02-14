@@ -31,12 +31,12 @@ function MyOrder() {
     }
     useEffect(()=>{
         isloading(true)
-        if(mrord.length > 0){
-          setvalid(true)
-        }
-        else{
-          setvalid(false)
-        }
+        // if(mrord.length > 0){
+        //   setvalid(true)
+        // }
+        // else{
+        //   setvalid(false)
+        // }
      async function user(params) {
             
         let data=datas()
@@ -73,7 +73,7 @@ function MyOrder() {
                 let d=datass.Product;
                 return d;
             }});
-        }).then((data)=>{console.log(data);
+        }).then((data)=>{
           if(data.length > 0){
             setvalid(true)
           }

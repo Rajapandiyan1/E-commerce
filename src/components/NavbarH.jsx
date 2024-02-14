@@ -55,7 +55,7 @@ export default function NavbarH() {
             }else{
                 setinres(false)
                 setadmin(false)
-                setinres('col-10 col-sm-10 col-md-11')
+                setinres('col-10 col-sm-10 col-md-10')
             } 
         }
         resposive()
