@@ -38,8 +38,8 @@ count=0;
   },[])
   return (
     <div className='row'>
-      {!valid && !load && <div className='col-12 d-flex justify-content-center align-items-center'  style={{height:'100vh'}}>Invalid Order</div>}
-     {load &&<div className="col-12 d-flex justify-content-center align-items-center" style={{height:'75vh',marginTop:'10vh'}}>
+      {!valid && !load && <div className='col-12 d-flex justify-content-center align-items-center'  style={{minHeight:'100vh'}}>Invalid Order</div>}
+     {load &&<div className="col-12 d-flex justify-content-center align-items-center" style={{minHeight:'75vh',marginTop:'10vh'}}>
    <span className='spinner-border text-success'></span>
       </div>}
       

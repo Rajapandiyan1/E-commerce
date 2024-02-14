@@ -94,12 +94,13 @@ useEffect(()=>{
     localStorage.removeItem('Dashboard');
     if(Authen()){
         islog(true)
-        setadmin(true)
+        // setadmin(true)
     }
     else{
         setadmin(false)
         islog(false)
     }
+    
 }
 function Cancels(id) {
   setcard((prev)=>{ return prev.filter((data,ids)=>{ return (ids!=id)})});
@@ -112,7 +113,7 @@ function rest(params) {
   setcard([])
 }
   return (
-    <div className='row ' style={{marginTop:'70px'}}>
+    <div className='row ' style={{marginTop:'70px',minHeight:'80vh'}}>
         
 <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasBottom6" aria-labelledby="offcanvasBottomLabel">
   <div className="offcanvas-header">
@@ -152,7 +153,7 @@ function rest(params) {
         </Modal.Body>
          
       </Modal>
-      {!valid && log && <div className='col-12 d-flex justify-content-center align-items-center' style={{height:'100vh'}}>
+      {!valid && log && <div className='col-12 d-flex justify-content-center align-items-center' style={{height:'100vh',overflowY:'scroll'}}>
             <div className='' >Invalid data of addcards</div>
             </div>
       }
